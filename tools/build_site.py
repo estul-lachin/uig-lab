@@ -23,6 +23,9 @@ import markdown
 REPO_URL = "https://github.com/estul-lachin/uig-lab"
 RAW_URL = "https://raw.githubusercontent.com/estul-lachin/uig-lab/main"
 PROFILE_URL = "https://github.com/estul-lachin"
+LINKEDIN_URL = "https://www.linkedin.com/in/estul-lachin"
+OWNER = "Estul Lachin"
+BYLINE = "IT support technician moving into SOC · Edmonton, AB"
 SITE_URL = "https://lab.uig.me"
 SITE_DESCRIPTION = ("Hands-on IT labs I have built and passed, each a resettable Docker environment "
                     "with automated checks.")
@@ -45,6 +48,8 @@ MIN_LEAK_LINE = 20  # shorter lines (fi, }, set -e ...) are too generic to compa
 SCREENSHOTS = "screenshots"  # per-lab folder, copied to the site as is
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".gif", ".webp"}
 MAX_IMAGE_BYTES = 1024 * 1024  # larger screenshots get a warning: resize them first
+ASSETS = ROOT / "tools" / "assets"  # favicons and the link-preview image, copied to the site root
+OG_IMAGE = "og-image.png"  # 1200x630, rendered from tools/assets/og-image.html
 
 e = html.escape
 
@@ -230,7 +235,7 @@ def page(title, body, depth, current="", path="", description=SITE_DESCRIPTION):
         f'<a href="{href}"{" aria-current=\"page\"" if key == current else ""}>{label}</a>'
         for label, href, key in nav
     )
-    full_title = "uig-lab" if title == "uig-lab" else f"{title} · uig-lab"
+    full_title = f"{OWNER} · Hands-on IT labs" if title == "uig-lab" else f"{title} · {OWNER}"
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -239,17 +244,24 @@ def page(title, body, depth, current="", path="", description=SITE_DESCRIPTION):
 <title>{e(full_title)}</title>
 <meta name="description" content="{e(description)}">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="uig-lab">
+<meta property="og:site_name" content="{OWNER} · lab.uig.me">
 <meta property="og:title" content="{e(full_title)}">
 <meta property="og:description" content="{e(description)}">
 <meta property="og:url" content="{e(f"{SITE_URL}/{path}")}">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="{SITE_URL}/{OG_IMAGE}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{OWNER}: hands-on IT labs">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="{rel}favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{rel}favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="{rel}apple-touch-icon.png">
 <link rel="stylesheet" href="{rel}style.css">
 </head>
 <body>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="{rel or './'}">uig-lab</a>
+    <a class="brand" href="{rel or './'}">{OWNER}</a>
     <nav>{links}</nav>
   </div>
 </header>
@@ -258,8 +270,9 @@ def page(title, body, depth, current="", path="", description=SITE_DESCRIPTION):
 </main>
 <footer class="site-footer">
   <div class="wrap">
-    <a href="{PROFILE_URL}">github.com/estul-lachin</a> ·
-    <a href="{REPO_URL}">source</a>
+    <a href="{LINKEDIN_URL}">LinkedIn</a> ·
+    <a href="{PROFILE_URL}">GitHub</a> ·
+    <a href="{REPO_URL}">Source</a>
   </div>
 </footer>
 </body>
@@ -294,6 +307,7 @@ def build_home(labs, projects):
     parts = [
         '<section class="intro">',
         "<h1>Hands-on IT labs</h1>",
+        f'<p class="byline">{e(OWNER)} · {e(BYLINE)}</p>',
         "<p>Every skill I learn becomes a small Docker lab with automated checks, which I can reset and "
         "redo at any time. A lab appears here once I have passed it myself. Work that can't be checked "
         "automatically, such as VM-based home labs, is listed separately as documented projects.</p>",
@@ -499,6 +513,9 @@ def main():
     write(out / "timeline" / "index.html", build_timeline(labs))
     write(out / "404.html", build_404())
     shutil.copyfile(ROOT / "tools" / "site.css", out / "style.css")
+    for f in ASSETS.iterdir():
+        if f.is_file() and f.suffix != ".html":  # .html files are image sources, not pages
+            shutil.copyfile(f, out / f.name)
     passed = [l for l in labs.values() if l["passes"]]
     for lab in passed:
         write(out / "labs" / lab["name"] / "index.html", build_lab(lab))

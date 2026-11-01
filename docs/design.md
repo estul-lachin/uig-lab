@@ -260,7 +260,14 @@ meaning:
 ### Design
 - One CSS file, no JS framework; works at phone width; dark mode via `prefers-color-scheme`
 - Clean, like technical docs / a portfolio — nothing flashy
-- No personal contact details (phone, email); only a link to https://github.com/estul-lachin
+- No personal contact details (phone, email); only links to LinkedIn
+  (https://www.linkedin.com/in/estul-lachin) and https://github.com/estul-lachin, in the footer
+- The site says whose it is, since my résumé links to it: page titles end in "Estul Lachin", the header shows
+  my name, and the home page has a one-line byline (role and city)
+- Favicons (`favicon.svg`, `favicon.ico`, `apple-touch-icon.png`) and a 1200x630 link-preview image
+  (`og-image.png`) live in `tools/assets/` and are copied to the site root. They are rendered from
+  `favicon.svg` and `og-image.html` by `tools/render_assets.sh` (macOS, Chrome) and committed, so the build
+  and CI never need a browser
 - Open Graph / Twitter card meta tags on every page (title, description, URL), so links shared on LinkedIn
   or in messages show a proper preview
 

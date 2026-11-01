@@ -49,7 +49,7 @@ a:hover { text-decoration: underline; }
 /* header / footer */
 .site-header { border-bottom: 1px solid var(--border); background: var(--surface); }
 .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 16px; }
-.brand { font-weight: 700; color: var(--text); font-family: var(--mono); letter-spacing: -0.02em; }
+.brand { font-weight: 700; color: var(--text); letter-spacing: -0.01em; white-space: nowrap; }
 .site-header nav { display: flex; gap: 20px; }
 .site-header nav a { color: var(--muted); }
 .site-header nav a[aria-current="page"] { color: var(--text); font-weight: 600; }
@@ -63,6 +63,7 @@ h2 { font-size: 1.3rem; margin: 40px 0 12px; }
 h3 { font-size: 1.05rem; margin: 0 0 6px; }
 .small-heading { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); }
 .lead, .intro p { color: var(--muted); max-width: 640px; }
+.intro .byline { color: var(--text); font-weight: 600; margin: -4px 0 12px; }
 .empty { color: var(--muted); font-style: italic; }
 
 /* stats */
