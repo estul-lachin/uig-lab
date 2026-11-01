@@ -10,7 +10,7 @@ jobs:
     # An image that only exists for one architecture will fail here - prefer multi-arch images.
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Syntax check
         run: bash -n lab
       - name: Test all labs
