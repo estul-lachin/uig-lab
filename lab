@@ -169,7 +169,8 @@ Usage: ./lab <command> [args]
   test <name> | --all      reset -> solve -> check -> clean up (never records progress)
   status <name> [--json]   Show whether the lab is running
   info <name>              Show the lab.conf fields
-  shot <name> <file> <as>  Add a screenshot to labs/<name>/screenshots/<as>.<ext> (resized, compressed)
+  project <name> [cat]     Create a documented project from templates/project (no container, no checks)
+  shot <name> <file> <as>  Add a screenshot to a lab's or project's screenshots/<as>.<ext>
   site [--progress FILE]   Build the showcase into site/ for a local preview
 
 Categories: linux network security web db cloud misc
@@ -207,15 +208,17 @@ cmd_list() {
   done
 }
 
-cmd_new() {
-  local n=${1:-} cat=${2:-misc} f tmp line
-  [ -n "$n" ] || die "usage: ./lab new <name> [category]"
-  [[ $n =~ $NAME_RE ]] || die "invalid lab name '$n' (lowercase letters, digits and hyphens; must match $NAME_RE)"
+# Copy templates/<kind> to <kind>s/<name> and fill in the placeholders. Names are unique across
+# labs/ and projects/, so commands like `shot` know which folder a name means.
+copy_template() {
+  local kind=$1 n=$2 cat=$3 f tmp line
+  [[ $n =~ $NAME_RE ]] || die "invalid $kind name '$n' (lowercase letters, digits and hyphens; must match $NAME_RE)"
   valid_category "$cat" || die "invalid category '$cat' (one of: ${CATEGORIES[*]})"
-  [ -e "labs/$n" ] && die "lab already exists: labs/$n"
-  [ -d templates/lab ] || die "templates/lab is missing"
-  mkdir -p labs
-  cp -R templates/lab "labs/$n" || die "could not copy the template"
+  [ -e "labs/$n" ] && die "name already used by a lab: labs/$n"
+  [ -e "projects/$n" ] && die "name already used by a project: projects/$n"
+  [ -d "templates/$kind" ] || die "templates/$kind is missing"
+  mkdir -p "${kind}s"
+  cp -R "templates/$kind" "${kind}s/$n" || die "could not copy the template"
   tmp=$(mktemp) || die "mktemp failed"
   while IFS= read -r -d '' f; do
     # Only text files that contain a placeholder (-I skips binary files such as images).
@@ -226,8 +229,14 @@ cmd_new() {
       printf '%s\n' "$line"
     done <"$f" >"$tmp"
     cat "$tmp" >"$f"   # copy back in place: keeps the file's mode, no sed -i
-  done < <(find "labs/$n" -type f -print0)
+  done < <(find "${kind}s/$n" -type f -print0)
   rm -f "$tmp"
+}
+
+cmd_new() {
+  local n=${1:-} cat=${2:-misc}
+  [ -n "$n" ] || die "usage: ./lab new <name> [category]"
+  copy_template lab "$n" "$cat"
   cat <<EOF
 Created labs/$n (category: $cat). Edit next:
   labs/$n/lab.conf           title, summary, tags, source
@@ -237,6 +246,19 @@ Created labs/$n (category: $cat). Edit next:
   labs/$n/check.sh           checks (negative checks need preconditions)
   labs/$n/solution/solve.sh  reference solution
 Then: ./lab test $n
+EOF
+}
+
+cmd_project() {
+  local n=${1:-} cat=${2:-misc}
+  [ -n "$n" ] || die "usage: ./lab project <name> [category]"
+  copy_template project "$n" "$cat"
+  cat <<EOF
+Created projects/$n (category: $cat). A project is documented work that can't be a Docker lab
+(VMs, Windows, GUI tools); lab.uig.me marks it "documented, not auto-checked". Edit next:
+  projects/$n/project.conf   title, summary, tags; set DATE when it is finished to publish it
+  projects/$n/README.md      the write-up, in your own words
+Screenshots: ./lab shot $n ~/Screenshots/<file>.png <name>
 EOF
 }
 
@@ -405,16 +427,19 @@ cmd_info() {
 }
 
 cmd_shot() {
-  local n=${1:-} src=${2:-} name=${3:-} ext dir dest w h before after
+  local n=${1:-} src=${2:-} name=${3:-} ext base dir dest w h before after
   [ -n "$n" ] && [ -n "$src" ] && [ -n "$name" ] \
-    || die "usage: ./lab shot <lab> <image file> <name>   e.g. ./lab shot hello-world ~/Screenshots/x.png check-passed"
-  need_lab "$n"
+    || die "usage: ./lab shot <lab or project> <image file> <name>   e.g. ./lab shot hello-world ~/Screenshots/x.png check-passed"
+  [[ $n =~ $NAME_RE ]] || die "invalid name '$n' (must match $NAME_RE)"
+  if [ -f "labs/$n/lab.conf" ]; then base=labs/$n
+  elif [ -f "projects/$n/project.conf" ]; then base=projects/$n
+  else die "no such lab or project: $n (see ./lab list, or projects/)"; fi
   [ -f "$src" ] || die "no such file: $src"
   ext=${src##*.}; ext=${ext,,}
   case $ext in png|jpg|jpeg|gif|webp) ;; *) die "not an image: $src (png, jpg, jpeg, gif or webp)" ;; esac
   name=${name%.*}
   [[ $name =~ $NAME_RE ]] || die "invalid name '$name' (lowercase letters, digits and hyphens, e.g. check-passed)"
-  dir=labs/$n/screenshots
+  dir=$base/screenshots
   dest=$dir/$name.$ext
   [ -e "$dest" ] && die "$dest already exists (pick another name, or delete it first)"
   mkdir -p "$dir" && cp "$src" "$dest" || die "could not copy $src"
@@ -449,7 +474,7 @@ cmd_shot() {
   [ "$after" -gt $((1024 * 1024)) ] && warn "still over 1 MB; consider cropping it"
   cat <<EOF
 
-Check it for private details (usernames, hostnames, real IPs, emails, tokens), then add to labs/$n/README.md:
+Check it for private details (usernames, hostnames, real IPs, emails, tokens), then add to $base/README.md:
   ![Describe what it shows]($(basename "$dir")/$name.$ext)
 EOF
 }
@@ -469,7 +494,7 @@ cmd_site() {
 cmd=${1:-help}
 [ $# -gt 0 ] && shift
 case $cmd in
-  list|new|up|shell|check|solve|down|reset|test|status|info|shot|site) "cmd_$cmd" "$@" ;;
+  list|new|project|up|shell|check|solve|down|reset|test|status|info|shot|site) "cmd_$cmd" "$@" ;;
   help|-h|--help) cmd_help ;;
   *) cmd_help >&2; die "unknown command: $cmd" ;;
 esac

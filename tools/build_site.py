@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Build the static showcase for lab.uig.me into site/.
 
-Reads labs/*/lab.conf, labs/*/README.md, labs/*/screenshots/ and progress.jsonl. Never reads check.sh or
-solution/ (except for the final leak check, which makes sure none of their content ended up in the output).
+Reads labs/*/lab.conf, labs/*/README.md, labs/*/screenshots/, projects/*/ (project.conf, README.md,
+screenshots/) and progress.jsonl. Never reads check.sh or solution/ (except for the final leak check, which
+makes sure none of their content ended up in the output).
 
 Usage: python3 tools/build_site.py [--progress PATH] [--out DIR]
 """
@@ -38,7 +39,7 @@ CATEGORIES = {
 }
 CONF_DEFAULTS = {
     "TITLE": "", "SUMMARY": "", "CATEGORY": "misc", "TAGS": "", "SOURCE": "",
-    "SERVICE": "main", "CLEANUP_CMD": "", "PUBLIC": "yes",
+    "SERVICE": "main", "CLEANUP_CMD": "", "PUBLIC": "yes", "DATE": "",
 }
 MIN_LEAK_LINE = 20  # shorter lines (fi, }, set -e ...) are too generic to compare
 SCREENSHOTS = "screenshots"  # per-lab folder, copied to the site as is
@@ -123,6 +124,22 @@ def load_labs(progress):
     return labs
 
 
+def load_projects():
+    """Documented projects (no checks): public ones with a DATE, newest first."""
+    projects = []
+    for conf_path in sorted((ROOT / "projects").glob("*/project.conf")):
+        conf = parse_conf(conf_path)
+        if conf["PUBLIC"] != "yes" or not conf["DATE"].strip():
+            continue
+        readme = conf_path.parent / "README.md"
+        projects.append({
+            "name": conf_path.parent.name,
+            "conf": conf,
+            "readme": readme.read_text(encoding="utf-8") if readme.exists() else "",
+        })
+    return sorted(projects, key=lambda p: p["conf"]["DATE"], reverse=True)
+
+
 # ---------------------------------------------------------------- README rendering
 
 def clean_readme(text):
@@ -148,31 +165,31 @@ def clean_readme(text):
     return text
 
 
-def rewrite_links(body, name):
-    """Point relative links in a lab README at the repo on GitHub.
+def rewrite_links(body, base):
+    """Point relative links in a README under base (labs/<name> or projects/<name>) at the repo on GitHub.
 
-    Links into the lab's screenshots/ folder stay relative: that folder is copied next to the page.
+    Links into its screenshots/ folder stay relative: that folder is copied next to the page.
     Other relative images point at the raw file, since a GitHub blob URL is an HTML page, not an image.
     """
     def fix(m):
         attr, url = m.group(1), m.group(2)
         if re.match(r"^([a-z][a-z0-9+.-]*:|#|/)", url, re.I):
             return m.group(0)
-        path = posixpath.normpath(posixpath.join("labs", name, html.unescape(url)))
+        path = posixpath.normpath(posixpath.join(base, html.unescape(url)))
         if path.startswith(".."):
             return m.group(0)
-        if path.startswith(f"labs/{name}/{SCREENSHOTS}/"):
+        if path.startswith(f"{base}/{SCREENSHOTS}/"):
             return m.group(0)
         if attr == "src":
             return f'{attr}="{e(f"{RAW_URL}/{path}")}"'
-        kind = "tree" if url.endswith("/") or path == f"labs/{name}" else "blob"
+        kind = "tree" if url.endswith("/") or path == base else "blob"
         return f'{attr}="{e(f"{REPO_URL}/{kind}/main/{path}")}"'
     return re.sub(r'\b(href|src)="([^"]*)"', fix, body)
 
 
-def copy_screenshots(name, out):
-    """Copy labs/<name>/screenshots/ images to the lab's page folder."""
-    src = ROOT / "labs" / name / SCREENSHOTS
+def copy_screenshots(base, out):
+    """Copy <base>/screenshots/ images (base = labs/<name> or projects/<name>) next to its page."""
+    src = ROOT / base / SCREENSHOTS
     if not src.is_dir():
         return
     for f in sorted(src.rglob("*")):
@@ -186,14 +203,14 @@ def copy_screenshots(name, out):
         if f.stat().st_size > MAX_IMAGE_BYTES:
             print(f"build_site: warning: {rel} is {f.stat().st_size // 1024} KB; "
                   f"shrink it (./lab shot does that)", file=sys.stderr)
-        dest = out / "labs" / name / SCREENSHOTS / f.relative_to(src)
+        dest = out / base / SCREENSHOTS / f.relative_to(src)
         dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(f, dest)
 
 
-def render_readme(text, name):
+def render_readme(text, base):
     md = markdown.Markdown(extensions=["extra", "sane_lists"], output_format="html")
-    return rewrite_links(md.convert(clean_readme(text)), name)
+    return rewrite_links(md.convert(clean_readme(text)), base)
 
 
 # ---------------------------------------------------------------- pages
@@ -207,6 +224,7 @@ def page(title, body, depth, current="", path="", description=SITE_DESCRIPTION):
     # which GitHub Pages serves at any missing URL). path = the page's URL path, for link previews.
     rel = "/" if depth is None else "../" * depth
     nav = [("Labs", rel or "./", "home"),
+           ("Projects", f"{rel}projects/", "projects"),
            ("Timeline", f"{rel}timeline/", "timeline")]
     links = "".join(
         f'<a href="{href}"{" aria-current=\"page\"" if key == current else ""}>{label}</a>'
@@ -260,18 +278,33 @@ def category_name(cat):
     return CATEGORIES.get(cat, cat.capitalize() or "Misc")
 
 
-def build_home(labs):
+NOT_CHECKED = ('<span class="badge" title="Written up by me; there is no automated check for it">'
+               "Documented project · not auto-checked</span>")
+
+
+def project_card(p, rel):
+    c = p["conf"]
+    return (f'<article class="card"><h3><a href="{rel}projects/{e(p["name"])}/">{e(c["TITLE"] or p["name"])}</a></h3>'
+            f'<p>{e(c["SUMMARY"])}</p>{tags_html(c)}'
+            f'<p class="status project">Documented {e(c["DATE"])}</p></article>')
+
+
+def build_home(labs, projects):
     passed = [l for l in labs.values() if l["passes"]]
     parts = [
         '<section class="intro">',
         "<h1>Hands-on IT labs</h1>",
         "<p>Every skill I learn becomes a small Docker lab with automated checks, which I can reset and "
-        "redo at any time. A lab appears here once I have passed it myself.</p>",
+        "redo at any time. A lab appears here once I have passed it myself. Work that can't be checked "
+        "automatically, such as VM-based home labs, is listed separately as documented projects.</p>",
         "</section>",
     ]
     latest = max((p["_time"] for l in passed for p in l["passes"]), default=None)
     stats = [f'<div class="stat"><span class="num">{len(passed)}</span>'
              f'<span class="label">{"lab" if len(passed) == 1 else "labs"} passed</span></div>']
+    if projects:
+        stats.append(f'<div class="stat"><span class="num">{len(projects)}</span>'
+                     f'<span class="label">documented {"project" if len(projects) == 1 else "projects"}</span></div>')
     if latest:
         stats.append(f'<div class="stat"><span class="num">{fmt_date(latest)}</span>'
                      f'<span class="label">latest pass</span></div>')
@@ -307,6 +340,11 @@ def build_home(labs):
             )
         parts.append(f'<section class="category" id="cat-{e(cat)}"><h2>{e(category_name(cat))}</h2>'
                      f'<div class="cards">{"".join(cards)}</div></section>')
+    if projects:
+        parts.append('<section class="category" id="projects"><h2>Documented projects</h2>'
+                     '<p class="lead">Written up with notes and screenshots. Unlike the labs above, '
+                     'these have no automated check.</p>'
+                     f'<div class="cards">{"".join(project_card(p, "") for p in projects)}</div></section>')
     return page("uig-lab", "\n".join(parts), 0, "home")
 
 
@@ -333,7 +371,7 @@ def build_lab(lab):
   <a href="{e(f"{REPO_URL}/tree/main/labs/{name}")}">View the lab on GitHub →</a>
 </aside>
 <div class="readme">
-{render_readme(lab["readme"], name)}
+{render_readme(lab["readme"], f"labs/{name}")}
 </div>
 <section class="checks">
   <h2>Checks passed</h2>
@@ -343,6 +381,45 @@ def build_lab(lab):
 </article>"""
     return page(c["TITLE"] or name, body, 2, path=f"labs/{name}/",
                 description=c["SUMMARY"] or SITE_DESCRIPTION)
+
+
+def build_project(p):
+    c, name = p["conf"], p["name"]
+    meta = [f'<span>{e(category_name(c["CATEGORY"]))}</span>']
+    if c["SOURCE"]:
+        meta.append(f'<span>Learned from: {e(c["SOURCE"])}</span>')
+    body = f"""<article class="lab">
+<header class="lab-header">
+  <p class="meta">{" · ".join(meta)}</p>
+  <h1>{e(c["TITLE"] or name)}</h1>
+  <p class="summary">{e(c["SUMMARY"])}</p>
+  {tags_html(c)}
+  {NOT_CHECKED}
+</header>
+<aside class="record">
+  <dl>
+    <div><dt>Documented</dt><dd>{e(c["DATE"])}</dd></div>
+  </dl>
+  <a href="{e(f"{REPO_URL}/tree/main/projects/{name}")}">View the project on GitHub →</a>
+</aside>
+<div class="readme">
+{render_readme(p["readme"], f"projects/{name}")}
+</div>
+</article>"""
+    return page(c["TITLE"] or name, body, 2, path=f"projects/{name}/",
+                description=c["SUMMARY"] or SITE_DESCRIPTION)
+
+
+def build_projects_index(projects):
+    if projects:
+        items = f'<div class="cards">{"".join(project_card(p, "../") for p in projects)}</div>'
+    else:
+        items = '<p class="empty">No documented projects yet.</p>'
+    body = ("<h1>Documented projects</h1>\n"
+            '<p class="lead">Work that can\'t be a Docker lab with automated checks, such as VM-based home '
+            "labs, written up with notes and screenshots. These are not auto-checked; the labs are.</p>\n"
+            + items)
+    return page("Projects", body, 1, "projects", path="projects/")
 
 
 def build_timeline(labs):
@@ -409,6 +486,7 @@ def main():
     args = ap.parse_args()
 
     labs = load_labs(load_progress(args.progress))
+    projects = load_projects()
     out = args.out.resolve()
     if out == ROOT or ROOT.is_relative_to(out):
         fail(f"refusing to write into {out}")
@@ -416,18 +494,22 @@ def main():
         shutil.rmtree(out)
     out.mkdir(parents=True)
 
-    write(out / "index.html", build_home(labs))
+    write(out / "index.html", build_home(labs, projects))
+    write(out / "projects" / "index.html", build_projects_index(projects))
     write(out / "timeline" / "index.html", build_timeline(labs))
     write(out / "404.html", build_404())
     shutil.copyfile(ROOT / "tools" / "site.css", out / "style.css")
     passed = [l for l in labs.values() if l["passes"]]
     for lab in passed:
         write(out / "labs" / lab["name"] / "index.html", build_lab(lab))
-        copy_screenshots(lab["name"], out)
+        copy_screenshots(f"labs/{lab['name']}", out)
+    for p in projects:
+        write(out / "projects" / p["name"] / "index.html", build_project(p))
+        copy_screenshots(f"projects/{p['name']}", out)
 
     leak_check(out)
     print(f"Built {out}: {len(passed)} of {len(labs)} public labs passed, "
-          f"{sum(len(l['passes']) for l in labs.values())} passes.")
+          f"{sum(len(l['passes']) for l in labs.values())} passes, {len(projects)} documented projects.")
 
 
 if __name__ == "__main__":

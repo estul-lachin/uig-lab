@@ -94,6 +94,11 @@ h3 { font-size: 1.05rem; margin: 0 0 6px; }
 }
 .card p { margin: 0 0 10px; color: var(--muted); font-size: 15px; }
 .card .status { margin: auto 0 0; color: var(--ok); font-size: 14px; font-weight: 600; }
+.card .status.project { color: var(--muted); }
+.badge {
+  display: inline-block; border: 1px dashed var(--border); border-radius: 999px; padding: 1px 10px;
+  font-size: 13px; color: var(--muted);
+}
 .tags { list-style: none; padding: 0; margin: 0 0 12px; display: flex; flex-wrap: wrap; gap: 6px; }
 .tags li { background: var(--chip); border-radius: 999px; padding: 1px 10px; font-size: 13px; color: var(--muted); }
 
@@ -128,7 +133,6 @@ h3 { font-size: 1.05rem; margin: 0 0 6px; }
 .readme img { max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: var(--radius); }
 .readme table { border-collapse: collapse; display: block; overflow-x: auto; }
 .readme th, .readme td { border: 1px solid var(--border); padding: 6px 10px; }
-.readme img { max-width: 100%; }
 
 /* timeline */
 .timeline { list-style: none; padding: 0; margin: 24px 0; border-left: 2px solid var(--border); }

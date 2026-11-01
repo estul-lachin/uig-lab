@@ -35,7 +35,11 @@ is exposed to the internet.
 - Never commit pass records created by an AI session or by verification: `progress.jsonl` only holds the
   owner's own passes. Remove any such records before committing.
 - Never fill in the "My notes" section of a lab README; the owner writes it. The same goes for screenshots.
-- Screenshots live in `labs/<name>/screenshots/` (png/jpg/gif/webp, lowercase-hyphenated names, longest side
+- Documented projects (`projects/<name>/`, created with `./lab project`) are the owner's own write-ups of
+  work that can't be a Docker lab (VMs, Windows, GUI tools). Never write their content or set their `DATE`:
+  an AI session may only create the skeleton and fix formatting when asked. The site marks them "not
+  auto-checked"; never present a project as a passed lab.
+- Screenshots live in `labs/<name>/screenshots/` or `projects/<name>/screenshots/` (png/jpg/gif/webp, lowercase-hyphenated names, longest side
   1600px or less; the owner adds them with `./lab shot`) and are linked from the README with a relative path
   and real alt text. Never run `sips -Z` on a whole folder: it also enlarges small images. Terminal output goes in
   code blocks, not screenshots. Everything here is public: no usernames, hostnames, real IPs, emails or tokens.

@@ -24,7 +24,7 @@ one bash script manages labs locally, and the public site is purely static.
 ./lab reset hello-world       # wipe everything and start fresh
 ```
 
-Other commands: `new`, `solve`, `test`, `status`, `info`, `shot`, `site`. Run `./lab help` for the full list.
+Other commands: `new`, `project`, `solve`, `test`, `status`, `info`, `shot`, `site`. Run `./lab help` for the full list.
 
 ## When I learn something new
 
@@ -40,8 +40,10 @@ Other commands: `new`, `solve`, `test`, `status`, `info`, `shot`, `site`. Run `.
 lab                    CLI (bash)
 lib/check-lib.sh       helpers shared by every check.sh (section, check, as_user, summary)
 templates/lab/         template for new labs
+templates/project/     template for new documented projects
 labs/<name>/           one lab: lab.conf, Dockerfile, docker-compose.yml, README.md, check.sh, solution/,
                        .dockerignore, optional screenshots/
+projects/<name>/       one documented project: project.conf, README.md, optional screenshots/
 progress.jsonl         one line per pass, read by the showcase
 docs/design.md         full design
 ```
@@ -56,8 +58,12 @@ lab, there is nothing in it to peek at.
 Good fits: Linux commands, service configuration, network tools, multi-container networks, vulnerable
 services, log analysis: anything whose end state a script can check.
 
-Not a fit: pure concepts (those go into notes), and Windows / Active Directory / Sysmon / GUI tools (those
-belong in my VM home lab).
+Not a fit: pure concepts (those go into notes), and Windows / Active Directory / Sysmon / GUI tools, which
+run in my VM home lab. Those become **documented projects** instead: `./lab project <name> [category]` creates
+`projects/<name>/`, I write it up with notes and screenshots, and once I set `DATE` in `project.conf` it
+appears on the showcase, clearly marked "documented project, not auto-checked". Projects have no container
+and no checks, never go into `progress.jsonl` or the timeline, and lab and project names are unique across
+both folders.
 
 ## Conventions
 
@@ -79,7 +85,8 @@ belong in my VM home lab).
 The site is built by `tools/build_site.py` (from `lab.conf`, `README.md` and `progress.jsonl`, never from
 `check.sh` or `solution/`; the build fails if any of their content would end up in the output) and deployed by
 `.github/workflows/pages.yml` to GitHub Pages on every push to `main`. Only labs with `PUBLIC=yes` that I have
-passed at least once are shown. `site/` is never committed.
+passed at least once are shown, plus documented projects with `PUBLIC=yes` and a `DATE`. `site/` is never
+committed.
 
 Local preview:
 

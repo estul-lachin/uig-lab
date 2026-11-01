@@ -55,7 +55,9 @@ uig-lab/
 │   ├── check.sh
 │   ├── .dockerignore
 │   └── solution/solve.sh
+├── templates/project/        # Template for documented projects (project.conf, README.md)
 ├── labs/hello-world/         # Example lab, same structure as the template
+├── projects/                 # Documented projects (see "Documented projects" in phase 2)
 ├── progress.jsonl            # Pass records, committed to git, read by the showcase
 ├── .claude/commands/new-lab.md
 ├── .github/workflows/test.yml
@@ -103,6 +105,7 @@ uig-lab/
 | `test <name>` / `test --all` | reset → solve → check must fully pass → clean up (CLEANUP_CMD + `down -v`, **also on failure**); print pass/fail per lab and a total; non-zero exit if any lab fails. **`test` never writes `progress.jsonl`** (that's the reference solution passing, not me) — disable recording with an internal flag, not an environment variable a user could set by accident |
 | `status <name> [--json]` | Running or not |
 | `info <name>` | Show the lab.conf fields |
+| `project <name> [category]` | Copy `templates/project` to `projects/<name>` (same name and category rules as `new`; names are unique across labs and projects) |
 | `site` | Build the showcase into `site/` locally for preview (see phase 2) |
 
 Always call compose as:
@@ -237,7 +240,22 @@ that only exists for one architecture will show up here.
    - Check list (from the latest pass record)
    - Pass record: first pass, latest pass, number of passes
    - Link to the lab's folder: `REPO_URL/tree/main/labs/<name>`
-3. **Timeline** `/timeline/`: every pass, newest first
+3. **Timeline** `/timeline/`: every pass, newest first (lab passes only, never projects)
+4. **Projects** `/projects/` and `/projects/<name>/`: documented projects (see below)
+
+### Documented projects
+Work that can't be a Docker lab with automated checks (VMs, Windows, Active Directory, Wazuh agents, GUI
+tools), such as my VM home lab, which my résumé links to. Kept clearly apart from labs so "passed" keeps its
+meaning:
+- `projects/<name>/project.conf`: `TITLE`, `SUMMARY`, `CATEGORY`, `TAGS`, `SOURCE`, `DATE`, `PUBLIC`.
+  A project is published only when `PUBLIC=yes` **and** `DATE` is set (e.g. `2026-11`): an unfinished write-up
+  stays hidden, the way an unpassed lab does
+- `README.md` (Overview / What I built / What I did / What I learned / My notes / Related) and optional
+  `screenshots/`, all written by me; empty sections are hidden on the site
+- On the site: a "Documented projects" section on the home page and a stat for their count, a `/projects/`
+  index, and one page per project, each with a "Documented project · not auto-checked" badge. Never in the
+  timeline, never in `progress.jsonl`
+- `./lab shot` works for projects too
 
 ### Design
 - One CSS file, no JS framework; works at phone width; dark mode via `prefers-color-scheme`
