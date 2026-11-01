@@ -36,7 +36,8 @@ is exposed to the internet.
   owner's own passes. Remove any such records before committing.
 - Never fill in the "My notes" section of a lab README; the owner writes it. The same goes for screenshots.
 - Screenshots live in `labs/<name>/screenshots/` (png/jpg/gif/webp, lowercase-hyphenated names, longest side
-  1600px or less) and are linked from the README with a relative path and real alt text. Terminal output goes in
+  1600px or less; the owner adds them with `./lab shot`) and are linked from the README with a relative path
+  and real alt text. Never run `sips -Z` on a whole folder: it also enlarges small images. Terminal output goes in
   code blocks, not screenshots. Everything here is public: no usernames, hostnames, real IPs, emails or tokens.
 - Every lab has a `.dockerignore` (from the template) that keeps `check.sh`, `solution/`, `screenshots/` and
   `README.md` out of the Docker build context.

@@ -84,8 +84,8 @@ uig-lab/
 - `.dockerignore`: keeps `check.sh`, `solution/`, `screenshots/` and `README.md` out of the build context, so a
   `COPY . …` in a Dockerfile can never put them in the image
 - `screenshots/` (optional, written by me): images linked from the README with a relative path
-  (`![alt](screenshots/name.png)`); png/jpg/gif/webp, lowercase-hyphenated names, longest side ≤ 1600px
-  (`sips -Z 1600`). Use code blocks for terminal output; screenshots are for GUIs and visual results.
+  (`![alt](screenshots/name.png)`); png/jpg/gif/webp, lowercase-hyphenated names, longest side ≤ 1600px.
+  Added with `./lab shot`. Use code blocks for terminal output; screenshots are for GUIs and visual results.
   Public, so crop out usernames, hostnames, real IPs, emails and tokens
 
 ### `./lab` commands
@@ -97,6 +97,7 @@ uig-lab/
 | `shell <name>` | Open a shell in the SERVICE container |
 | `check <name> [--json]` | Run the checks; non-zero exit if any fail; **on a full pass, append a record to `progress.jsonl`** |
 | `solve <name>` | Run the reference solution |
+| `shot <name> <file> <as>` | Copy an image to `labs/<name>/screenshots/<as>.<ext>`; shrink it with `sips -Z 1600` only if the longest side is over 1600px (sips also enlarges); compress PNGs with `pngquant` if installed; print the Markdown line. Never edits the README |
 | `down <name>` | **Stop only, don't remove the container** (users and config created inside are kept; continue next `up`) |
 | `reset <name>` | Run CLEANUP_CMD, then `down -v --remove-orphans`, then `up` |
 | `test <name>` / `test --all` | reset → solve → check must fully pass → clean up (CLEANUP_CMD + `down -v`, **also on failure**); print pass/fail per lab and a total; non-zero exit if any lab fails. **`test` never writes `progress.jsonl`** (that's the reference solution passing, not me) — disable recording with an internal flag, not an environment variable a user could set by accident |

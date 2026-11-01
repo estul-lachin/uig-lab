@@ -169,6 +169,7 @@ Usage: ./lab <command> [args]
   test <name> | --all      reset -> solve -> check -> clean up (never records progress)
   status <name> [--json]   Show whether the lab is running
   info <name>              Show the lab.conf fields
+  shot <name> <file> <as>  Add a screenshot to labs/<name>/screenshots/<as>.<ext> (resized, compressed)
   site [--progress FILE]   Build the showcase into site/ for a local preview
 
 Categories: linux network security web db cloud misc
@@ -403,6 +404,56 @@ cmd_info() {
   printf '%-12s %s\n' PASSES "$(pass_count "$n")"
 }
 
+cmd_shot() {
+  local n=${1:-} src=${2:-} name=${3:-} ext dir dest w h before after
+  [ -n "$n" ] && [ -n "$src" ] && [ -n "$name" ] \
+    || die "usage: ./lab shot <lab> <image file> <name>   e.g. ./lab shot hello-world ~/Screenshots/x.png check-passed"
+  need_lab "$n"
+  [ -f "$src" ] || die "no such file: $src"
+  ext=${src##*.}; ext=${ext,,}
+  case $ext in png|jpg|jpeg|gif|webp) ;; *) die "not an image: $src (png, jpg, jpeg, gif or webp)" ;; esac
+  name=${name%.*}
+  [[ $name =~ $NAME_RE ]] || die "invalid name '$name' (lowercase letters, digits and hyphens, e.g. check-passed)"
+  dir=labs/$n/screenshots
+  dest=$dir/$name.$ext
+  [ -e "$dest" ] && die "$dest already exists (pick another name, or delete it first)"
+  mkdir -p "$dir" && cp "$src" "$dest" || die "could not copy $src"
+  before=$(wc -c <"$dest")
+
+  # Shrink to at most 1600px on the longest side. Only shrink: sips -Z also enlarges small images.
+  if command -v sips >/dev/null; then
+    w=$(sips -g pixelWidth "$dest" 2>/dev/null | awk '/pixelWidth/ {print $2}')
+    h=$(sips -g pixelHeight "$dest" 2>/dev/null | awk '/pixelHeight/ {print $2}')
+    if [ -n "$w" ] && [ -n "$h" ] && { [ "$w" -gt 1600 ] || [ "$h" -gt 1600 ]; }; then
+      sips -Z 1600 "$dest" >/dev/null || warn "resizing failed; the image is kept at ${w}x${h}"
+      echo "Resized ${w}x${h} -> $(sips -g pixelWidth "$dest" | awk '/pixelWidth/ {print $2}')x$(sips -g pixelHeight "$dest" | awk '/pixelHeight/ {print $2}')"
+    else
+      echo "Size ${w:-?}x${h:-?}: small enough, not resized"
+    fi
+  else
+    warn "sips not found (macOS only): not resized; keep the longest side at 1600px or less"
+  fi
+
+  # Lossy PNG compression, if pngquant is installed. It keeps the original when it can't do better.
+  if [ "$ext" = png ]; then
+    if command -v pngquant >/dev/null; then
+      pngquant --quality=70-95 --skip-if-larger --strip --force --ext .png -- "$dest" 2>/dev/null
+      case $? in 0|98|99) ;; *) warn "pngquant failed; the image is kept uncompressed" ;; esac
+    else
+      echo "Tip: brew install pngquant to make PNG screenshots much smaller"
+    fi
+  fi
+
+  after=$(wc -c <"$dest")
+  echo "Saved $dest ($((before / 1024)) KB -> $((after / 1024)) KB)"
+  [ "$after" -gt $((1024 * 1024)) ] && warn "still over 1 MB; consider cropping it"
+  cat <<EOF
+
+Check it for private details (usernames, hostnames, real IPs, emails, tokens), then add to labs/$n/README.md:
+  ![Describe what it shows]($(basename "$dir")/$name.$ext)
+EOF
+}
+
 cmd_site() {
   local py=python3
   [ -x .venv/bin/python ] && py=.venv/bin/python
@@ -418,7 +469,7 @@ cmd_site() {
 cmd=${1:-help}
 [ $# -gt 0 ] && shift
 case $cmd in
-  list|new|up|shell|check|solve|down|reset|test|status|info|site) "cmd_$cmd" "$@" ;;
+  list|new|up|shell|check|solve|down|reset|test|status|info|shot|site) "cmd_$cmd" "$@" ;;
   help|-h|--help) cmd_help ;;
   *) cmd_help >&2; die "unknown command: $cmd" ;;
 esac

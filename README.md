@@ -24,7 +24,7 @@ one bash script manages labs locally, and the public site is purely static.
 ./lab reset hello-world       # wipe everything and start fresh
 ```
 
-Other commands: `new`, `solve`, `test`, `status`, `info`, `site`. Run `./lab help` for the full list.
+Other commands: `new`, `solve`, `test`, `status`, `info`, `shot`, `site`. Run `./lab help` for the full list.
 
 ## When I learn something new
 
@@ -66,10 +66,11 @@ belong in my VM home lab).
 - Pinned image tags (never `latest`), preferably images with **arm64** builds
 - Every lab must pass `./lab test <name>` before it is committed
 - Content from paid courses is rewritten in my own words with my own scenarios, never copied
-- Screenshots go in `labs/<name>/screenshots/` and are linked from the README as
-  `![what it shows](screenshots/name.png)`; they show up on GitHub and on the showcase. Lowercase-hyphenated
-  names, resized first (`sips -Z 1600 labs/<name>/screenshots/*.png`), nothing private in them. Terminal
-  output goes in code blocks instead
+- Screenshots: `./lab shot <lab> ~/Screenshots/<file>.png <name>` copies one into `labs/<lab>/screenshots/`,
+  shrinks it to 1600px on the longest side if it is bigger (never enlarges), compresses PNGs when `pngquant`
+  is installed (`brew install pngquant`), and prints the Markdown line to paste into the README:
+  `![what it shows](screenshots/name.png)`. Images show up on GitHub and on the showcase. Check them for
+  private details first. Terminal output goes in code blocks instead
 - `PUBLIC=no` in `lab.conf` hides a lab from the showcase. The repo itself is public, so this hides it
   from the site, not from GitHub
 

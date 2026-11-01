@@ -185,7 +185,7 @@ def copy_screenshots(name, out):
             continue
         if f.stat().st_size > MAX_IMAGE_BYTES:
             print(f"build_site: warning: {rel} is {f.stat().st_size // 1024} KB; "
-                  f"resize it (e.g. sips -Z 1600 {rel})", file=sys.stderr)
+                  f"shrink it (./lab shot does that)", file=sys.stderr)
         dest = out / "labs" / name / SCREENSHOTS / f.relative_to(src)
         dest.parent.mkdir(parents=True, exist_ok=True)
         shutil.copyfile(f, dest)
