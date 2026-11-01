@@ -1,0 +1,1 @@
+{"lab":"hello-world","passed_at":"2026-11-01T14:44:38-06:00","pass":3,"total":3,"checks":["hello.txt exists","Content is exactly 'Hello, World!'","Mode is 644"]}
