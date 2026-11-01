@@ -1,0 +1,5 @@
+services:
+  main:
+    build: .
+    hostname: hello-world
+    init: true

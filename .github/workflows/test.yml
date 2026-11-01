@@ -1,0 +1,17 @@
+name: test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    # Note: CI runs on amd64, while labs are developed on an arm64 Mac (Apple Silicon).
+    # An image that only exists for one architecture will fail here - prefer multi-arch images.
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Syntax check
+        run: bash -n lab
+      - name: Test all labs
+        run: ./lab test --all

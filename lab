@@ -1,0 +1,418 @@
+#!/usr/bin/env bash
+# lab - manage uig-lab Docker labs (one skill = one lab = one directory under labs/).
+# Run ./lab help for usage. Design: docs/design.md
+
+if [ -z "${BASH_VERSINFO:-}" ] || [ "${BASH_VERSINFO[0]}" -lt 4 ]; then
+  echo "uig-lab needs bash 4 or newer (macOS: brew install bash)" >&2
+  exit 1
+fi
+
+set -uo pipefail
+
+# Internal flag: `test` sets it to 0 so the reference solution never writes progress.jsonl.
+# Assigned unconditionally, so nothing in the environment can change it.
+RECORD=1
+
+CATEGORIES=(linux network security web db cloud misc)
+NAME_RE='^[a-z0-9][a-z0-9-]*$'
+CONF_KEYS=(TITLE SUMMARY CATEGORY TAGS SOURCE SERVICE CLEANUP_CMD PUBLIC)
+declare -A CONF=()
+
+# Resolve the repo root (follows symlinks without GNU readlink -f) and work from there.
+_src=${BASH_SOURCE[0]}
+while [ -L "$_src" ]; do
+  _dir=$(cd -P "$(dirname "$_src")" && pwd)
+  _src=$(readlink "$_src")
+  [[ $_src == /* ]] || _src=$_dir/$_src
+done
+ROOT=$(cd -P "$(dirname "$_src")" && pwd)
+cd "$ROOT" || exit 1
+PROGRESS=progress.jsonl
+
+if [ -t 1 ]; then
+  COLOR=1 C_G=$'\e[32m' C_R=$'\e[31m' C_Y=$'\e[33m' C_B=$'\e[1m' C_D=$'\e[2m' C_0=$'\e[0m'
+else
+  COLOR=0 C_G="" C_R="" C_Y="" C_B="" C_D="" C_0=""
+fi
+
+die()  { printf 'error: %s\n' "$*" >&2; exit 1; }
+warn() { printf 'warning: %s\n' "$*" >&2; }
+
+# ---------------------------------------------------------------- helpers
+
+compose() {
+  local n=$1; shift
+  docker compose -p "kl-$n" --project-directory "labs/$n" -f "labs/$n/docker-compose.yml" "$@"
+}
+
+# JSON string escaping (same rules as lib/check-lib.sh); result in REPLY.
+json_escape() {
+  local s=$1 i ch rep
+  s=${s//'\'/'\\'}
+  s=${s//'"'/'\"'}
+  s=${s//$'\n'/'\n'}
+  s=${s//$'\t'/'\t'}
+  s=${s//$'\r'/'\r'}
+  for i in {1..31} 127; do
+    case $i in 9|10|13) continue ;; esac
+    printf -v ch "\\x$(printf %02x "$i")"
+    [[ $s == *"$ch"* ]] || continue
+    printf -v rep '\\u%04x' "$i"
+    s=${s//"$ch"/"$rep"}
+  done
+  REPLY=$s
+}
+
+# Quoted JSON string for $1; result in REPLY.
+json_str() { json_escape "$1"; REPLY="\"$REPLY\""; }
+
+# Decode the inside of a JSON string; result in REPLY.
+json_unescape() {
+  local s=$1 out="" c
+  while [[ $s == *'\'* ]]; do
+    out+=${s%%'\'*}
+    s=${s#*'\'}
+    c=${s:0:1}; s=${s:1}
+    case $c in
+      n) out+=$'\n' ;;
+      t) out+=$'\t' ;;
+      r) out+=$'\r' ;;
+      b) out+=$'\b' ;;
+      f) out+=$'\f' ;;
+      u) printf -v c "\\u${s:0:4}"; out+=$c; s=${s:4} ;;
+      *) out+=$c ;;  # \" \\ \/
+    esac
+  done
+  REPLY=$out$s
+}
+
+valid_category() {
+  local c
+  for c in "${CATEGORIES[@]}"; do [ "$1" = "$c" ] && return 0; done
+  return 1
+}
+
+all_labs() {
+  local d
+  for d in labs/*/; do
+    [ -f "${d}lab.conf" ] && basename "$d"
+  done
+}
+
+# Source lab.conf in a subshell (never pollutes our variables) and fill CONF.
+load_conf() {
+  local n=$1 v i
+  local -a vals=()
+  while IFS= read -r -d '' v; do vals+=("$v"); done < <(
+    TITLE="" SUMMARY="" CATEGORY=misc TAGS="" SOURCE="" SERVICE=main CLEANUP_CMD="" PUBLIC=yes
+    set +u
+    # shellcheck disable=SC1090
+    source "labs/$n/lab.conf" >/dev/null 2>&1 || exit 1
+    printf '%s\0' "$TITLE" "$SUMMARY" "$CATEGORY" "$TAGS" "$SOURCE" \
+      "${SERVICE:-main}" "$CLEANUP_CMD" "${PUBLIC:-yes}"
+  )
+  [ ${#vals[@]} -eq ${#CONF_KEYS[@]} ] || die "could not read labs/$n/lab.conf"
+  CONF=()
+  for i in "${!CONF_KEYS[@]}"; do CONF[${CONF_KEYS[i]}]=${vals[i]}; done
+}
+
+# Validate a lab name argument and load its config.
+need_lab() {
+  local n=${1:-}
+  [ -n "$n" ] || die "missing lab name (see ./lab list)"
+  [[ $n =~ $NAME_RE ]] || die "invalid lab name '$n' (must match $NAME_RE)"
+  [ -f "labs/$n/lab.conf" ] || die "no such lab: $n (see ./lab list)"
+  load_conf "$n"
+}
+
+is_running() {
+  [ -n "$(compose "$1" ps -q --status running "${CONF[SERVICE]}" 2>/dev/null)" ]
+}
+
+container_exists() {
+  [ -n "$(compose "$1" ps -a -q "${CONF[SERVICE]}" 2>/dev/null)" ]
+}
+
+need_running() {
+  is_running "$1" || die "lab '$1' is not running (start it with ./lab up $1)"
+}
+
+pass_count() {
+  [ -f "$PROGRESS" ] || { echo 0; return; }
+  grep -c "^{\"lab\":\"$1\"," "$PROGRESS"
+}
+
+# Run CLEANUP_CMD inside the container (if any) so volumes can be removed.
+run_cleanup_cmd() {
+  local n=$1
+  [ -n "${CONF[CLEANUP_CMD]}" ] || return 0
+  container_exists "$n" || return 0
+  compose "$n" start >/dev/null 2>&1
+  compose "$n" exec -T "${CONF[SERVICE]}" bash -c "${CONF[CLEANUP_CMD]}" </dev/null \
+    || warn "CLEANUP_CMD failed for $n"
+}
+
+# ---------------------------------------------------------------- commands
+
+cmd_help() {
+  cat <<'EOF'
+Usage: ./lab <command> [args]
+
+  list [--json]            List all labs (category, title, running, passed)
+  new <name> [category]    Create a lab from templates/lab (category default: misc)
+  up <name>                Build and start the lab
+  shell <name>             Open a shell in the lab's main container
+  check <name> [--json]    Run the checks; a full pass is recorded in progress.jsonl
+  solve <name>             Run the reference solution
+  down <name>              Stop the lab (container and its changes are kept)
+  reset <name>             Wipe the lab (containers + volumes) and start fresh
+  test <name> | --all      reset -> solve -> check -> clean up (never records progress)
+  status <name> [--json]   Show whether the lab is running
+  info <name>              Show the lab.conf fields
+  site                     Build the showcase into site/ (phase 2)
+
+Categories: linux network security web db cloud misc
+EOF
+}
+
+cmd_list() {
+  local json=0 n running passed first=1 a b c d e
+  [ "${1:-}" = --json ] && json=1
+  local -a names=()
+  mapfile -t names < <(all_labs)
+  if [ $json = 1 ]; then
+    printf '['
+    for n in "${names[@]}"; do
+      load_conf "$n"
+      running=false; is_running "$n" && running=true
+      passed=false; [ "$(pass_count "$n")" -gt 0 ] && passed=true
+      json_str "$n"; a=$REPLY; json_str "${CONF[CATEGORY]}"; b=$REPLY
+      json_str "${CONF[TITLE]}"; c=$REPLY; json_str "${CONF[PUBLIC]}"; d=$REPLY
+      [ $first = 1 ] && first=0 || printf ','
+      printf '{"name":%s,"category":%s,"title":%s,"public":%s,"running":%s,"passed":%s}' \
+        "$a" "$b" "$c" "$d" "$running" "$passed"
+    done
+    printf ']\n'
+    return 0
+  fi
+  if [ ${#names[@]} -eq 0 ]; then echo "No labs yet. Create one with ./lab new <name> [category]"; return 0; fi
+  printf '%s%-24s %-9s %-8s %-7s %s%s\n' "$C_B" NAME CATEGORY RUNNING PASSED TITLE "$C_0"
+  for n in "${names[@]}"; do
+    load_conf "$n"
+    e=$(pass_count "$n")
+    if is_running "$n"; then running="${C_G}yes${C_0}     "; else running="${C_D}no${C_0}      "; fi
+    if [ "$e" -gt 0 ]; then passed="${C_G}yes${C_0}    "; else passed="${C_D}no${C_0}     "; fi
+    printf '%-24s %-9s %s %s %s\n' "$n" "${CONF[CATEGORY]}" "$running" "$passed" "${CONF[TITLE]}"
+  done
+}
+
+cmd_new() {
+  local n=${1:-} cat=${2:-misc} f tmp line
+  [ -n "$n" ] || die "usage: ./lab new <name> [category]"
+  [[ $n =~ $NAME_RE ]] || die "invalid lab name '$n' (lowercase letters, digits and hyphens; must match $NAME_RE)"
+  valid_category "$cat" || die "invalid category '$cat' (one of: ${CATEGORIES[*]})"
+  [ -e "labs/$n" ] && die "lab already exists: labs/$n"
+  [ -d templates/lab ] || die "templates/lab is missing"
+  mkdir -p labs
+  cp -R templates/lab "labs/$n" || die "could not copy the template"
+  tmp=$(mktemp) || die "mktemp failed"
+  while IFS= read -r -d '' f; do
+    while IFS= read -r line || [ -n "$line" ]; do
+      line=${line//__NAME__/"$n"}
+      line=${line//__CATEGORY__/"$cat"}
+      printf '%s\n' "$line"
+    done <"$f" >"$tmp"
+    cat "$tmp" >"$f"   # copy back in place: keeps the file's mode, no sed -i
+  done < <(find "labs/$n" -type f -print0)
+  rm -f "$tmp"
+  cat <<EOF
+Created labs/$n (category: $cat). Edit next:
+  labs/$n/lab.conf           title, summary, tags, source
+  labs/$n/Dockerfile         packages the lab needs (pinned base image)
+  labs/$n/docker-compose.yml extra services for multi-machine labs
+  labs/$n/README.md          concepts, tasks, hints
+  labs/$n/check.sh           checks (negative checks need preconditions)
+  labs/$n/solution/solve.sh  reference solution
+Then: ./lab test $n
+EOF
+}
+
+cmd_up() {
+  local n=${1:-}
+  need_lab "$n"
+  compose "$n" up -d --build || die "failed to start $n"
+  echo "Lab $n is up. Open a shell: ./lab shell $n    Check: ./lab check $n"
+}
+
+cmd_shell() {
+  local n=${1:-}
+  need_lab "$n"
+  need_running "$n"
+  compose "$n" exec "${CONF[SERVICE]}" bash -c 'umask 022; exec bash'
+}
+
+# Stream the check results as JSON lines from inside the container.
+check_stream() {
+  local n=$1
+  {
+    printf 'KL_FORMAT=json\nFORCE_COLOR=%s\numask 022\n' "$COLOR"
+    cat lib/check-lib.sh "labs/$n/check.sh"
+    printf '\nsummary\n'
+  } | compose "$n" exec -T "${CONF[SERVICE]}" bash -s
+}
+
+cmd_check() {
+  local n=${1:-} json=0
+  [ "${2:-}" = --json ] && json=1
+  need_lab "$n"
+  need_running "$n"
+
+  local str='"((\\.|[^"\\])*)"'
+  local re_check='^\{"section":'"$str"',"desc":'"$str"',"ok":(true|false),"hint":(null|'"$str"')\}$'
+  local re_sum='^\{"summary":true,"pass":([0-9]+),"fail":([0-9]+)\}$'
+  local line sec desc ok hint cur_sec="" pass="" fail="" total
+  local -a checks=()
+
+  while IFS= read -r line; do
+    if [[ $line =~ $re_check ]]; then
+      sec=${BASH_REMATCH[1]} desc=${BASH_REMATCH[3]} ok=${BASH_REMATCH[5]}
+      hint=""; [ "${BASH_REMATCH[6]}" != null ] && hint=${BASH_REMATCH[7]}
+      checks+=("$desc")   # kept escaped: copied verbatim into progress.jsonl
+      if [ $json = 1 ]; then printf '%s\n' "$line"; continue; fi
+      if [ "$sec" != "$cur_sec" ]; then
+        cur_sec=$sec; json_unescape "$sec"
+        printf '\n%s== %s ==%s\n' "$C_B" "$REPLY" "$C_0"
+      fi
+      json_unescape "$desc"
+      if [ "$ok" = true ]; then
+        printf '  %s✔%s %s\n' "$C_G" "$C_0" "$REPLY"
+      else
+        printf '  %s✘%s %s\n' "$C_R" "$C_0" "$REPLY"
+        if [ -n "$hint" ]; then json_unescape "$hint"; printf '    %s→ %s%s\n' "$C_Y" "$REPLY" "$C_0"; fi
+      fi
+    elif [[ $line =~ $re_sum ]]; then
+      pass=${BASH_REMATCH[1]} fail=${BASH_REMATCH[2]}
+      [ $json = 1 ] && printf '%s\n' "$line"
+    else
+      printf '%s\n' "$line" >&2   # stray output from check.sh
+    fi
+  done < <(check_stream "$n")
+
+  [ -n "$pass" ] || die "check.sh for $n did not finish (no summary line) - see errors above"
+  total=$((pass + fail))
+  if [ $json = 0 ]; then
+    if [ "$fail" -eq 0 ]; then printf '\n%sAll passed: %d/%d%s\n' "$C_G" "$pass" "$total" "$C_0"
+    else printf '\n%sPassed %d/%d, %d remaining%s\n' "$C_Y" "$pass" "$total" "$fail" "$C_0"; fi
+  fi
+  [ "$fail" -eq 0 ] && [ "$total" -gt 0 ] || return 1
+
+  if [ "$RECORD" = 1 ]; then
+    local ts cj="" d
+    ts=$(date +%Y-%m-%dT%H:%M:%S%z)
+    ts="${ts:0:${#ts}-2}:${ts:${#ts}-2}"
+    for d in "${checks[@]}"; do cj+="${cj:+,}\"$d\""; done
+    printf '{"lab":"%s","passed_at":"%s","pass":%d,"total":%d,"checks":[%s]}\n' \
+      "$n" "$ts" "$pass" "$total" "$cj" >>"$PROGRESS"
+    local msg="Recorded. Commit to publish on lab.uig.me: git add progress.jsonl && git commit -m \"pass: $n\""
+    if [ $json = 1 ]; then printf '%s\n' "$msg" >&2; else printf '\n%s\n' "$msg"; fi
+  fi
+  return 0
+}
+
+cmd_solve() {
+  local n=${1:-}
+  need_lab "$n"
+  need_running "$n"
+  [ -f "labs/$n/solution/solve.sh" ] || die "labs/$n/solution/solve.sh is missing"
+  # Solutions never live in the container: stream them in, run from a temp dir, delete afterwards.
+  COPYFILE_DISABLE=1 tar --no-xattrs -C "labs/$n/solution" -cf - . \
+    | compose "$n" exec -T "${CONF[SERVICE]}" bash -c \
+      'umask 022; d=$(mktemp -d) || exit 1; trap "rm -rf \"$d\"" EXIT
+       tar --no-same-owner -C "$d" -xf - && cd "$d" && bash ./solve.sh </dev/null'
+}
+
+cmd_down() {
+  local n=${1:-}
+  need_lab "$n"
+  compose "$n" stop || die "failed to stop $n"
+  echo "Lab $n stopped (container kept; ./lab up $n continues where you left off)."
+}
+
+cmd_reset() {
+  local n=${1:-}
+  need_lab "$n"
+  run_cleanup_cmd "$n"
+  compose "$n" down -v --remove-orphans || die "failed to remove $n"
+  compose "$n" up -d --build || die "failed to start $n"
+  echo "Lab $n reset to a fresh environment."
+}
+
+cmd_test() {
+  local -a names=()
+  if [ "${1:-}" = --all ]; then
+    mapfile -t names < <(all_labs)
+  else
+    need_lab "${1:-}"
+    names=("$1")
+  fi
+  local n ok=0 bad=0
+  local -a results=()
+  for n in "${names[@]}"; do
+    printf '\n%s### test %s%s\n' "$C_B" "$n" "$C_0"
+    if ( RECORD=0; cmd_reset "$n" && cmd_solve "$n" && cmd_check "$n" ); then
+      results+=("${C_G}PASS${C_0} $n"); ok=$((ok + 1))
+    else
+      results+=("${C_R}FAIL${C_0} $n"); bad=$((bad + 1))
+    fi
+    # Always clean up, also on failure.
+    load_conf "$n"
+    run_cleanup_cmd "$n"
+    compose "$n" down -v --remove-orphans >/dev/null 2>&1 || warn "cleanup failed for $n"
+  done
+  printf '\n%sTest results%s\n' "$C_B" "$C_0"
+  printf '  %s\n' "${results[@]}"
+  printf 'Total: %d passed, %d failed, %d labs\n' "$ok" "$bad" "${#names[@]}"
+  [ "$bad" -eq 0 ]
+}
+
+cmd_status() {
+  local n=${1:-} json=0 state
+  [ "${2:-}" = --json ] && json=1
+  need_lab "$n"
+  if is_running "$n"; then state=running
+  elif container_exists "$n"; then state=stopped
+  else state=absent; fi
+  if [ $json = 1 ]; then
+    printf '{"lab":"%s","running":%s,"state":"%s"}\n' "$n" "$([ $state = running ] && echo true || echo false)" "$state"
+  else
+    case $state in
+      running) echo "$n: running" ;;
+      stopped) echo "$n: stopped (container kept)" ;;
+      absent)  echo "$n: not created" ;;
+    esac
+  fi
+}
+
+cmd_info() {
+  local n=${1:-} k
+  need_lab "$n"
+  printf '%-12s %s\n' NAME "$n"
+  for k in "${CONF_KEYS[@]}"; do printf '%-12s %s\n' "$k" "${CONF[$k]}"; done
+  printf '%-12s %s\n' PASSES "$(pass_count "$n")"
+}
+
+cmd_site() {
+  [ -f tools/build_site.py ] || die "the showcase build (tools/build_site.py) arrives in phase 2"
+  command -v python3 >/dev/null || die "python3 is required to build the showcase"
+  python3 tools/build_site.py "$@"
+}
+
+# ---------------------------------------------------------------- main
+
+cmd=${1:-help}
+[ $# -gt 0 ] && shift
+case $cmd in
+  list|new|up|shell|check|solve|down|reset|test|status|info|site) "cmd_$cmd" "$@" ;;
+  help|-h|--help) cmd_help ;;
+  *) cmd_help >&2; die "unknown command: $cmd" ;;
+esac
