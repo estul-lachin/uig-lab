@@ -169,7 +169,7 @@ Usage: ./lab <command> [args]
   test <name> | --all      reset -> solve -> check -> clean up (never records progress)
   status <name> [--json]   Show whether the lab is running
   info <name>              Show the lab.conf fields
-  site                     Build the showcase into site/ (phase 2)
+  site [--progress FILE]   Build the showcase into site/ for a local preview
 
 Categories: linux network security web db cloud misc
 EOF
@@ -402,9 +402,13 @@ cmd_info() {
 }
 
 cmd_site() {
-  [ -f tools/build_site.py ] || die "the showcase build (tools/build_site.py) arrives in phase 2"
-  command -v python3 >/dev/null || die "python3 is required to build the showcase"
-  python3 tools/build_site.py "$@"
+  local py=python3
+  [ -x .venv/bin/python ] && py=.venv/bin/python
+  command -v "$py" >/dev/null || die "python3 is required to build the showcase"
+  "$py" -c 'import markdown' 2>/dev/null \
+    || die "the 'markdown' package is missing; run: python3 -m venv .venv && .venv/bin/pip install -r tools/requirements.txt"
+  "$py" tools/build_site.py "$@" || return 1
+  echo "Preview: python3 -m http.server -d site 8000   then open http://localhost:8000"
 }
 
 # ---------------------------------------------------------------- main

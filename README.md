@@ -70,8 +70,18 @@ belong in my VM home lab).
 
 ## Showcase deployment
 
-The site is built by `tools/build_site.py` and deployed by GitHub Actions to GitHub Pages. Preview it
-locally with `./lab site && python3 -m http.server -d site 8000`.
+The site is built by `tools/build_site.py` (from `lab.conf`, `README.md` and `progress.jsonl`, never from
+`check.sh` or `solution/`; the build fails if any of their content would end up in the output) and deployed by
+`.github/workflows/pages.yml` to GitHub Pages on every push to `main`. Only labs with `PUBLIC=yes` that I have
+passed at least once are shown. `site/` is never committed.
+
+Local preview:
+
+```bash
+python3 -m venv .venv && .venv/bin/pip install -r tools/requirements.txt   # once
+./lab site
+python3 -m http.server -d site 8000                                        # http://localhost:8000
+```
 
 One-time manual setup, in this order:
 
