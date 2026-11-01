@@ -30,6 +30,32 @@ Check your work from the host: `./lab check hello-world`
 
 ## My notes
 
+### 1. Create and Write Files
+
+```bash
+touch hello.txt
+echo "Hello, World!" > hello.txt
+```
+
+### 2. Check File Permissions
+
+```bash
+ls -l hello.txt
+stat -c "%a %n" hello.txt
+```
+
+### 3. Change File Permissions
+
+```bash
+chmod 644 hello.txt
+```
+
+**Remember:**
+- `ls -l` → Check permissions.
+- `chmod` → Change permissions.
+- `>` → Overwrite.
+- `>>` → Append.
+
 ## Related
 
 - `man chmod`, `man stat`
