@@ -34,7 +34,12 @@ is exposed to the internet.
 - Never edit `progress.jsonl` by hand, and never let `test` or `solve` write to it.
 - Never commit pass records created by an AI session or by verification: `progress.jsonl` only holds the
   owner's own passes. Remove any such records before committing.
-- Never fill in the "My notes" section of a lab README; the owner writes it.
+- Never fill in the "My notes" section of a lab README; the owner writes it. The same goes for screenshots.
+- Screenshots live in `labs/<name>/screenshots/` (png/jpg/gif/webp, lowercase-hyphenated names, longest side
+  1600px or less) and are linked from the README with a relative path and real alt text. Terminal output goes in
+  code blocks, not screenshots. Everything here is public: no usernames, hostnames, real IPs, emails or tokens.
+- Every lab has a `.dockerignore` (from the template) that keeps `check.sh`, `solution/`, `screenshots/` and
+  `README.md` out of the Docker build context.
 - English everywhere (READMEs, comments, CLI output, website).
 - Pinned image tags, never `latest`; prefer images with arm64 builds (CI runs on amd64, so both matter).
 - Course material from paid courses is never copied: rewrite in the owner's own words with their own scenarios.

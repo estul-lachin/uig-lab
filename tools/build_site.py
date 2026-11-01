@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Build the static showcase for lab.uig.me into site/.
 
-Reads labs/*/lab.conf, labs/*/README.md and progress.jsonl. Never reads check.sh or solution/
-(except for the final leak check, which makes sure none of their content ended up in the output).
+Reads labs/*/lab.conf, labs/*/README.md, labs/*/screenshots/ and progress.jsonl. Never reads check.sh or
+solution/ (except for the final leak check, which makes sure none of their content ended up in the output).
 
 Usage: python3 tools/build_site.py [--progress PATH] [--out DIR]
 """
@@ -20,7 +20,11 @@ from pathlib import Path
 import markdown
 
 REPO_URL = "https://github.com/estul-lachin/uig-lab"
+RAW_URL = "https://raw.githubusercontent.com/estul-lachin/uig-lab/main"
 PROFILE_URL = "https://github.com/estul-lachin"
+SITE_URL = "https://lab.uig.me"
+SITE_DESCRIPTION = ("Hands-on IT labs I have built and passed, each a resettable Docker environment "
+                    "with automated checks.")
 
 ROOT = Path(__file__).resolve().parent.parent
 CATEGORIES = {
@@ -37,6 +41,9 @@ CONF_DEFAULTS = {
     "SERVICE": "main", "CLEANUP_CMD": "", "PUBLIC": "yes",
 }
 MIN_LEAK_LINE = 20  # shorter lines (fi, }, set -e ...) are too generic to compare
+SCREENSHOTS = "screenshots"  # per-lab folder, copied to the site as is
+IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".gif", ".webp"}
+MAX_IMAGE_BYTES = 1024 * 1024  # larger screenshots get a warning: resize them first
 
 e = html.escape
 
@@ -142,7 +149,11 @@ def clean_readme(text):
 
 
 def rewrite_links(body, name):
-    """Point relative links in a lab README at the repo on GitHub."""
+    """Point relative links in a lab README at the repo on GitHub.
+
+    Links into the lab's screenshots/ folder stay relative: that folder is copied next to the page.
+    Other relative images point at the raw file, since a GitHub blob URL is an HTML page, not an image.
+    """
     def fix(m):
         attr, url = m.group(1), m.group(2)
         if re.match(r"^([a-z][a-z0-9+.-]*:|#|/)", url, re.I):
@@ -150,9 +161,34 @@ def rewrite_links(body, name):
         path = posixpath.normpath(posixpath.join("labs", name, html.unescape(url)))
         if path.startswith(".."):
             return m.group(0)
+        if path.startswith(f"labs/{name}/{SCREENSHOTS}/"):
+            return m.group(0)
+        if attr == "src":
+            return f'{attr}="{e(f"{RAW_URL}/{path}")}"'
         kind = "tree" if url.endswith("/") or path == f"labs/{name}" else "blob"
         return f'{attr}="{e(f"{REPO_URL}/{kind}/main/{path}")}"'
     return re.sub(r'\b(href|src)="([^"]*)"', fix, body)
+
+
+def copy_screenshots(name, out):
+    """Copy labs/<name>/screenshots/ images to the lab's page folder."""
+    src = ROOT / "labs" / name / SCREENSHOTS
+    if not src.is_dir():
+        return
+    for f in sorted(src.rglob("*")):
+        if not f.is_file() or f.name.startswith("."):
+            continue
+        rel = f.relative_to(ROOT).as_posix()
+        if f.suffix.lower() not in IMAGE_SUFFIXES:
+            print(f"build_site: warning: {rel}: not an image ({', '.join(sorted(IMAGE_SUFFIXES))}), skipped",
+                  file=sys.stderr)
+            continue
+        if f.stat().st_size > MAX_IMAGE_BYTES:
+            print(f"build_site: warning: {rel} is {f.stat().st_size // 1024} KB; "
+                  f"resize it (e.g. sips -Z 1600 {rel})", file=sys.stderr)
+        dest = out / "labs" / name / SCREENSHOTS / f.relative_to(src)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(f, dest)
 
 
 def render_readme(text, name):
@@ -166,9 +202,9 @@ def fmt_date(dt):
     return dt.strftime("%Y-%m-%d")
 
 
-def page(title, body, depth, current=""):
+def page(title, body, depth, current="", path="", description=SITE_DESCRIPTION):
     # depth = how deep the page sits below the site root; None = absolute links (404 page,
-    # which GitHub Pages serves at any missing URL).
+    # which GitHub Pages serves at any missing URL). path = the page's URL path, for link previews.
     rel = "/" if depth is None else "../" * depth
     nav = [("Labs", rel or "./", "home"),
            ("Timeline", f"{rel}timeline/", "timeline")]
@@ -183,7 +219,13 @@ def page(title, body, depth, current=""):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(full_title)}</title>
-<meta name="description" content="Hands-on IT labs I have built and passed, each a resettable Docker environment with automated checks.">
+<meta name="description" content="{e(description)}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="uig-lab">
+<meta property="og:title" content="{e(full_title)}">
+<meta property="og:description" content="{e(description)}">
+<meta property="og:url" content="{e(f"{SITE_URL}/{path}")}">
+<meta name="twitter:card" content="summary">
 <link rel="stylesheet" href="{rel}style.css">
 </head>
 <body>
@@ -299,7 +341,8 @@ def build_lab(lab):
   <ul>{checks}</ul>
 </section>
 </article>"""
-    return page(c["TITLE"] or name, body, 2)
+    return page(c["TITLE"] or name, body, 2, path=f"labs/{name}/",
+                description=c["SUMMARY"] or SITE_DESCRIPTION)
 
 
 def build_timeline(labs):
@@ -317,7 +360,7 @@ def build_timeline(labs):
             )
         items = '<ol class="timeline">' + "".join(rows) + "</ol>"
     body = f'<h1>Timeline</h1>\n<p class="lead">Every lab pass, newest first. Redoing a lab counts too.</p>\n{items}'
-    return page("Timeline", body, 1, "timeline")
+    return page("Timeline", body, 1, "timeline", path="timeline/")
 
 
 def build_404():
@@ -341,7 +384,7 @@ def leak_check(out):
         rel = f.relative_to(out).as_posix()
         if f.name == "check.sh" or "solution/" in rel + "/":
             problems.append(f"{rel}: forbidden file")
-        if f.is_file():
+        if f.is_file() and f.suffix.lower() not in IMAGE_SUFFIXES:
             raw = f.read_text(encoding="utf-8", errors="replace")
             text = raw + "\n" + html.unescape(raw)
             for s in secrets:
@@ -380,6 +423,7 @@ def main():
     passed = [l for l in labs.values() if l["passes"]]
     for lab in passed:
         write(out / "labs" / lab["name"] / "index.html", build_lab(lab))
+        copy_screenshots(lab["name"], out)
 
     leak_check(out)
     print(f"Built {out}: {len(passed)} of {len(labs)} public labs passed, "

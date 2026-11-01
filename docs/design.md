@@ -53,6 +53,7 @@ uig-lab/
 │   ├── docker-compose.yml
 │   ├── README.md
 │   ├── check.sh
+│   ├── .dockerignore
 │   └── solution/solve.sh
 ├── labs/hello-world/         # Example lab, same structure as the template
 ├── progress.jsonl            # Pass records, committed to git, read by the showcase
@@ -80,6 +81,12 @@ uig-lab/
   Hints in a collapsible `<details>` / My notes / Related
 - `check.sh`: no shebang; `./lab check` concatenates it with the lib and runs it inside the container
 - `solution/solve.sh`: entry point of the reference solution; may call other scripts in the same folder
+- `.dockerignore`: keeps `check.sh`, `solution/`, `screenshots/` and `README.md` out of the build context, so a
+  `COPY . …` in a Dockerfile can never put them in the image
+- `screenshots/` (optional, written by me): images linked from the README with a relative path
+  (`![alt](screenshots/name.png)`); png/jpg/gif/webp, lowercase-hyphenated names, longest side ≤ 1600px
+  (`sips -Z 1600`). Use code blocks for terminal output; screenshots are for GUIs and visual results.
+  Public, so crop out usernames, hostnames, real IPs, emails and tokens
 
 ### `./lab` commands
 | Command | What it does |
@@ -209,8 +216,12 @@ that only exists for one architecture will show up here.
 - `tools/build_site.py`: Python 3, only depends on `markdown` (listed in `tools/requirements.txt`)
 - Reads `labs/*/lab.conf` (parse `KEY="value"` lines), `labs/*/README.md` and `progress.jsonl`;
   writes static HTML to `site/`
+- Copies `labs/<name>/screenshots/` (images only) next to the lab page, so relative image links in the README
+  work both on GitHub and on the site; warns about images over 1 MB. Other relative links point at GitHub
+  (`blob`/`tree` for links, `raw.githubusercontent.com` for images)
 - `REPO_URL = "https://github.com/estul-lachin/uig-lab"` as a constant at the top
-- Includes only labs with `PUBLIC=yes`
+- Includes only labs with `PUBLIC=yes` that I have passed at least once. Unpassed labs get no card, no page
+  and are not counted anywhere (no "not yet" cards, no "passed / total")
 - **Never publishes** `solution/` or `check.sh` source. The check list on a lab page comes from the `checks`
   field of its latest progress record; labs never passed show no check list
 - Parse timestamps with or without the colon in the offset
@@ -218,8 +229,8 @@ that only exists for one architecture will show up here.
 
 ### Pages
 1. **Home**:
-   - One-line intro + stats: labs passed / total, completion per category, date of the latest pass
-   - Cards grouped by category: title, summary, tags, status (passed + first pass date / not yet)
+   - One-line intro + stats: number of labs passed, passed count per category, date of the latest pass
+   - Cards grouped by category: title, summary, tags, first pass date (and number of passes if more than one)
 2. **Lab page** `/labs/<name>/`:
    - Title + summary, then the rendered README (keep `<details>` collapsible)
    - Check list (from the latest pass record)
@@ -231,6 +242,8 @@ that only exists for one architecture will show up here.
 - One CSS file, no JS framework; works at phone width; dark mode via `prefers-color-scheme`
 - Clean, like technical docs / a portfolio — nothing flashy
 - No personal contact details (phone, email); only a link to https://github.com/estul-lachin
+- Open Graph / Twitter card meta tags on every page (title, description, URL), so links shared on LinkedIn
+  or in messages show a proper preview
 
 ### Deployment
 - `.github/workflows/pages.yml`, on push to main:

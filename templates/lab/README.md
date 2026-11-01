@@ -21,4 +21,7 @@ Check your work from the host: `./lab check __NAME__`
 
 ## My notes
 
+<!-- Screenshots go in screenshots/ (lowercase-hyphen names, resized with sips -Z 1600), linked as
+     ![what it shows](screenshots/name.png). Prefer code blocks for terminal output. -->
+
 ## Related

@@ -125,6 +125,7 @@ h3 { font-size: 1.05rem; margin: 0 0 6px; }
 }
 .readme summary { cursor: pointer; font-weight: 600; }
 .readme details[open] summary { margin-bottom: 4px; }
+.readme img { max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: var(--radius); }
 .readme table { border-collapse: collapse; display: block; overflow-x: auto; }
 .readme th, .readme td { border: 1px solid var(--border); padding: 6px 10px; }
 .readme img { max-width: 100%; }
