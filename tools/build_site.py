@@ -308,9 +308,7 @@ def build_home(labs, projects):
         '<section class="intro">',
         "<h1>Hands-on IT labs</h1>",
         f'<p class="byline">{e(OWNER)} · {e(BYLINE)}</p>',
-        "<p>Every skill I learn becomes a small Docker lab with automated checks, which I can reset and "
-        "redo at any time. A lab appears here once I have passed it myself. Work that can't be checked "
-        "automatically, such as VM-based home labs, is listed separately as documented projects.</p>",
+        "<p>Labs and projects from the IT skills I'm learning.</p>",
         "</section>",
     ]
     latest = max((p["_time"] for l in passed for p in l["passes"]), default=None)
