@@ -1,0 +1,13 @@
+id,time,observation
+1,2026-09-02T14:00Z,A forum broker sells VPN access to the victim; the affiliate buys it
+2,2026-09-05T03:10Z,Repeated requests to the VPN login page from 198.51.100.23 enumerate its version
+3,2026-09-06T22:41Z,VPN login as j.ortiz from 203.0.113.14 with a correct password and no MFA prompt
+4,2026-09-06T22:55Z,powershell.exe downloads and runs a.ps1 from update-cdn.top on WS-ORTIZ
+5,2026-09-06T23:02Z,A scheduled task named OneDriveSync is created to start the loader at every logon
+6,2026-09-06T23:03Z,WS-ORTIZ starts calling update-cdn.top over HTTPS every 60 seconds
+7,2026-09-09T01:20Z,The lsass.exe process memory is dumped on WS-ORTIZ
+8,2026-09-09T01:48Z,A domain admin account opens a Remote Desktop session to FS-01
+9,2026-09-09T02:05Z,AdFind lists every user and computer in the domain
+10,2026-09-14T02:30Z,svch0st.exe (renamed rclone) uploads 180 GB from FS-01 to cloud storage
+11,2026-09-19T03:58Z,vssadmin delete shadows /all /quiet runs on FS-01 and FS-02
+12,2026-09-19T04:01Z,Files on FS-01 and FS-02 are encrypted and renamed to .ntide

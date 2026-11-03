@@ -1,0 +1,33 @@
+TLP:CLEAR  -  Incident summary IR-2026-117  -  Hollow Pine Freight (fictional)
+
+Summary
+-------
+Between 2026-09-02 and 2026-09-19 an affiliate of the NightTide ransomware-as-a-service operation,
+tracked as "tern", compromised Hollow Pine Freight, stole about 180 GB of data and encrypted the
+file servers. NightTide's developers run the payment portal and the leak site; the affiliate did the
+intrusion. Access was not gained by tern itself: on 2026-09-02 a broker on a criminal forum offered
+"VPN access, logistics, 2k staff" and the listing matches this victim.
+
+Observed infrastructure (defanged)
+----------------------------------
+- Scanning of the VPN portal came from 198.51.100[.]23.
+- The VPN login with stolen credentials came from 203.0.113[.]14.
+- The loader was fetched from hxxps://update-cdn[.]top/a.ps1 ; update-cdn[.]top resolved to 192.0.2[.]77
+  and was also the beacon destination (HTTPS, every 60 s).
+- The leak site is ntide4leaksx7q[.]onion ; negotiation happens at chat.ntide-support[.]top .
+- Data was uploaded with a renamed rclone to a public cloud storage service.
+
+File hashes (SHA-256)
+---------------------
+loader   a.ps1          7c057430678d2bc6e064616357b2bc9ea8cbc5e0ab91ec496654efff367fe69d
+locker   ntide.exe      8c70409eadd5c134c2bdcdad8721237b0604fc879189bb7253a960aef8a48671
+exfil    svch0st.exe    c0c33d8358a2da9e61719aef02480a58036ab8fbc4a53c8d805c91b60b325b8e
+
+Extortion
+---------
+After encryption the victim's name appeared on the leak site with a countdown. Three days later the
+customer portal was hit by a DDoS attack and several of Hollow Pine's customers received e-mails
+telling them their shipment data would be published.
+
+Note: indicators are defanged ([.] and hxxp) so nobody opens them by accident. Refang before you
+load them into a tool: replace [.] with . and hxxp with http.
