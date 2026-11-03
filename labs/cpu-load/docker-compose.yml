@@ -1,0 +1,7 @@
+services:
+  main:
+    build: .
+    hostname: app-03
+    init: true
+    # The container's CPU budget, for task 1.
+    cpus: "2"
