@@ -41,3 +41,12 @@ check "Report ssh-failures-by-src exists in Search & Reporting" 'curl -sk -u $AU
   "Save As > Report, name ssh-failures-by-src"
 check "...and its first row is the brute-force source" '_spl "| savedsearch \"ssh-failures-by-src\"" | head -n1 | grep -q "203.0.113.50"' \
   "Failed password events, rex out the address, | stats count by it | sort - count; time range All time"
+
+# Optional: only when the owner has put their own data in private-data/ (index private, local only).
+if [ "$(_spl "| tstats count where index=private")" -gt 0 ] 2>/dev/null; then
+  section "8. Your private data (index=private)"
+  check "PRIVATE_COUNT_ACCESS: access_combined events in the private index" '[ "$(_kv $A PRIVATE_COUNT_ACCESS)" = "$(_spl "| tstats count where index=private sourcetype=access_combined")" ]' "index=private sourcetype=access_combined, All time"
+  check "PRIVATE_SOURCETYPES: sourcetypes in the private index" '[ "$(_kv $A PRIVATE_SOURCETYPES)" = "$(_spl "| metadata type=sourcetypes index=private | stats count")" ]' "| metadata type=sourcetypes index=private"
+  check "PRIVATE_STATUS_VALUES: distinct status values in its access_combined" '[ "$(_kv $A PRIVATE_STATUS_VALUES)" = "$(_spl "search index=private sourcetype=access_combined | stats dc(status)")" ]' "| stats dc(status)"
+  check "PRIVATE_COUNT_SECURE: linux_secure events in the private index" '[ "$(_kv $A PRIVATE_COUNT_SECURE)" = "$(_spl "| tstats count where index=private sourcetype=linux_secure")" ]' "All time"
+fi

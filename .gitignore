@@ -3,3 +3,7 @@
 .env
 site/
 .venv/
+
+# Course data a lab owner exported for local use only (see labs/*/private-data/README.md)
+labs/*/private-data/*
+!labs/*/private-data/README.md

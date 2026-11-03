@@ -19,3 +19,6 @@ services:
       SPLUNK_APPS_URL: /opt/lab-app/lab_data.tgz
     ports:
       - "127.0.0.1:8000:8000"
+    volumes:
+      # Optional, local only: see private-data/README.md. Read-only, never part of an image.
+      - ./private-data:/opt/private-data:ro
