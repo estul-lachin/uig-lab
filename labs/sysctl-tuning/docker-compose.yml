@@ -1,0 +1,11 @@
+services:
+  main:
+    build: .
+    hostname: edge-03
+    init: true
+    # The live (per-container) network settings start out unsafe, for the audit in task 2.
+    # /proc/sys stays read-only: the container can't change the shared kernel of the Docker VM.
+    sysctls:
+      net.ipv4.ip_forward: 1
+      net.ipv4.conf.all.accept_redirects: 1
+      net.ipv4.conf.all.send_redirects: 1
