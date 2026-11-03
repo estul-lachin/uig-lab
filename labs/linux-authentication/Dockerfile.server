@@ -1,0 +1,14 @@
+# The backup server I need key access to. Always a pinned tag (never latest).
+FROM ubuntu:24.04
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends openssh-server \
+ && rm -rf /var/lib/apt/lists/* \
+ && mkdir -p /run/sshd
+
+# Lab-only test account; its password is documented in the README.
+RUN useradd -m -s /bin/bash ops \
+ && echo "ops:ops-pass" | chpasswd \
+ && printf 'PasswordAuthentication yes\nKbdInteractiveAuthentication no\n' > /etc/ssh/sshd_config.d/10-lab.conf
+
+CMD ["/usr/sbin/sshd", "-D", "-e"]

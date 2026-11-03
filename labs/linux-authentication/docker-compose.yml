@@ -1,0 +1,13 @@
+services:
+  main:
+    build: .
+    hostname: jumphost
+    init: true
+    depends_on:
+      - server
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    hostname: server
+    init: true
