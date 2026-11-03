@@ -1,0 +1,5 @@
+services:
+  main:
+    build: .
+    hostname: linux-server-setup
+    init: true
