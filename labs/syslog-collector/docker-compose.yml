@@ -1,0 +1,36 @@
+services:
+  # The collector: ./lab shell and ./lab check run here.
+  main:
+    build: .
+    hostname: collector
+    init: true
+    networks:
+      lan:
+        ipv4_address: 10.253.80.10
+        aliases: [collector]
+  fw-01:
+    build: { context: ., dockerfile: Dockerfile.sender }
+    environment: { ROLE: firewall }
+    init: true
+    networks: { lan: { ipv4_address: 10.253.80.21 } }
+  web-01:
+    build: { context: ., dockerfile: Dockerfile.sender }
+    environment: { ROLE: web }
+    init: true
+    networks: { lan: { ipv4_address: 10.253.80.22 } }
+  dc-01:
+    build: { context: ., dockerfile: Dockerfile.sender }
+    environment: { ROLE: windows }
+    init: true
+    networks: { lan: { ipv4_address: 10.253.80.23 } }
+  cam-07:
+    build: { context: ., dockerfile: Dockerfile.sender }
+    environment: { ROLE: unknown }
+    init: true
+    networks: { lan: { ipv4_address: 10.253.80.66 } }
+
+networks:
+  lan:
+    ipam:
+      config:
+        - subnet: 10.253.80.0/24

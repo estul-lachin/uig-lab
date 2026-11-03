@@ -1,0 +1,5 @@
+# The devices that send logs. Always a pinned tag (never latest).
+FROM ubuntu:24.04
+COPY sender.sh /usr/local/bin/sender.sh
+RUN chmod 755 /usr/local/bin/sender.sh
+CMD ["/usr/local/bin/sender.sh"]
