@@ -1,0 +1,15 @@
+# The lab's own DNS server for the corp.lab zone. Always a pinned tag (never latest).
+FROM ubuntu:24.04
+
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends dnsmasq-base \
+ && rm -rf /var/lib/apt/lists/*
+
+RUN printf '%s\n' \
+      'host-record=portal.corp.lab,10.20.0.10' \
+      'host-record=portal.corp.lab,10.20.0.11' \
+      'host-record=files.corp.lab,10.20.0.15' \
+      'host-record=updates.corp.lab,10.20.0.30' \
+      > /etc/dnsmasq-lab.conf
+
+CMD ["dnsmasq", "-k", "--no-resolv", "--no-hosts", "--conf-file=/etc/dnsmasq-lab.conf", "--user=root", "--log-facility=-"]

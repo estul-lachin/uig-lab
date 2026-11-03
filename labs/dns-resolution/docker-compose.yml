@@ -1,0 +1,30 @@
+services:
+  main:
+    build: .
+    hostname: workstation
+    init: true
+    dns:
+      - 10.253.53.53
+    # The hijack for task 5: Docker writes this line into /etc/hosts.
+    extra_hosts:
+      - "updates.corp.lab:203.0.113.66"
+    networks:
+      lab:
+        ipv4_address: 10.253.53.10
+    depends_on:
+      - dns
+  dns:
+    build:
+      context: .
+      dockerfile: Dockerfile.dns
+    hostname: dns
+    init: true
+    networks:
+      lab:
+        ipv4_address: 10.253.53.53
+
+networks:
+  lab:
+    ipam:
+      config:
+        - subnet: 10.253.53.0/24
