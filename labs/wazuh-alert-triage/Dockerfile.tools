@@ -1,0 +1,7 @@
+# Helper image: makes the lab's TLS certificates and plays the shop server's activity.
+FROM ubuntu:24.04
+RUN apt-get update \
+ && apt-get install -y --no-install-recommends openssl ca-certificates curl \
+ && rm -rf /var/lib/apt/lists/*
+COPY config/certs.sh config/feed.sh /usr/local/bin/
+RUN chmod 755 /usr/local/bin/certs.sh /usr/local/bin/feed.sh
