@@ -1,0 +1,13 @@
+services:
+  main:
+    build: .
+    hostname: web-01
+    init: true
+    depends_on:
+      - backup
+  backup:
+    build:
+      context: .
+      dockerfile: Dockerfile.backup
+    hostname: backup
+    init: true
