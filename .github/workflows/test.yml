@@ -1,17 +1,67 @@
 name: test
 
+# A push tests only the labs it changed, each in its own parallel job. Changes to the shared code
+# (./lab, lib/, templates/, this file) test every lab, and so do the weekly run and a manual run
+# (Actions > test > Run workflow), which catch images or packages that changed upstream.
 on:
   push:
   pull_request:
+  schedule:
+    - cron: "17 6 * * 1"   # Mondays 06:17 UTC
+  workflow_dispatch:
 
 jobs:
+  plan:
+    runs-on: ubuntu-latest
+    outputs:
+      labs: ${{ steps.pick.outputs.labs }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+      - name: Syntax check
+        run: bash -n lab
+      - name: Pick the labs to test
+        id: pick
+        env:
+          EVENT: ${{ github.event_name }}
+          BEFORE: ${{ github.event.before }}
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          all() { find labs -mindepth 2 -maxdepth 2 -name lab.conf | cut -d/ -f2 | sort; }
+          case $EVENT in
+            push) from=$BEFORE ;;
+            pull_request) from=$BASE ;;
+            *) from= ;;
+          esac
+          if [ -z "$from" ] || [ "$from" = 0000000000000000000000000000000000000000 ] \
+             || ! git cat-file -e "$from^{commit}" 2>/dev/null; then
+            labs=$(all)                       # schedule, manual run, new branch or rewritten history
+          else
+            changed=$(git diff --name-only "$from" "$GITHUB_SHA")
+            if printf '%s\n' "$changed" | grep -qE '^(lab|lib/.*|templates/.*|\.github/workflows/test\.yml)$'; then
+              labs=$(all)
+            else
+              labs=$(printf '%s\n' "$changed" | sed -n 's#^labs/\([^/]*\)/.*#\1#p' | sort -u \
+                     | while read -r n; do [ -f "labs/$n/lab.conf" ] && echo "$n"; done)
+            fi
+          fi
+          json=$(printf '%s\n' $labs | jq -Rsc 'split("\n") | map(select(length > 0))')
+          echo "labs=$json" >> "$GITHUB_OUTPUT"
+          echo "Labs to test: $json"
+
   test:
+    needs: plan
+    if: needs.plan.outputs.labs != '[]'
     # Note: CI runs on amd64, while labs are developed on an arm64 Mac (Apple Silicon).
     # An image that only exists for one architecture will fail here - prefer multi-arch images.
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        lab: ${{ fromJSON(needs.plan.outputs.labs) }}
+    name: ${{ matrix.lab }}
     steps:
       - uses: actions/checkout@v5
-      - name: Syntax check
-        run: bash -n lab
-      - name: Test all labs
-        run: ./lab test --all
+      - name: Test ${{ matrix.lab }}
+        run: ./lab test "${{ matrix.lab }}"

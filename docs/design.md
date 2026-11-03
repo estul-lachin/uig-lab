@@ -208,9 +208,15 @@ Create a new lab for it:
 ```
 
 ### .github/workflows/test.yml
-On push and pull request: check out, `bash -n lab`, then `./lab test --all` on `ubuntu-latest`
-(Docker and Compose are preinstalled). Note in a comment that CI runs on amd64 while I use arm64, so an image
-that only exists for one architecture will show up here.
+On `ubuntu-latest` (Docker and Compose are preinstalled). A `plan` job runs `bash -n lab` and picks the labs:
+- push / pull request: only the labs whose `labs/<name>/` changed; every lab when `lab`, `lib/`, `templates/`
+  or the workflow itself changed; none when nothing under `labs/` did (progress, projects, docs).
+- weekly schedule and manual run (`workflow_dispatch`): every lab, to catch images or packages that changed
+  upstream.
+
+Then one parallel `./lab test <name>` job per lab (`fail-fast: false`), so a run takes about as long as its
+slowest lab. Note in a comment that CI runs on amd64 while I use arm64, so an image that only exists for one
+architecture will show up here.
 
 ---
 
