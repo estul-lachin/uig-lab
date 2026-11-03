@@ -1,0 +1,23 @@
+services:
+  main:
+    build: .
+    hostname: edge-02
+    init: true
+    # Lets the lab change interface state (ip link set ... up, ip link del).
+    cap_add:
+      - NET_ADMIN
+    networks:
+      lan:
+        ipv4_address: 10.253.70.10
+      mgmt:
+        ipv4_address: 10.253.71.10
+
+networks:
+  lan:
+    ipam:
+      config:
+        - subnet: 10.253.70.0/24
+  mgmt:
+    ipam:
+      config:
+        - subnet: 10.253.71.0/24
