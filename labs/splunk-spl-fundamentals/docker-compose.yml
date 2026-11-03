@@ -1,0 +1,25 @@
+services:
+  # The analyst's workstation: ./lab shell and ./lab check run here.
+  main:
+    build: .
+    hostname: analyst
+    init: true
+    depends_on:
+      - splunk
+  # The same Splunk and data as splunk-search-basics (one generator, one image cache).
+  splunk:
+    build: ../splunk-search-basics/splunk
+    platform: linux/amd64
+    hostname: splunk
+    environment:
+      # The owner accepted the Splunk General Terms and license for these labs.
+      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_GENERAL_TERMS: --accept-sgt-current-at-splunk-com
+      # Lab-only password, documented in the README. Splunk Web listens on localhost only.
+      SPLUNK_PASSWORD: Lab-Splunk-2026
+      SPLUNK_APPS_URL: /opt/lab-app/lab_data.tgz
+    ports:
+      - "127.0.0.1:8000:8000"
+    volumes:
+      # Optional, local only: see ../splunk-search-basics/private-data/README.md
+      - ./private-data:/opt/private-data:ro
