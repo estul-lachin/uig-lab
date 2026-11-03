@@ -1,0 +1,14 @@
+services:
+  main:
+    build: .
+    hostname: fs-01
+    init: true
+    # chattr +i (immutable files) needs this capability.
+    cap_add:
+      - LINUX_IMMUTABLE
+    volumes:
+      - backup:/backup
+
+volumes:
+  # The "other medium" for backups. Immutable files live only here; ./lab reset unlocks them first (CLEANUP_CMD).
+  backup:
