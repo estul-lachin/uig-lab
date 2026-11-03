@@ -67,7 +67,7 @@ rogue route back and removes your blackhole.
 
 - `ip route`, `ip route show default`, `ip route show default | awk '{print $3}'`
 - `ip route get 1.1.1.1`, `ip route get 10.253.61.20`: a missing `via` is your answer for `MGMT_VIA`
-- `ip route add blackhole 203.0.113.0/24`, `ip route show type blackhole`, `ip route get 203.0.113.9`
+- `ip route add blackhole <prefix>`, `ip route show type blackhole`, `ip route get 203.0.113.9`
 - Compare each `via` in `ip route` with the gateway in `gw.txt`; then `ip route del <prefix>` and
   `ip route get 198.51.100.7`
 - Your interface names may be swapped (mgmt on `eth0`); always read them from the output

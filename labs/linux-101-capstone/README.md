@@ -86,7 +86,7 @@ Check your work from the host: `./lab check linux-101-capstone`
 - `find / -xdev -type f -name '*deploy*' 2>/dev/null`; a name that starts with `.` is hidden from `ls`
 - `printf '#!/bin/bash\ntar czf ... -C /root/site public\n' > ...`, `chmod +x`, then
   `tar tzf /root/site/backups/site.tar.gz`
-- `groupadd -f webteam`, `useradd -m webadmin`, `usermod -aG webteam webadmin`, `id webadmin`
+- `groupadd -f <group>`, `useradd -m <user>`, `usermod -aG <group> <user>`, `id <user>`
 - `hostname -I`
 - `crontab -l`, then `(crontab -l; echo '30 1 * * * /root/site/scripts/backup.sh') | crontab -`
 - `ls /var/spool/cron/crontabs`, `crontab -l -u <user>`, then

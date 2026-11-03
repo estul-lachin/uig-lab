@@ -13,9 +13,9 @@ S
 cat > $D/numberlines.sh <<'S'
 #!/usr/bin/env bash
 n=0
-while IFS= read -r line || [ -n "$line" ]; do
+while IFS= read -r row || [ -n "$row" ]; do
   n=$(( n + 1 ))
-  printf '%d: %s\n' "$n" "$line"
+  printf '%d: %s\n' "$n" "$row"
 done < "$1"
 S
 

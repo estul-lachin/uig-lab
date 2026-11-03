@@ -76,7 +76,7 @@ with the odd listener back.
 <summary>Hints</summary>
 
 - `ss -tlnp`, `ss -tln | grep :9001`
-- `echo "case 4471 opened" | ncat --send-only 127.0.0.1 9002`, then `cat /root/recv.txt`
+- `echo "<message>" | ncat --send-only 127.0.0.1 <port>`, then `cat /root/recv.txt`
 - `ss -H -tn state established '( sport = :9003 or dport = :9003 )' | wc -l`
 - `ss -tlnp 'sport = :31337'` shows `pid=`, then `ls -l /proc/<pid>/exe`
 - `kill <pid>`; check again with `ss -tln`

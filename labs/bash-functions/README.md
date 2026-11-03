@@ -68,8 +68,9 @@ Check your work from the host: `./lab check bash-functions`
 - As the normal user: `su operator2 -c 'source /root/scripts/toolkit.sh; is_root; echo $?'`
 - Spot leaks: run `compgen -v > /tmp/before`, call your functions, run `compgen -v > /tmp/after`, then
   `comm -13 /tmp/before /tmp/after`
-- `source "$(dirname "${BASH_SOURCE[0]}")/toolkit.sh"`
-- `"$@"; rc=$?; echo "command exited with $rc" >&2; exit "$rc"`
+- Build the library path from `dirname "${BASH_SOURCE[0]}"`, the directory of the running script
+- In relay.sh: run `"$@"`, save `$?` in a variable on the very next line, report it on stderr, then
+  `exit` with that variable
 
 </details>
 

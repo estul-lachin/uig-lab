@@ -473,7 +473,7 @@ def leak_check(out):
     problems = []
     for f in out.rglob("*"):
         rel = f.relative_to(out).as_posix()
-        if f.name == "check.sh" or "solution/" in rel + "/":
+        if f.name == "check.sh" or "solution" in rel.split("/"):
             problems.append(f"{rel}: forbidden file")
         if f.is_file() and f.suffix.lower() not in IMAGE_SUFFIXES:
             raw = f.read_text(encoding="utf-8", errors="replace")

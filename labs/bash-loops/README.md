@@ -71,10 +71,10 @@ Check your work from the host: `./lab check bash-loops`
 <details>
 <summary>Hints</summary>
 
-- `shopt -s nullglob; for f in *.log; do echo "$f: $(wc -l < "$f")"; done`
+- `shopt -s nullglob` before the loop; `wc -l < file` prints only the number
 - `cat -A /root/data/sample.txt` shows the leading spaces, and that the last line has no `$`
-- `n=${1:-10}; for (( i = 1; i <= n; i++ )); do ...; done`
-- `comm -13 <(sort /root/data/baseline-users.txt) <(cut -d: -f1 /etc/passwd | sort)`
+- `n=${1:-10}`, then a C-style `for (( start; condition; step ))`
+- `comm -13 <(sort <baseline>) <(<names from /etc/passwd> | sort)`; `cut -d: -f1` gives the names
 - `getent passwd <name>` for each new account: where is its home, and what is its shell?
 
 </details>

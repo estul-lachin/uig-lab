@@ -70,7 +70,7 @@ original `/etc/hosts`.
 - `grep ^hosts /etc/nsswitch.conf`
 - For each name in `/etc/hosts`, compare `getent hosts <name>` with `dig +short <name>`
 - Docker bind-mounts `/etc/hosts`, so `sed -i` fails ("Device or resource busy"). Filter into a temp
-  file, then write it back with `cat /tmp/hosts.new > /etc/hosts`
+  file, then write it back over the original with `cat <temp file> > /etc/hosts`
 
 </details>
 

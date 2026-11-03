@@ -86,10 +86,10 @@ Check your work from the host: `./lab check bash-traps-signals`
 <details>
 <summary>Hints</summary>
 
-- `tmp=$(mktemp -d)`, `trap 'rm -rf "$tmp"' EXIT`, `exit "${1:-0}"`
-- `on_int() { echo "caught SIGINT" >> /root/scripts/graceful.log; exit 130; }`, `trap on_int INT`,
-  `while true; do sleep 1; done`
-- `trap 'echo "error on line $LINENO" >&2' ERR`; `cat -n errtrap.sh` shows the line numbers
+- Save the `mktemp -d` path in a variable, set the EXIT trap right after, and end with `exit "${1:-0}"`
+- A handler function that appends the line to the log and exits 130, `trap <function> INT`, and an
+  endless loop of `sleep 1`
+- The ERR example in Concepts prints exactly the right text; `cat -n errtrap.sh` shows the line numbers
 - `./strict.sh; echo $?` should print an error and a non-zero status
 - `set -u` near the top, or `"${LOGDIR:?LOGDIR not set}"` in the `rm` line. Test it with
   `env -u LOGDIR ./prune-logs.sh`. Make a bait file first (`touch /old-test.log`) and see that it

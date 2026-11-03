@@ -5,10 +5,10 @@ mkdir -p $D
 
 cat > $D/cleanup.sh <<'S'
 #!/usr/bin/env bash
-tmp=$(mktemp -d)
-trap 'rm -rf "$tmp"' EXIT
-echo "$tmp" > /root/scripts/last-tmpdir.txt
-touch "$tmp/work-file"
+workdir=$(mktemp -d)
+trap 'rm -rf -- "$workdir"' EXIT
+echo "$workdir" > /root/scripts/last-tmpdir.txt
+touch "$workdir/work-file"
 sleep 1
 exit "${1:-0}"
 S
@@ -16,17 +16,19 @@ S
 cat > $D/graceful.sh <<'S'
 #!/usr/bin/env bash
 on_int() {
-  echo "caught SIGINT" >> /root/scripts/graceful.log
+  printf 'caught SIGINT\n' >> /root/scripts/graceful.log
   exit 130
 }
 trap on_int INT
-while true; do sleep 1; done
+while :; do
+  sleep 1
+done
 S
 
 cat > $D/errtrap.sh <<'S'
 #!/usr/bin/env bash
 set -euo pipefail
-trap 'echo "error on line $LINENO" >&2' ERR
+trap 'printf "error on line %s\n" "$LINENO" >&2' ERR
 echo "starting"
 ls /does-not-exist
 echo unreachable
