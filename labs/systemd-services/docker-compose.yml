@@ -1,0 +1,18 @@
+services:
+  main:
+    build: .
+    hostname: app-01
+    # systemd as PID 1 needs a writable cgroup tree and a few extra rights.
+    # This container is more powerful than the other labs': keep it on your own machine.
+    cgroup: host
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:rw
+    tmpfs:
+      - /run
+      - /run/lock
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - apparmor=unconfined
+      - seccomp=unconfined
+    tty: true
