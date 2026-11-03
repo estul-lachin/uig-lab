@@ -3,9 +3,11 @@ set -euo pipefail
 A=/root/answers.txt
 
 # Right after a reset the big process is still filling its memory; wait until it settles.
-for _ in $(seq 1 30); do
-  [ "$(ps -eo rss= --sort=-rss | head -n1)" -gt 133000 ] && break
-  sleep 1
+prev=0
+for _ in $(seq 1 60); do
+  now=$(ps -eo rss= --sort=-rss | head -n1 | tr -d ' ')
+  [ "$now" -gt 100000 ] && [ "$now" = "$prev" ] && break
+  prev=$now; sleep 2
 done
 
 # 1-4. The usual views

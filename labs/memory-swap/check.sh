@@ -35,7 +35,7 @@ check "HOG_PID is the biggest process" '[ -n "$HOG" ] && [ "$(_kv $A HOG_PID)" =
 check "HOG_DISGUISE is the name ps shows" '[ "$(_kv $A HOG_DISGUISE)" = "[kswapd1]" ]' "ps -o args="
 check "HOG_PROGRAM is the program really running" '[ "$(_kv $A HOG_PROGRAM)" = /usr/bin/bash ]' "readlink /proc/<pid>/exe (a real kernel thread has none)"
 check "HOG_SCRIPT is the file it was reading its code from" '[ "$(_kv $A HOG_SCRIPT)" = /usr/local/lib/.cache/kmon ]' "ls -l /proc/<pid>/fd"
-check "HOG_RSS_MB is about its RSS" 'v=$(_kv $A HOG_RSS_MB); [ -n "$v" ] && [ "$v" -ge 130 ] && [ "$v" -le 180 ]' "RSS is in KiB in ps; divide by 1024"
+check "HOG_RSS_MB is about its RSS" 'v=$(_kv $A HOG_RSS_MB); r=$(( $(cat /run/.lab-hog-rss 2>/dev/null || echo 0) / 1024 )); [ -n "$v" ] && [ $r -gt 0 ] && [ $((v * 100)) -ge $((r * 85)) ] && [ $((v * 100)) -le $((r * 115)) ]' "RSS is in KiB in ps; divide by 1024"
 check "It is gone, and the container's usage dropped" '[ -n "$HOG" ] && [ -f $A ] && ! kill -0 $HOG 2>/dev/null && [ $(cat /sys/fs/cgroup/memory.current) -lt 104857600 ]' \
   "kill <pid>; memory.current shows the container's usage"
 check "Its script is deleted" '[ -f $A ] && [ ! -e /usr/local/lib/.cache/kmon ]' "rm it"

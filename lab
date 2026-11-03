@@ -350,9 +350,11 @@ cmd_solve() {
   need_running "$n"
   [ -f "labs/$n/solution/solve.sh" ] || die "labs/$n/solution/solve.sh is missing"
   # Solutions never live in the container: stream them in, run from a temp dir, delete afterwards.
+  # The temp dir is in /var/tmp: in a systemd lab that has just booted, /tmp may still get a fresh
+  # tmpfs mounted over it, which would hide a directory made there.
   COPYFILE_DISABLE=1 tar --no-xattrs -C "labs/$n/solution" -cf - . \
     | compose "$n" exec -T "${CONF[SERVICE]}" bash -c \
-      'umask 022; d=$(mktemp -d) || exit 1; trap "rm -rf \"$d\"" EXIT
+      'umask 022; d=$(mktemp -d -p /var/tmp 2>/dev/null || mktemp -d) || exit 1; trap "rm -rf \"$d\"" EXIT
        tar --no-same-owner -C "$d" -xf - && cd "$d" && bash ./solve.sh </dev/null'
 }
 
