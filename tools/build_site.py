@@ -257,6 +257,8 @@ def page(title, body, depth, current="", path="", description=SITE_DESCRIPTION):
 <link rel="icon" href="{rel}favicon.ico" sizes="32x32">
 <link rel="apple-touch-icon" href="{rel}apple-touch-icon.png">
 <link rel="stylesheet" href="{rel}style.css">
+<!-- Privacy-friendly visit counter (no cookies): https://uig.goatcounter.com -->
+<script data-goatcounter="https://uig.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </head>
 <body>
 <header class="site-header">
