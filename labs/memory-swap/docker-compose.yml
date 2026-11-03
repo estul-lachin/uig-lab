@@ -1,0 +1,7 @@
+services:
+  main:
+    build: .
+    hostname: app-02
+    init: true
+    # The container's real memory budget, for task 5.
+    mem_limit: 512m
