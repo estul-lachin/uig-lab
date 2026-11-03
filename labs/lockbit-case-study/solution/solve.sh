@@ -1,5 +1,5 @@
 # Reference solution for lockbit-case-study.
-set -euo pipefail
+set -eu   # no pipefail: several pipes end in head -n1, which closes them early
 umask 022
 cd /root/case
 E=events.jsonl
