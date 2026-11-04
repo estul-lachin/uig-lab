@@ -1,0 +1,21 @@
+2026-10-07T03:49:00Z sshd[2988]: Accepted keyboard-interactive/pam for root from 10.50.1.21 port 51522 ssh2
+2026-10-07T03:51:00Z shell[3101]: [root]: esxcli system version get
+2026-10-07T03:51:30Z shell[3102]: [root]: esxcli vm process list
+2026-10-07T03:52:00Z shell[3103]: [root]: esxcli vm process kill --type=force --world-id=2101500   # EHR-DB01
+2026-10-07T03:52:06Z shell[3104]: [root]: esxcli vm process kill --type=force --world-id=2101537   # EHR-APP01
+2026-10-07T03:52:12Z shell[3105]: [root]: esxcli vm process kill --type=force --world-id=2101574   # EHR-APP02
+2026-10-07T03:52:18Z shell[3106]: [root]: esxcli vm process kill --type=force --world-id=2101611   # PACS01
+2026-10-07T03:52:24Z shell[3107]: [root]: esxcli vm process kill --type=force --world-id=2101648   # BILLING01
+2026-10-07T03:52:30Z shell[3108]: [root]: esxcli vm process kill --type=force --world-id=2101685   # FILE-ARCHIVE
+2026-10-07T03:52:36Z shell[3109]: [root]: esxcli vm process kill --type=force --world-id=2101722   # SCAN-SRV
+2026-10-07T03:54:00Z shell[3110]: [root]: cd /vmfs/volumes/datastore1
+2026-10-07T03:54:30Z shell[3111]: [root]: chmod +x /tmp/svcupd && /tmp/svcupd --access-token 8c1e0f6b9d --no-prop-servers --extension qhr5zfk
+2026-10-07T03:55:00Z vmkernel: File renamed: /vmfs/volumes/datastore1/EHR-DB01/EHR-DB01-flat.vmdk -> EHR-DB01-flat.vmdk.qhr5zfk
+2026-10-07T03:55:18Z vmkernel: File renamed: /vmfs/volumes/datastore1/EHR-APP01/EHR-APP01-flat.vmdk -> EHR-APP01-flat.vmdk.qhr5zfk
+2026-10-07T03:55:36Z vmkernel: File renamed: /vmfs/volumes/datastore1/EHR-APP02/EHR-APP02-flat.vmdk -> EHR-APP02-flat.vmdk.qhr5zfk
+2026-10-07T03:55:54Z vmkernel: File renamed: /vmfs/volumes/datastore1/PACS01/PACS01-flat.vmdk -> PACS01-flat.vmdk.qhr5zfk
+2026-10-07T03:56:12Z vmkernel: File renamed: /vmfs/volumes/datastore1/BILLING01/BILLING01-flat.vmdk -> BILLING01-flat.vmdk.qhr5zfk
+2026-10-07T03:56:30Z vmkernel: File renamed: /vmfs/volumes/datastore1/FILE-ARCHIVE/FILE-ARCHIVE-flat.vmdk -> FILE-ARCHIVE-flat.vmdk.qhr5zfk
+2026-10-07T03:56:48Z vmkernel: File renamed: /vmfs/volumes/datastore1/SCAN-SRV/SCAN-SRV-flat.vmdk -> SCAN-SRV-flat.vmdk.qhr5zfk
+2026-10-07T03:58:00Z vmkernel: File created: /vmfs/volumes/datastore1/RECOVER-qhr5zfk-FILES.txt
+2026-10-07T03:59:00Z shell[3120]: [root]: rm -f /tmp/svcupd

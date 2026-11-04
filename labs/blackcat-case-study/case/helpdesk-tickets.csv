@@ -1,0 +1,5 @@
+ticket,time,claimed_user,action,verified_by_callback,note
+HD-4410,2026-10-06T14:00:00Z,s.berg,password_reset,yes,locked out after holiday
+HD-4417,2026-10-06T19:40:00Z,j.morales,mfa_reset,no,"new phone, urgent, on call tonight"
+HD-4418,2026-10-06T20:00:00Z,m.rossi,mfa_reset,yes,replaced phone
+HD-4421,2026-10-06T22:00:00Z,a.khan,password_reset,yes,forgot password

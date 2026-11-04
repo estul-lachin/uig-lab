@@ -1,0 +1,713 @@
+{"time":"2026-10-05T00:18:02Z","host":"PHP-WS12","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T00:31:33Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T00:48:21Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T00:48:51Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T00:52:06Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T01:14:16Z","host":"PHP-WS15","user":"t.nash","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T01:25:27Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T01:32:43Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T01:44:54Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T01:45:40Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T02:13:18Z","host":"PHP-FS02","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T02:26:24Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T02:27:45Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T02:30:22Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T02:30:52Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T02:33:06Z","host":"PHP-WS15","user":"k.lee","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T02:36:57Z","host":"PHP-WS15","user":"a.khan","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T02:46:09Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T02:55:36Z","host":"PHP-FS02","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T02:57:38Z","host":"PHP-WS15","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T02:58:07Z","host":"PHP-HD07","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T02:59:55Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T03:12:41Z","host":"PHP-WS12","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T03:22:51Z","host":"PHP-WS12","user":"k.lee","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T03:29:06Z","host":"PHP-HD07","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T03:30:21Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T03:39:50Z","host":"PHP-CTX01","user":"t.nash","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T03:42:01Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T03:50:12Z","host":"PHP-FS02","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T03:50:47Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T03:51:44Z","host":"PHP-FS02","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T04:01:56Z","host":"PHP-WS15","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T04:11:33Z","host":"PHP-FS02","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T04:33:56Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T04:36:08Z","host":"PHP-DC01","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T04:37:08Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T04:40:26Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T04:49:44Z","host":"PHP-DC01","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T04:53:13Z","host":"PHP-WS12","user":"k.lee","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T05:00:39Z","host":"PHP-CTX01","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T05:05:57Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T05:13:30Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T05:17:58Z","host":"PHP-DC01","user":"d.ward","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T05:20:51Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T05:21:34Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T05:31:08Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T05:32:13Z","host":"PHP-WS12","user":"t.nash","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T05:36:34Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T05:37:55Z","host":"PHP-WS15","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T05:40:21Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T05:44:49Z","host":"PHP-CTX01","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T06:00:05Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T06:08:23Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T06:12:37Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T06:14:12Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T06:19:50Z","host":"PHP-WS12","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T06:21:31Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T06:30:30Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T06:34:39Z","host":"PHP-FS02","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T06:39:44Z","host":"PHP-DC01","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T06:50:52Z","host":"PHP-FS02","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T07:06:24Z","host":"PHP-WS15","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T07:10:23Z","host":"PHP-WS15","user":"d.ward","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T07:16:14Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T07:22:47Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T07:50:38Z","host":"PHP-FS02","user":"t.nash","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T07:51:43Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T07:55:33Z","host":"PHP-WS12","user":"a.khan","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T07:57:16Z","host":"PHP-WS12","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T08:02:34Z","host":"PHP-DC01","user":"d.ward","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T08:06:37Z","host":"PHP-WS15","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T08:07:10Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T08:08:30Z","host":"PHP-WS15","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T08:15:37Z","host":"PHP-FS02","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T08:36:18Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T08:38:19Z","host":"PHP-HD07","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T08:39:18Z","host":"PHP-FS02","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T08:39:36Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T08:43:07Z","host":"PHP-CTX01","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T08:47:50Z","host":"PHP-WS12","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T08:48:35Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T08:56:15Z","host":"PHP-FS02","user":"d.ward","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T08:58:49Z","host":"PHP-WS12","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T09:01:56Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T09:03:34Z","host":"PHP-DC01","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T09:28:33Z","host":"PHP-FS02","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T09:28:41Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T09:32:49Z","host":"PHP-WS12","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T09:34:54Z","host":"PHP-WS15","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T09:36:17Z","host":"PHP-WS15","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T09:37:58Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T09:45:12Z","host":"PHP-FS02","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T09:55:42Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T09:57:14Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T09:59:09Z","host":"PHP-WS15","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T10:03:28Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T10:11:44Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T10:13:24Z","host":"PHP-FS02","user":"t.nash","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T10:17:11Z","host":"PHP-DC01","user":"d.ward","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T10:17:41Z","host":"PHP-WS15","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T10:18:32Z","host":"PHP-WS12","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T10:22:22Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T10:25:42Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T10:50:17Z","host":"PHP-WS12","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T11:15:55Z","host":"PHP-WS12","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T11:22:48Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T11:24:23Z","host":"PHP-WS12","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T11:25:21Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T11:29:37Z","host":"PHP-WS15","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T11:33:28Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T11:38:36Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T11:38:41Z","host":"PHP-FS02","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T11:42:00Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T11:50:20Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T11:56:46Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T11:56:55Z","host":"PHP-HD07","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T12:00:44Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T12:14:15Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T12:19:56Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T12:26:44Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T12:34:33Z","host":"PHP-DC01","user":"d.ward","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T12:40:16Z","host":"PHP-WS15","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T12:45:09Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T12:46:52Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T12:59:51Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T13:02:40Z","host":"PHP-FS02","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T13:28:05Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T13:33:54Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T13:37:28Z","host":"PHP-WS12","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T13:39:28Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T13:43:19Z","host":"PHP-WS12","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T13:46:16Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T13:50:48Z","host":"PHP-WS12","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T13:55:11Z","host":"PHP-HD07","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T14:09:44Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T14:18:46Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T14:27:40Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T14:28:06Z","host":"PHP-FS02","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T14:32:36Z","host":"PHP-WS15","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T14:35:54Z","host":"PHP-WS15","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T14:41:58Z","host":"PHP-WS12","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T14:51:15Z","host":"PHP-WS15","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T14:58:32Z","host":"PHP-DC01","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T15:04:02Z","host":"PHP-CTX01","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T15:07:21Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T15:10:19Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T15:26:49Z","host":"PHP-DC01","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T15:31:33Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T15:32:30Z","host":"PHP-DC01","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T15:41:36Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T15:44:36Z","host":"PHP-DC01","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T15:50:32Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T15:52:15Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T15:56:42Z","host":"PHP-CTX01","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T15:57:01Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T15:57:17Z","host":"PHP-FS02","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T16:46:42Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T16:47:06Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T16:49:58Z","host":"PHP-WS12","user":"d.ward","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T16:49:59Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T16:52:16Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T17:08:30Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T17:13:33Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T17:15:55Z","host":"PHP-DC01","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T17:23:50Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T17:31:08Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T17:32:55Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T17:41:32Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T17:43:52Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T17:44:29Z","host":"PHP-HD07","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T17:46:29Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T17:58:01Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T18:01:27Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T18:14:15Z","host":"PHP-CTX01","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T18:36:39Z","host":"PHP-HD07","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T18:36:41Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T18:46:03Z","host":"PHP-HD07","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T18:51:07Z","host":"PHP-HD07","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T18:51:39Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T18:53:05Z","host":"PHP-CTX01","user":"t.nash","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T18:54:30Z","host":"PHP-FS02","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T18:56:58Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T19:09:10Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T19:10:16Z","host":"PHP-CTX01","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T19:13:16Z","host":"PHP-CTX01","user":"t.nash","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T19:14:46Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T19:15:14Z","host":"PHP-WS12","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T19:23:38Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T19:44:23Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T20:00:57Z","host":"PHP-WS15","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T20:06:30Z","host":"PHP-WS12","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T20:09:22Z","host":"PHP-WS15","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T20:15:18Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T20:24:44Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T20:31:18Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T20:32:36Z","host":"PHP-DC01","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T20:39:00Z","host":"PHP-HD07","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T20:40:12Z","host":"PHP-FS02","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T20:44:37Z","host":"PHP-DC01","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T20:47:36Z","host":"PHP-HD07","user":"k.lee","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T20:47:56Z","host":"PHP-DC01","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T20:53:22Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T21:07:15Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T21:08:51Z","host":"PHP-FS02","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T21:16:04Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T21:16:15Z","host":"PHP-FS02","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T21:21:38Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T21:24:42Z","host":"PHP-WS15","user":"d.ward","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T21:32:44Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T21:36:40Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T21:44:47Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T21:49:26Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T22:07:58Z","host":"PHP-WS12","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T22:12:15Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T22:12:39Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T22:13:13Z","host":"PHP-CTX01","user":"t.nash","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T22:14:39Z","host":"PHP-WS15","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T22:15:00Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T22:15:53Z","host":"PHP-HD07","user":"k.lee","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T22:31:56Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T22:32:26Z","host":"PHP-FS02","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T22:42:45Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T22:48:11Z","host":"PHP-WS15","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T22:59:01Z","host":"PHP-FS02","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T23:10:31Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T23:13:06Z","host":"PHP-HD07","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T23:31:20Z","host":"PHP-WS15","user":"a.khan","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T23:32:24Z","host":"PHP-DC01","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T23:39:23Z","host":"PHP-WS15","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-05T23:41:30Z","host":"PHP-HD07","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-05T23:47:34Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-05T23:50:00Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-05T23:54:28Z","host":"PHP-WS12","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T00:04:45Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T00:10:39Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T00:10:55Z","host":"PHP-WS12","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T00:15:58Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T00:19:22Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T00:20:30Z","host":"PHP-WS12","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T00:21:46Z","host":"PHP-CTX01","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T00:22:16Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T00:27:32Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T00:28:31Z","host":"PHP-HD07","user":"d.ward","image":"C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe","command_line":"AnyDesk.exe --control"}
+{"time":"2026-10-06T00:36:07Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T00:37:58Z","host":"PHP-CTX01","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T00:40:57Z","host":"PHP-HD07","user":"d.ward","image":"C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe","command_line":"AnyDesk.exe --control"}
+{"time":"2026-10-06T00:50:52Z","host":"PHP-WS15","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T01:06:52Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T01:16:37Z","host":"PHP-CTX01","user":"t.nash","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T01:18:17Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T01:27:26Z","host":"PHP-WS12","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T01:41:19Z","host":"PHP-DC01","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T01:42:08Z","host":"PHP-DC01","user":"k.lee","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T02:04:35Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T02:05:06Z","host":"PHP-FS02","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T02:06:36Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T02:10:26Z","host":"PHP-CTX01","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T02:25:05Z","host":"PHP-DC01","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T02:32:56Z","host":"PHP-WS15","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T02:35:31Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T02:39:28Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T02:43:19Z","host":"PHP-WS15","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T02:44:44Z","host":"PHP-WS15","user":"d.ward","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T03:01:09Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T03:06:10Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T03:09:15Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T03:10:55Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T03:28:29Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T03:38:04Z","host":"PHP-HD07","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T03:40:02Z","host":"PHP-DC01","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T03:41:52Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T03:44:43Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T03:47:34Z","host":"PHP-HD07","user":"d.ward","image":"C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe","command_line":"AnyDesk.exe --control"}
+{"time":"2026-10-06T03:49:48Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T03:50:49Z","host":"PHP-DC01","user":"d.ward","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T03:54:09Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T03:56:41Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T04:22:58Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T04:26:16Z","host":"PHP-CTX01","user":"a.khan","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T04:31:13Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T04:38:08Z","host":"PHP-CTX01","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T04:42:53Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T04:45:59Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T04:48:11Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T04:53:54Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T05:01:58Z","host":"PHP-WS15","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T05:02:45Z","host":"PHP-WS15","user":"a.khan","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T05:04:24Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T05:06:52Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T05:10:21Z","host":"PHP-DC01","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T05:13:46Z","host":"PHP-FS02","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T05:18:21Z","host":"PHP-CTX01","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T05:19:08Z","host":"PHP-WS15","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T05:34:43Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T05:37:34Z","host":"PHP-WS12","user":"d.ward","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T05:39:56Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T05:45:25Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T05:45:50Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T05:47:17Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T05:52:27Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T05:58:52Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T06:02:20Z","host":"PHP-FS02","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T06:22:02Z","host":"PHP-HD07","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T06:25:39Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T06:30:05Z","host":"PHP-HD07","user":"d.ward","image":"C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe","command_line":"AnyDesk.exe --control"}
+{"time":"2026-10-06T06:34:43Z","host":"PHP-FS02","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T06:41:33Z","host":"PHP-DC01","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T06:52:39Z","host":"PHP-HD07","user":"d.ward","image":"C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe","command_line":"AnyDesk.exe --control"}
+{"time":"2026-10-06T07:08:15Z","host":"PHP-FS02","user":"a.khan","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T07:25:23Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T07:35:10Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T07:56:26Z","host":"PHP-CTX01","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T07:59:45Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T08:00:18Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T08:01:19Z","host":"PHP-WS15","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T08:05:23Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T08:12:47Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T08:39:10Z","host":"PHP-FS02","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T08:41:19Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T08:46:09Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T09:02:17Z","host":"PHP-DC01","user":"t.nash","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T09:06:26Z","host":"PHP-CTX01","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T09:08:15Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T09:13:02Z","host":"PHP-DC01","user":"d.ward","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T09:19:23Z","host":"PHP-WS15","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T09:25:55Z","host":"PHP-WS15","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T09:46:51Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T09:52:41Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T09:57:30Z","host":"PHP-CTX01","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T10:09:00Z","host":"PHP-WS12","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T10:10:37Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T10:23:33Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T10:23:49Z","host":"PHP-CTX01","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T10:30:29Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T10:33:32Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T10:37:06Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T10:49:15Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T10:53:45Z","host":"PHP-FS02","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T10:55:38Z","host":"PHP-WS15","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T10:59:11Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T11:07:35Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T11:11:50Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T11:15:41Z","host":"PHP-WS15","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T11:20:00Z","host":"PHP-WS12","user":"k.lee","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T11:28:47Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T11:35:48Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T11:37:28Z","host":"PHP-DC01","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T11:40:53Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T11:41:34Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T11:41:52Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T11:52:24Z","host":"PHP-CTX01","user":"t.nash","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T11:57:42Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T12:05:33Z","host":"PHP-CTX01","user":"d.ward","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T12:05:54Z","host":"PHP-WS12","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T12:10:30Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T12:11:04Z","host":"PHP-WS15","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T12:14:24Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T12:19:04Z","host":"PHP-WS15","user":"a.khan","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T12:22:35Z","host":"PHP-DC01","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T12:24:38Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T12:44:07Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T12:47:47Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T12:55:58Z","host":"PHP-WS15","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T13:09:52Z","host":"PHP-CTX01","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T13:10:08Z","host":"PHP-WS15","user":"a.khan","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T13:10:17Z","host":"PHP-HD07","user":"d.ward","image":"C:\\Program Files (x86)\\AnyDesk\\AnyDesk.exe","command_line":"AnyDesk.exe --control"}
+{"time":"2026-10-06T13:29:10Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T13:29:51Z","host":"PHP-HD07","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T13:31:53Z","host":"PHP-HD07","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T13:33:53Z","host":"PHP-WS12","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T13:34:30Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T13:45:47Z","host":"PHP-WS12","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T13:50:38Z","host":"PHP-WS15","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T13:54:44Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T13:57:40Z","host":"PHP-HD07","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T14:02:19Z","host":"PHP-DC01","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T14:04:56Z","host":"PHP-CTX01","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T14:12:58Z","host":"PHP-FS02","user":"k.lee","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T14:16:03Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T14:20:45Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T14:24:49Z","host":"PHP-HD07","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T14:33:19Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T14:48:03Z","host":"PHP-CTX01","user":"a.khan","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T14:50:50Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T15:01:23Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T15:02:21Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T15:08:14Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T15:14:00Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T15:14:38Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T15:35:03Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T15:43:26Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T15:52:33Z","host":"PHP-FS02","user":"a.khan","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T15:54:56Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T15:55:55Z","host":"PHP-CTX01","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T15:58:42Z","host":"PHP-DC01","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T16:10:22Z","host":"PHP-WS12","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T16:18:01Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T16:21:26Z","host":"PHP-DC01","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T16:41:17Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T16:46:03Z","host":"PHP-CTX01","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T16:53:31Z","host":"PHP-WS15","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T17:04:58Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T17:05:26Z","host":"PHP-FS02","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T17:09:16Z","host":"PHP-DC01","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T17:09:25Z","host":"PHP-HD07","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T17:11:38Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T17:15:04Z","host":"PHP-WS15","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T17:19:23Z","host":"PHP-CTX01","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T17:26:40Z","host":"PHP-DC01","user":"k.lee","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T17:42:57Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T17:52:54Z","host":"PHP-CTX01","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T18:35:26Z","host":"PHP-WS12","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T18:58:18Z","host":"PHP-WS15","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T18:58:30Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T19:00:43Z","host":"PHP-CTX01","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T19:10:14Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T19:12:08Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T19:13:35Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T19:14:57Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T19:16:35Z","host":"PHP-CTX01","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T19:19:39Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T19:27:14Z","host":"PHP-HD07","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T19:29:38Z","host":"PHP-CTX01","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T19:44:56Z","host":"PHP-DC01","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T19:48:09Z","host":"PHP-FS02","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T19:49:44Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T19:51:34Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T19:53:55Z","host":"PHP-HD07","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T19:54:51Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T19:56:32Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T19:59:30Z","host":"PHP-WS12","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T20:07:01Z","host":"PHP-DC01","user":"t.nash","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T20:12:00Z","host":"PHP-CTX01","user":"PHP\\j.morales","image":"C:\\Users\\j.morales\\Downloads\\AnyDesk.exe","command_line":"AnyDesk.exe --install C:\\ProgramData\\AnyDesk --start-with-win --silent"}
+{"time":"2026-10-06T20:15:39Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T20:30:00Z","host":"PHP-CTX01","user":"PHP\\j.morales","image":"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe","command_line":"powershell.exe -ep bypass -f C:\\ProgramData\\ADRecon.ps1 -OutputDir C:\\ProgramData\\adr"}
+{"time":"2026-10-06T20:33:33Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T20:35:42Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T20:36:17Z","host":"PHP-HD07","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T20:46:01Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T20:55:00Z","host":"PHP-CTX01","user":"PHP\\j.morales","image":"C:\\ProgramData\\netscan.exe","command_line":"netscan.exe /hide /auto:C:\\ProgramData\\n.xml /range:10.50.0.1-10.50.3.254"}
+{"time":"2026-10-06T21:02:53Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T21:08:03Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T21:08:47Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T21:12:02Z","host":"PHP-WS12","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T21:16:59Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T21:20:00Z","host":"PHP-CTX01","user":"PHP\\j.morales","image":"C:\\Windows\\System32\\rundll32.exe","command_line":"rundll32.exe C:\\Windows\\System32\\comsvcs.dll, MiniDump 704 C:\\ProgramData\\l.dmp full"}
+{"time":"2026-10-06T21:23:03Z","host":"PHP-DC01","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T21:23:52Z","host":"PHP-DC01","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T21:27:03Z","host":"PHP-WS12","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T21:27:57Z","host":"PHP-WS15","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T21:28:05Z","host":"PHP-FS02","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T21:28:24Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T21:40:05Z","host":"PHP-WS12","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T21:41:42Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T21:45:23Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T21:49:13Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T22:00:00Z","host":"PHP-CTX01","user":"PHP\\adm.cortez","image":"C:\\ProgramData\\PsExec64.exe","command_line":"PsExec64.exe \\\\PHP-FS02 -accepteula -s cmd.exe"}
+{"time":"2026-10-06T22:04:19Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T22:05:00Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\PSEXESVC.exe","command_line":"PSEXESVC.exe"}
+{"time":"2026-10-06T22:05:06Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T22:06:21Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T22:19:46Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T22:20:00Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\ProgramData\\sync\\rclone.exe","command_line":"rclone.exe copy \\\\PHP-FS02\\Claims mega:php-claims --transfers 16 -q"}
+{"time":"2026-10-06T22:27:28Z","host":"PHP-HD07","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T22:43:10Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T22:43:26Z","host":"PHP-HD07","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T22:49:49Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T22:52:14Z","host":"PHP-FS02","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T22:56:06Z","host":"PHP-CTX01","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T22:57:01Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T22:58:44Z","host":"PHP-HD07","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-06T23:00:55Z","host":"PHP-DC01","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T23:10:43Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T23:12:58Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T23:14:37Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T23:16:25Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T23:30:24Z","host":"PHP-HD07","user":"a.khan","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T23:33:14Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-06T23:45:46Z","host":"PHP-FS02","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-06T23:48:18Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T23:53:49Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-06T23:59:17Z","host":"PHP-WS12","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T00:02:02Z","host":"PHP-WS12","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T00:03:01Z","host":"PHP-DC01","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T00:25:17Z","host":"PHP-FS02","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T00:30:49Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T00:41:42Z","host":"PHP-CTX01","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T00:48:05Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T00:51:57Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T00:53:21Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T01:05:00Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T01:05:44Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T01:07:08Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T01:07:28Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T01:09:59Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T01:23:36Z","host":"PHP-DC01","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T01:24:53Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T01:38:43Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T01:40:23Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T01:42:03Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T01:48:20Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T01:55:20Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T02:04:09Z","host":"PHP-WS15","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T02:08:50Z","host":"PHP-WS12","user":"d.ward","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T02:20:53Z","host":"PHP-CTX01","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T02:22:39Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T02:35:22Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T02:41:25Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T02:50:08Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T02:54:28Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T03:00:21Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T03:03:20Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T03:05:45Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T03:14:29Z","host":"PHP-WS15","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T03:18:52Z","host":"PHP-DC01","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T03:24:11Z","host":"PHP-WS12","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T03:33:22Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T03:35:16Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T03:36:20Z","host":"PHP-WS12","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T03:39:14Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T03:40:57Z","host":"PHP-CTX01","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T03:49:25Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T03:55:28Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T03:59:54Z","host":"PHP-WS15","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T04:00:42Z","host":"PHP-FS02","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T04:03:20Z","host":"PHP-WS15","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T04:16:10Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T04:21:29Z","host":"PHP-CTX01","user":"a.khan","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T04:23:39Z","host":"PHP-DC01","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T04:27:29Z","host":"PHP-FS02","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T04:27:55Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T04:28:35Z","host":"PHP-WS12","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T04:37:16Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T04:42:07Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T04:47:28Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T04:52:09Z","host":"PHP-WS12","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T04:52:26Z","host":"PHP-FS02","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T04:59:00Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T05:00:18Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T05:02:08Z","host":"PHP-DC01","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T05:06:47Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T05:13:45Z","host":"PHP-FS02","user":"t.nash","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T05:23:58Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T05:44:24Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T05:52:14Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T05:53:17Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T06:23:08Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T06:31:40Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T06:35:57Z","host":"PHP-HD07","user":"d.ward","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T06:45:33Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T06:48:22Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T07:02:25Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T07:05:30Z","host":"PHP-WS15","user":"a.khan","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T07:05:45Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T07:17:07Z","host":"PHP-WS15","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T07:24:13Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T07:27:48Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T07:34:59Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T07:35:33Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T07:40:05Z","host":"PHP-HD07","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T07:50:22Z","host":"PHP-FS02","user":"d.ward","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T07:53:59Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T07:58:25Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T08:09:04Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T08:09:58Z","host":"PHP-WS15","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T08:11:30Z","host":"PHP-DC01","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T08:14:07Z","host":"PHP-CTX01","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T08:19:43Z","host":"PHP-HD07","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T08:42:28Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T08:50:21Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T08:55:47Z","host":"PHP-CTX01","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T09:03:07Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T09:07:00Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T09:10:04Z","host":"PHP-DC01","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T09:15:48Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T09:19:14Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T09:22:52Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T09:24:02Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T09:24:17Z","host":"PHP-HD07","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T09:26:36Z","host":"PHP-CTX01","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T09:29:53Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T09:33:22Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T09:35:03Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T09:35:41Z","host":"PHP-HD07","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T09:36:22Z","host":"PHP-DC01","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T09:37:49Z","host":"PHP-WS12","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T09:39:21Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T09:42:58Z","host":"PHP-DC01","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T09:46:18Z","host":"PHP-CTX01","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T09:53:12Z","host":"PHP-CTX01","user":"k.lee","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T09:56:48Z","host":"PHP-CTX01","user":"a.khan","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T10:01:15Z","host":"PHP-CTX01","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T10:07:58Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T10:11:46Z","host":"PHP-DC01","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T10:14:26Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T10:19:54Z","host":"PHP-FS02","user":"k.lee","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T10:46:03Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T11:05:52Z","host":"PHP-CTX01","user":"j.morales","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T11:14:00Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T11:14:51Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T11:17:03Z","host":"PHP-HD07","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T11:20:08Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T11:21:32Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T11:25:15Z","host":"PHP-HD07","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T11:29:22Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T12:02:25Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T12:08:36Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T12:14:44Z","host":"PHP-HD07","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T12:22:24Z","host":"PHP-HD07","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T12:30:21Z","host":"PHP-DC01","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T12:47:44Z","host":"PHP-WS12","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T13:08:12Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T13:11:43Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T13:15:09Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T13:18:11Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T13:26:36Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T13:30:01Z","host":"PHP-HD07","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T13:30:35Z","host":"PHP-FS02","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T13:37:43Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T13:41:03Z","host":"PHP-HD07","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T13:47:30Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T14:05:13Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T14:07:01Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T14:22:25Z","host":"PHP-DC01","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T14:28:17Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T14:35:02Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T14:38:24Z","host":"PHP-WS15","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T14:53:14Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T15:00:01Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T15:03:16Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T15:32:36Z","host":"PHP-DC01","user":"a.khan","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T15:41:02Z","host":"PHP-DC01","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T15:46:19Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T15:52:14Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T15:54:50Z","host":"PHP-DC01","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T15:56:29Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T15:57:14Z","host":"PHP-CTX01","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T16:00:45Z","host":"PHP-CTX01","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T16:04:30Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T16:07:50Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T16:16:37Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T16:16:37Z","host":"PHP-WS12","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T16:20:53Z","host":"PHP-FS02","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T16:27:06Z","host":"PHP-FS02","user":"t.nash","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T16:36:21Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T16:44:06Z","host":"PHP-WS15","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T16:52:42Z","host":"PHP-WS15","user":"t.nash","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T16:57:39Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T17:13:46Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T17:21:13Z","host":"PHP-CTX01","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T17:21:28Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T17:24:02Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T17:25:51Z","host":"PHP-DC01","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T17:29:52Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T17:33:00Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T17:46:15Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T17:54:48Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T17:59:48Z","host":"PHP-WS12","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T18:03:20Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T18:03:22Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T18:11:07Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T18:18:13Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T18:18:44Z","host":"PHP-WS15","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T18:31:27Z","host":"PHP-WS12","user":"m.rossi","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T18:39:43Z","host":"PHP-FS02","user":"a.khan","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T18:46:06Z","host":"PHP-CTX01","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T18:48:39Z","host":"PHP-WS15","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T18:54:27Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T19:17:54Z","host":"PHP-FS02","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T19:27:06Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T19:27:45Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T19:45:46Z","host":"PHP-HD07","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T19:46:09Z","host":"PHP-DC01","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T19:50:25Z","host":"PHP-WS12","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T19:50:46Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T19:56:14Z","host":"PHP-CTX01","user":"t.nash","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T20:00:05Z","host":"PHP-CTX01","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T20:07:59Z","host":"PHP-CTX01","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T20:08:34Z","host":"PHP-WS12","user":"m.rossi","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T20:08:50Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T20:10:09Z","host":"PHP-WS12","user":"k.lee","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T20:14:34Z","host":"PHP-WS15","user":"p.osei","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T20:16:51Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T20:28:29Z","host":"PHP-DC01","user":"s.berg","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T20:31:52Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T20:46:08Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T20:49:37Z","host":"PHP-HD07","user":"k.lee","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T20:54:04Z","host":"PHP-WS15","user":"j.morales","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T21:03:17Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T21:03:22Z","host":"PHP-CTX01","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T21:11:49Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T21:21:01Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T21:22:33Z","host":"PHP-WS15","user":"t.nash","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T21:41:34Z","host":"PHP-WS12","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T21:44:28Z","host":"PHP-FS02","user":"a.khan","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T21:46:09Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T21:46:23Z","host":"PHP-CTX01","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T21:54:23Z","host":"PHP-WS15","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T22:08:07Z","host":"PHP-FS02","user":"k.lee","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T22:08:37Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T22:13:52Z","host":"PHP-WS15","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T22:28:23Z","host":"PHP-DC01","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T22:35:42Z","host":"PHP-WS12","user":"p.osei","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T23:02:24Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T23:14:29Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T23:19:17Z","host":"PHP-HD07","user":"s.berg","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T23:27:07Z","host":"PHP-HD07","user":"d.ward","image":"C:\\Program Files\\Citrix\\ICA Client\\wfica32.exe","command_line":"wfica32.exe"}
+{"time":"2026-10-07T23:35:36Z","host":"PHP-HD07","user":"d.ward","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T23:36:44Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T23:47:04Z","host":"PHP-FS02","user":"SYSTEM","image":"C:\\Windows\\System32\\taskhostw.exe","command_line":"taskhostw.exe"}
+{"time":"2026-10-07T23:52:17Z","host":"PHP-DC01","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
+{"time":"2026-10-07T23:52:19Z","host":"PHP-HD07","user":"SYSTEM","image":"C:\\Windows\\System32\\svchost.exe","command_line":"svchost.exe -k netsvcs"}
+{"time":"2026-10-07T23:57:12Z","host":"PHP-HD07","user":"t.nash","image":"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE","command_line":"OUTLOOK.EXE"}
