@@ -1,0 +1,1 @@
+30 2 * * * root /usr/local/bin/backup-web.sh

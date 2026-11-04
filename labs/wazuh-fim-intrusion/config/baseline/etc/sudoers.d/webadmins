@@ -1,0 +1,2 @@
+# Web team: reload the web stack only
+%webadmins ALL=(root) /usr/bin/systemctl reload nginx, /usr/bin/systemctl reload php-fpm

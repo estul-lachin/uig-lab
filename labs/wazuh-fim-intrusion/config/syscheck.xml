@@ -1,0 +1,5 @@
+    <!-- Lab: what web-server-01 watches, in real time, keeping diffs of text files -->
+    <directories realtime="yes" report_changes="yes">/etc/ssh,/etc/sudoers.d,/usr/local/bin</directories>
+    <directories realtime="yes" report_changes="yes">/etc/cron.d,/etc/cron.daily,/etc/cron.hourly</directories>
+    <directories realtime="yes" report_changes="yes">/var/www/html</directories>
+    <directories realtime="yes">/var/log/nginx</directories>

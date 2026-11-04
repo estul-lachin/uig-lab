@@ -1,0 +1,5 @@
+services:
+  # A Wazuh manager that watches its own files with syscheck: ./lab shell and ./lab check run here.
+  main:
+    build: .
+    hostname: web-server-01
