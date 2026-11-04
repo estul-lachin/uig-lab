@@ -1,0 +1,125 @@
+bastion-01 sshd[20327]: Accepted publickey for tomas from 10.20.0.11 port 48048 ssh2: RSA SHA256:AJBRvBnweSi9ufLdZZHmJSFaikAjptBeRv28gZmY3Fg
+bastion-01 sshd[20340]: pam_unix(sshd:session): session opened for user tomas(uid=1048) by (uid=0)
+bastion-01 sshd[20561]: Invalid user user from 198.51.100.14 port 33758
+bastion-01 sshd[20601]: Failed password for invalid user user from 198.51.100.14 port 33758 ssh2
+bastion-01 sshd[21001]: Invalid user dev from 192.0.2.88 port 49396
+bastion-01 sshd[21020]: Failed password for invalid user dev from 192.0.2.88 port 49396 ssh2
+bastion-01 sshd[20374]: Invalid user guest from 198.51.100.14 port 52766
+bastion-01 sshd[20399]: Failed password for invalid user guest from 198.51.100.14 port 52766 ssh2
+bastion-01 sshd[20017]: Accepted publickey for ops from 10.20.0.34 port 45606 ssh2: RSA SHA256:j5tVg4Lv2VJZQGiYUKUUeHa5YT2jd9G7uwMcnwHKPbU
+bastion-01 sshd[20022]: pam_unix(sshd:session): session opened for user ops(uid=1038) by (uid=0)
+bastion-01 sshd[20890]: Invalid user git from 192.0.2.88 port 43043
+bastion-01 sshd[20918]: Failed password for invalid user git from 192.0.2.88 port 43043 ssh2
+bastion-01 sshd[20496]: Invalid user test1 from 198.51.100.14 port 34155
+bastion-01 sshd[20525]: Failed password for invalid user test1 from 198.51.100.14 port 34155 ssh2
+bastion-01 sshd[20350]: Failed password for tomas from 10.20.0.17 port 56711 ssh2
+bastion-01 sshd[20755]: Invalid user www from 198.51.100.14 port 38398
+bastion-01 sshd[20792]: Failed password for invalid user www from 198.51.100.14 port 38398 ssh2
+bastion-01 sshd[20426]: Invalid user hadoop from 198.51.100.14 port 40787
+bastion-01 sshd[20464]: Failed password for invalid user hadoop from 198.51.100.14 port 40787 ssh2
+bastion-01 sshd[20811]: Invalid user minecraft from 198.51.100.14 port 49134
+bastion-01 sshd[20822]: Failed password for invalid user minecraft from 198.51.100.14 port 49134 ssh2
+bastion-01 sshd[20050]: Accepted publickey for ops from 10.20.0.31 port 47186 ssh2: RSA SHA256:97ryv1Dud3P6iPPEHMYuRmrzVqNndCDR0swXM4bhVei
+bastion-01 sshd[20085]: pam_unix(sshd:session): session opened for user ops(uid=1038) by (uid=0)
+bastion-01 sshd[20238]: Accepted publickey for ops from 10.20.0.17 port 60996 ssh2: RSA SHA256:6oiC7F6FqaeYLvcvERqBpyz1nNzZ6c2DnFqrLneZkB6
+bastion-01 sshd[20240]: pam_unix(sshd:session): session opened for user ops(uid=1038) by (uid=0)
+bastion-01 sshd[20162]: Accepted publickey for mira from 10.20.0.15 port 47124 ssh2: RSA SHA256:FK2ixVNgyMovuo55VuWABKKTNEunBng9SgnS8hbwiBP
+bastion-01 sshd[20185]: pam_unix(sshd:session): session opened for user mira(uid=1025) by (uid=0)
+bastion-01 sshd[21160]: Invalid user admin from 203.0.113.66 port 48510
+bastion-01 sshd[21182]: Failed password for invalid user admin from 203.0.113.66 port 48510 ssh2
+bastion-01 sshd[21199]: Invalid user test from 203.0.113.66 port 55565
+bastion-01 sshd[21217]: Failed password for invalid user test from 203.0.113.66 port 55565 ssh2
+bastion-01 sshd[21235]: Invalid user oracle from 203.0.113.66 port 58917
+bastion-01 sshd[21254]: Failed password for invalid user oracle from 203.0.113.66 port 58917 ssh2
+bastion-01 sshd[21263]: Invalid user ubuntu from 203.0.113.66 port 60435
+bastion-01 sshd[21300]: Failed password for invalid user ubuntu from 203.0.113.66 port 60435 ssh2
+bastion-01 sshd[21318]: Invalid user pi from 203.0.113.66 port 45440
+bastion-01 sshd[21342]: Failed password for invalid user pi from 203.0.113.66 port 45440 ssh2
+bastion-01 sshd[21352]: Invalid user guest from 203.0.113.66 port 47126
+bastion-01 sshd[21368]: Failed password for invalid user guest from 203.0.113.66 port 47126 ssh2
+bastion-01 sshd[21404]: Invalid user user from 203.0.113.66 port 40519
+bastion-01 sshd[21441]: Failed password for invalid user user from 203.0.113.66 port 40519 ssh2
+bastion-01 sshd[21474]: Invalid user ftp from 203.0.113.66 port 35584
+bastion-01 sshd[21503]: Failed password for invalid user ftp from 203.0.113.66 port 35584 ssh2
+bastion-01 sshd[21530]: Invalid user postgres from 203.0.113.66 port 52364
+bastion-01 sshd[21552]: Failed password for invalid user postgres from 203.0.113.66 port 52364 ssh2
+bastion-01 sshd[21574]: Invalid user support from 203.0.113.66 port 56489
+bastion-01 sshd[21608]: Failed password for invalid user support from 203.0.113.66 port 56489 ssh2
+bastion-01 sshd[21644]: Invalid user git from 203.0.113.66 port 55715
+bastion-01 sshd[21653]: Failed password for invalid user git from 203.0.113.66 port 55715 ssh2
+bastion-01 sshd[21667]: Invalid user jenkins from 203.0.113.66 port 49764
+bastion-01 sshd[21694]: Failed password for invalid user jenkins from 203.0.113.66 port 49764 ssh2
+bastion-01 sshd[21718]: Invalid user ansible from 203.0.113.66 port 35659
+bastion-01 sshd[21740]: Failed password for invalid user ansible from 203.0.113.66 port 35659 ssh2
+bastion-01 sshd[21746]: Invalid user hadoop from 203.0.113.66 port 58919
+bastion-01 sshd[21766]: Failed password for invalid user hadoop from 203.0.113.66 port 58919 ssh2
+bastion-01 sshd[21778]: Invalid user minecraft from 203.0.113.66 port 53971
+bastion-01 sshd[21807]: Failed password for invalid user minecraft from 203.0.113.66 port 53971 ssh2
+bastion-01 sshd[21844]: Invalid user test1 from 203.0.113.66 port 36644
+bastion-01 sshd[21862]: Failed password for invalid user test1 from 203.0.113.66 port 36644 ssh2
+bastion-01 sshd[21872]: Invalid user administrator from 203.0.113.66 port 53377
+bastion-01 sshd[21891]: Failed password for invalid user administrator from 203.0.113.66 port 53377 ssh2
+bastion-01 sshd[21909]: Invalid user www from 203.0.113.66 port 41574
+bastion-01 sshd[21924]: Failed password for invalid user www from 203.0.113.66 port 41574 ssh2
+bastion-01 sshd[21951]: Invalid user dev from 203.0.113.66 port 53822
+bastion-01 sshd[21981]: Failed password for invalid user dev from 203.0.113.66 port 53822 ssh2
+bastion-01 sshd[22016]: Invalid user backup from 203.0.113.66 port 56815
+bastion-01 sshd[22040]: Failed password for invalid user backup from 203.0.113.66 port 56815 ssh2
+bastion-01 sshd[22059]: Invalid user admin from 203.0.113.66 port 35136
+bastion-01 sshd[22089]: Failed password for invalid user admin from 203.0.113.66 port 35136 ssh2
+bastion-01 sshd[22107]: Invalid user test from 203.0.113.66 port 37355
+bastion-01 sshd[22112]: Failed password for invalid user test from 203.0.113.66 port 37355 ssh2
+bastion-01 sshd[22118]: Invalid user oracle from 203.0.113.66 port 36896
+bastion-01 sshd[22152]: Failed password for invalid user oracle from 203.0.113.66 port 36896 ssh2
+bastion-01 sshd[22190]: Invalid user ubuntu from 203.0.113.66 port 34105
+bastion-01 sshd[22219]: Failed password for invalid user ubuntu from 203.0.113.66 port 34105 ssh2
+bastion-01 sshd[22252]: Invalid user pi from 203.0.113.66 port 51721
+bastion-01 sshd[22290]: Failed password for invalid user pi from 203.0.113.66 port 51721 ssh2
+bastion-01 sshd[22304]: Invalid user guest from 203.0.113.66 port 48139
+bastion-01 sshd[22310]: Failed password for invalid user guest from 203.0.113.66 port 48139 ssh2
+bastion-01 sshd[22337]: Failed password for deploy from 203.0.113.66 port 34539 ssh2
+bastion-01 sshd[22361]: Failed password for deploy from 203.0.113.66 port 56892 ssh2
+bastion-01 sshd[22383]: Failed password for deploy from 203.0.113.66 port 56226 ssh2
+bastion-01 sshd[22398]: Failed password for deploy from 203.0.113.66 port 35513 ssh2
+bastion-01 sshd[22411]: Failed password for deploy from 203.0.113.66 port 44268 ssh2
+bastion-01 sshd[22450]: Failed password for deploy from 203.0.113.66 port 48675 ssh2
+bastion-01 sshd[22469]: Failed password for deploy from 203.0.113.66 port 42865 ssh2
+bastion-01 sshd[22478]: Failed password for deploy from 203.0.113.66 port 57126 ssh2
+bastion-01 sshd[22514]: Failed password for deploy from 203.0.113.66 port 48559 ssh2
+bastion-01 sshd[22553]: Accepted password for deploy from 203.0.113.66 port 35003 ssh2
+bastion-01 sshd[22554]: pam_unix(sshd:session): session opened for user deploy(uid=1003) by (uid=0)
+bastion-01 sshd[20253]: Accepted publickey for mira from 10.20.0.37 port 41986 ssh2: RSA SHA256:qq9ZM3TV2zy7NNcXLYRks33cwfDYSNgw0par7aaCTsM
+bastion-01 sshd[20267]: pam_unix(sshd:session): session opened for user mira(uid=1025) by (uid=0)
+bastion-01 sshd[20938]: Invalid user ftp from 192.0.2.88 port 51495
+bastion-01 sshd[20964]: Failed password for invalid user ftp from 192.0.2.88 port 51495 ssh2
+bastion-01 sshd[20648]: Invalid user pi from 198.51.100.14 port 57613
+bastion-01 sshd[20658]: Failed password for invalid user pi from 198.51.100.14 port 57613 ssh2
+bastion-01 sshd[20696]: Invalid user dev from 198.51.100.14 port 46379
+bastion-01 sshd[20721]: Failed password for invalid user dev from 198.51.100.14 port 46379 ssh2
+bastion-01 sshd[21049]: Invalid user hadoop from 192.0.2.88 port 37205
+bastion-01 sshd[21079]: Failed password for invalid user hadoop from 192.0.2.88 port 37205 ssh2
+bastion-01 sshd[20186]: Accepted publickey for kenji from 10.20.0.40 port 58113 ssh2: RSA SHA256:C3ZqrjuMaNYyMDyVHX6yZX8DJ7uo5xQ5GXiq6jKKjSs
+bastion-01 sshd[20214]: pam_unix(sshd:session): session opened for user kenji(uid=1029) by (uid=0)
+bastion-01 sshd[20123]: Accepted publickey for ops from 10.20.0.34 port 60498 ssh2: RSA SHA256:oXUQbJm4qvhf8NzxvJ4Kj6vXVk47SiN4gQzFxAofBMa
+bastion-01 sshd[20150]: pam_unix(sshd:session): session opened for user ops(uid=1038) by (uid=0)
+bastion-01 sshd[20973]: Invalid user user from 192.0.2.88 port 56922
+bastion-01 sshd[20983]: Failed password for invalid user user from 192.0.2.88 port 56922 ssh2
+bastion-01 sshd[20283]: Accepted publickey for ops from 10.20.0.27 port 58773 ssh2: RSA SHA256:B0zPk1LK64qVakxK2g0qDwA9A4EryXRdSo6edxq95d7
+bastion-01 sshd[20293]: pam_unix(sshd:session): session opened for user ops(uid=1038) by (uid=0)
+bastion-01 sshd[20538]: Invalid user jenkins from 198.51.100.14 port 60759
+bastion-01 sshd[20545]: Failed password for invalid user jenkins from 198.51.100.14 port 60759 ssh2
+bastion-01 sshd[20636]: Invalid user ftp from 198.51.100.14 port 44621
+bastion-01 sshd[20642]: Failed password for invalid user ftp from 198.51.100.14 port 44621 ssh2
+bastion-01 sshd[21110]: Invalid user ubuntu from 192.0.2.88 port 33373
+bastion-01 sshd[21144]: Failed password for invalid user ubuntu from 192.0.2.88 port 33373 ssh2
+bastion-01 sshd[20613]: Invalid user oracle from 198.51.100.14 port 50986
+bastion-01 sshd[20630]: Failed password for invalid user oracle from 198.51.100.14 port 50986 ssh2
+bastion-01 sshd[20840]: Invalid user test from 198.51.100.14 port 57220
+bastion-01 sshd[20877]: Failed password for invalid user test from 198.51.100.14 port 57220 ssh2
+bastion-01 sshd[20355]: Failed password for tomas from 10.20.0.17 port 39720 ssh2
+bastion-01 sshd[22558]: Accepted publickey for mira from 10.20.0.21 port 40038 ssh2: RSA SHA256:2hUM3LCYerZabLULakieEQqF5skgX6jGeM93vpoN4KU
+bastion-01 sshd[22583]: pam_unix(sshd:session): session opened for user mira(uid=1025) by (uid=0)
+bastion-01 sshd[22620]: Accepted password for deploy from 198.51.100.230 port 45948 ssh2
+bastion-01 sshd[22627]: pam_unix(sshd:session): session opened for user deploy(uid=1003) by (uid=0)
+bastion-01 sshd[22650]: Accepted publickey for ops from 10.20.0.33 port 36290 ssh2: RSA SHA256:dEYDvP18LPQCL2WBz3y82fFaWHst2QV37HRRRuLzqPs
+bastion-01 sshd[22657]: pam_unix(sshd:session): session opened for user ops(uid=1038) by (uid=0)
