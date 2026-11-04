@@ -1,0 +1,91 @@
+web-server-01 sudo:    sarah : TTY=pts/3 ; PWD=/home/sarah ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+web-server-01 sudo:       li : TTY=pts/3 ; PWD=/home/li ; USER=root ; COMMAND=/usr/bin/systemctl reload php8.3-fpm
+web-server-01 sudo:       li : TTY=pts/3 ; PWD=/home/li ; USER=root ; COMMAND=/usr/bin/tail -n 50 /var/log/nginx/error.log
+web-server-01 sudo:       li : TTY=pts/2 ; PWD=/home/li ; USER=root ; COMMAND=/usr/sbin/nginx -t
+web-server-01 sudo:       li : TTY=pts/3 ; PWD=/home/li ; USER=root ; COMMAND=/usr/bin/journalctl -u nginx --since today
+web-server-01 sudo:    sarah : TTY=pts/2 ; PWD=/home/sarah ; USER=www-data ; COMMAND=/usr/bin/ls -la /var/www/shop
+web-server-01 sudo:       li : TTY=pts/2 ; PWD=/home/li ; USER=root ; COMMAND=/usr/bin/tail -n 50 /var/log/nginx/error.log
+web-server-01 sudo:    sarah : TTY=pts/2 ; PWD=/home/sarah ; USER=www-data ; COMMAND=/usr/bin/ls -la /var/www/shop
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/su -
+web-server-01 sudo:    sarah : TTY=pts/3 ; PWD=/home/sarah ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/visudo
+web-server-01 sudo:       li : TTY=pts/2 ; PWD=/home/li ; USER=root ; COMMAND=/usr/bin/journalctl -u nginx --since today
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+web-server-01 sudo:       li : TTY=pts/3 ; PWD=/home/li ; USER=root ; COMMAND=/usr/bin/journalctl -u nginx --since today
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/visudo
+web-server-01 sudo:    sarah : TTY=pts/2 ; PWD=/home/sarah ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+web-server-01 sudo: backup-bot : TTY=unknown ; PWD=/home/backup-bot ; USER=root ; COMMAND=/usr/bin/rsync -a /var/www/ /srv/backup/www/
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/visudo
+web-server-01 sudo: backup-bot : TTY=unknown ; PWD=/home/backup-bot ; USER=root ; COMMAND=/usr/bin/rsync -a /var/www/ /srv/backup/www/
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/visudo
+web-server-01 sudo:    sarah : TTY=pts/2 ; PWD=/home/sarah ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/bin/bash
+web-server-01 sudo: backup-bot : TTY=unknown ; PWD=/home/backup-bot ; USER=root ; COMMAND=/usr/bin/rsync -a /var/www/ /srv/backup/www/
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/visudo
+web-server-01 sudo:    sarah : TTY=pts/2 ; PWD=/home/sarah ; USER=www-data ; COMMAND=/usr/bin/ls -la /var/www/shop
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/su -
+web-server-01 sudo: backup-bot : TTY=unknown ; PWD=/home/backup-bot ; USER=root ; COMMAND=/usr/bin/rsync -a /var/www/ /srv/backup/www/
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+web-server-01 sudo:       li : TTY=pts/3 ; PWD=/home/li ; USER=root ; COMMAND=/usr/sbin/nginx -t
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/passwd root
+web-server-01 sudo:    tomas : 1 incorrect password attempt ; TTY=pts/4 ; PWD=/home/tomas ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/passwd root
+web-server-01 sudo:    sarah : TTY=pts/3 ; PWD=/home/sarah ; USER=root ; COMMAND=/usr/bin/apt-get update
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/passwd root
+web-server-01 sudo:    sarah : TTY=pts/3 ; PWD=/home/sarah ; USER=root ; COMMAND=/usr/bin/tail -n 50 /var/log/nginx/error.log
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/su -
+web-server-01 sudo: backup-bot : TTY=unknown ; PWD=/home/backup-bot ; USER=root ; COMMAND=/usr/bin/rsync -a /var/www/ /srv/backup/www/
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/visudo
+web-server-01 sudo: backup-bot : TTY=unknown ; PWD=/home/backup-bot ; USER=root ; COMMAND=/usr/bin/rsync -a /var/www/ /srv/backup/www/
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/su -
+web-server-01 sudo: backup-bot : TTY=unknown ; PWD=/home/backup-bot ; USER=root ; COMMAND=/usr/bin/rsync -a /var/www/ /srv/backup/www/
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/bin/bash
+web-server-01 sudo:    sarah : TTY=pts/2 ; PWD=/home/sarah ; USER=root ; COMMAND=/usr/bin/tail -n 50 /var/log/nginx/error.log
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/visudo
+web-server-01 sudo: backup-bot : TTY=unknown ; PWD=/home/backup-bot ; USER=root ; COMMAND=/usr/bin/rsync -a /var/www/ /srv/backup/www/
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/su -
+web-server-01 sudo:    sarah : TTY=pts/3 ; PWD=/home/sarah ; USER=root ; COMMAND=/usr/bin/apt-get update
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+web-server-01 sudo:    sarah : TTY=pts/3 ; PWD=/home/sarah ; USER=root ; COMMAND=/usr/bin/journalctl -u nginx --since today
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+web-server-01 sudo: backup-bot : TTY=unknown ; PWD=/home/backup-bot ; USER=root ; COMMAND=/usr/bin/rsync -a /var/www/ /srv/backup/www/
+web-server-01 sudo:     dkim : 1 incorrect password attempt ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+web-server-01 sudo:    sarah : TTY=pts/2 ; PWD=/home/sarah ; USER=root ; COMMAND=/usr/bin/systemctl reload php8.3-fpm
+web-server-01 sudo:     dkim : 3 incorrect password attempts ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+web-server-01 sudo: backup-bot : TTY=unknown ; PWD=/home/backup-bot ; USER=root ; COMMAND=/usr/bin/rsync -a /var/www/ /srv/backup/www/
+web-server-01 sudo:     dkim : 3 incorrect password attempts ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/su -
+web-server-01 sudo: backup-bot : TTY=unknown ; PWD=/home/backup-bot ; USER=root ; COMMAND=/usr/bin/rsync -a /var/www/ /srv/backup/www/
+web-server-01 sudo:     dkim : 3 incorrect password attempts ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/bin/bash
+web-server-01 sudo:    sarah : TTY=pts/2 ; PWD=/home/sarah ; USER=www-data ; COMMAND=/usr/bin/ls -la /var/www/shop
+web-server-01 sudo:     dkim : command not allowed ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/bin/bash
+web-server-01 sudo:    sarah : TTY=pts/3 ; PWD=/home/sarah ; USER=root ; COMMAND=/usr/bin/apt-get update
+web-server-01 sudo:     dkim : command not allowed ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/su -
+web-server-01 sudo:    sarah : TTY=pts/2 ; PWD=/home/sarah ; USER=www-data ; COMMAND=/usr/bin/ls -la /var/www/shop
+web-server-01 sudo:     dkim : command not allowed ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/cat /etc/shadow
+web-server-01 sudo:    sarah : TTY=pts/2 ; PWD=/home/sarah ; USER=root ; COMMAND=/usr/sbin/nginx -t
+web-server-01 sudo:     dkim : command not allowed ; TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/python3
+web-server-01 sudo:       li : TTY=pts/2 ; PWD=/home/li ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+web-server-01 sudo:    sarah : TTY=pts/2 ; PWD=/home/sarah ; USER=www-data ; COMMAND=/usr/bin/ls -la /var/www/shop
+web-server-01 sudo:    sarah : TTY=pts/3 ; PWD=/home/sarah ; USER=root ; COMMAND=/usr/bin/apt-get update
+web-server-01 sudo:       li : TTY=pts/3 ; PWD=/home/li ; USER=root ; COMMAND=/usr/bin/systemctl reload php8.3-fpm
+web-server-01 sudo:       li : TTY=pts/2 ; PWD=/home/li ; USER=root ; COMMAND=/usr/bin/journalctl -u nginx --since today
+web-server-01 sudo:    sarah : TTY=pts/2 ; PWD=/home/sarah ; USER=root ; COMMAND=/usr/bin/tail -n 50 /var/log/nginx/error.log
+web-server-01 sudo:    tomas : 1 incorrect password attempt ; TTY=pts/4 ; PWD=/home/tomas ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+web-server-01 sudo:       li : TTY=pts/2 ; PWD=/home/li ; USER=root ; COMMAND=/usr/bin/systemctl reload php8.3-fpm
+web-server-01 sudo:       li : TTY=pts/3 ; PWD=/home/li ; USER=root ; COMMAND=/usr/sbin/nginx -t
+web-server-01 sudo:    sarah : TTY=pts/3 ; PWD=/home/sarah ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx
+web-server-01 sudo:    tomas : 1 incorrect password attempt ; TTY=pts/4 ; PWD=/home/tomas ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+web-server-01 sudo:       li : TTY=pts/2 ; PWD=/home/li ; USER=root ; COMMAND=/usr/bin/tail -n 50 /var/log/nginx/error.log
+web-server-01 sudo:    tomas : 1 incorrect password attempt ; TTY=pts/4 ; PWD=/home/tomas ; USER=root ; COMMAND=/usr/bin/systemctl status nginx
+web-server-01 sudo: backup-bot : TTY=unknown ; PWD=/home/backup-bot ; USER=root ; COMMAND=/usr/bin/rsync -a /var/www/ /srv/backup/www/
+web-server-01 sudo:    sarah : TTY=pts/2 ; PWD=/home/sarah ; USER=root ; COMMAND=/usr/sbin/nginx -t
+web-server-01 sudo:       li : TTY=pts/2 ; PWD=/home/li ; USER=root ; COMMAND=/usr/sbin/nginx -t
+web-server-01 sudo:       li : 1 incorrect password attempt ; TTY=pts/3 ; PWD=/home/li ; USER=root ; COMMAND=/usr/bin/apt-get upgrade -y
+web-server-01 sudo:       li : TTY=pts/3 ; PWD=/home/li ; USER=root ; COMMAND=/usr/bin/tail -n 50 /var/log/nginx/error.log
+web-server-01 sudo:    sarah : TTY=pts/2 ; PWD=/home/sarah ; USER=root ; COMMAND=/usr/bin/tail -n 50 /var/log/nginx/error.log
+web-server-01 sudo:    sarah : TTY=pts/3 ; PWD=/home/sarah ; USER=root ; COMMAND=/usr/bin/journalctl -u nginx --since today
+web-server-01 sudo:     dkim : TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/vim /etc/nginx/nginx.conf
+web-server-01 useradd[2210]: new user: name=sysupd, UID=0, GID=0, home=/home/sysupd, shell=/bin/bash, from=/dev/pts/1
+web-server-01 sudo:     dkim : TTY=pts/1 ; PWD=/home/dkim ; USER=root ; COMMAND=/usr/bin/vim /etc/nginx/nginx.conf
+web-server-01 sudo:    sarah : TTY=pts/2 ; PWD=/home/sarah ; USER=root ; COMMAND=/usr/bin/systemctl restart nginx

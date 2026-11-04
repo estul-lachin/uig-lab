@@ -1,0 +1,5 @@
+services:
+  # The Wazuh manager: ./lab shell and ./lab check run here.
+  main:
+    build: .
+    hostname: wazuh-manager
