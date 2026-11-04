@@ -1,0 +1,50 @@
+ip,hostname,os,ms17_010
+10.60.1.21,AVW-WS021,Windows 10 1607,installed
+10.60.1.22,AVW-WS022,Windows 7 SP1,missing
+10.60.1.23,AVW-WS023,Windows 7 SP1,installed
+10.60.1.24,AVW-WS024,Windows 10 1607,installed
+10.60.1.25,AVW-WS025,Windows 10 1607,installed
+10.60.1.26,AVW-WS026,Windows 10 1607,missing
+10.60.1.27,AVW-WS027,Windows 10 1607,installed
+10.60.1.28,AVW-WS028,Windows 10 1607,installed
+10.60.1.29,AVW-WS029,Windows 10 1607,missing
+10.60.1.30,AVW-WS030,Windows 10 1607,installed
+10.60.1.31,AVW-WS031,Windows 10 1607,installed
+10.60.1.32,AVW-WS032,Windows 10 1607,installed
+10.60.1.33,AVW-WS033,Windows 7 SP1,installed
+10.60.1.34,AVW-WS034,Windows 7 SP1,installed
+10.60.1.35,AVW-WS035,Windows 7 SP1,missing
+10.60.1.36,AVW-WS036,Windows 10 1607,missing
+10.60.1.37,AVW-WS037,Windows 10 1607,missing
+10.60.1.38,AVW-WS038,Windows 7 SP1,missing
+10.60.1.39,AVW-WS039,Windows 7 SP1,installed
+10.60.1.40,AVW-WS040,Windows 10 1607,missing
+10.60.1.41,AVW-WS041,Windows 7 SP1,installed
+10.60.1.42,AVW-WS042,Windows 10 1607,installed
+10.60.1.43,AVW-WS043,Windows 10 1607,installed
+10.60.1.44,AVW-WS044,Windows 10 1607,missing
+10.60.1.45,AVW-WS045,Windows 7 SP1,installed
+10.60.1.46,AVW-WS046,Windows 7 SP1,installed
+10.60.1.47,AVW-WS047,Windows 7 SP1,missing
+10.60.1.48,AVW-WS048,Windows 10 1607,missing
+10.60.1.49,AVW-WS049,Windows 10 1607,installed
+10.60.1.50,AVW-WS050,Windows 10 1607,installed
+10.60.1.51,AVW-WS051,Windows 10 1607,installed
+10.60.1.52,AVW-WS052,Windows 7 SP1,installed
+10.60.1.53,AVW-WS053,Windows 7 SP1,installed
+10.60.1.54,AVW-WS054,Windows 7 SP1,installed
+10.60.1.55,AVW-WS055,Windows 7 SP1,missing
+10.60.1.56,AVW-WS056,Windows 10 1607,missing
+10.60.1.57,AVW-WS057,Windows 7 SP1,missing
+10.60.1.58,AVW-WS058,Windows 10 1607,missing
+10.60.1.59,AVW-WS059,Windows 10 1607,missing
+10.60.1.60,AVW-WS060,Windows 7 SP1,missing
+10.60.2.10,AVW-SRV10,Windows Server 2012 R2,installed
+10.60.2.11,AVW-SRV11,Windows Server 2012 R2,installed
+10.60.2.15,AVW-SRV15,Windows Server 2012 R2,missing
+10.60.2.20,AVW-SRV20,Windows Server 2012 R2,installed
+10.60.2.21,AVW-SRV21,Windows Server 2012 R2,missing
+10.60.2.30,AVW-SRV30,Windows Server 2012 R2,installed
+10.60.3.5,AVW-HMI05,Windows 7 Embedded,missing
+10.60.3.6,AVW-HMI06,Windows 7 Embedded,missing
+10.60.3.7,AVW-HMI07,Windows 7 Embedded,installed

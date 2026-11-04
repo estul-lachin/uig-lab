@@ -1,0 +1,31 @@
+# The plant LAN of Alder Valley Water: three Samba servers and a workstation.
+services:
+  # AVW-SRV11, where ./lab shell and ./lab check run.
+  main:
+    build: .
+    hostname: avw-srv11
+    init: true
+    networks: { lan: { ipv4_address: 10.253.82.10 } }
+  fs-02:
+    build: { context: ., dockerfile: Dockerfile.smb }
+    hostname: avw-fs02
+    environment: { MIN: SMB2_02 }
+    init: true
+    networks: { lan: { ipv4_address: 10.253.82.11 } }
+  print-01:
+    build: { context: ., dockerfile: Dockerfile.smb }
+    hostname: avw-print01
+    environment: { MIN: NT1 }
+    init: true
+    networks: { lan: { ipv4_address: 10.253.82.12 } }
+  ws-31:
+    image: ubuntu:24.04
+    hostname: avw-ws031
+    init: true
+    command: ["sleep", "infinity"]
+    networks: { lan: { ipv4_address: 10.253.82.31 } }
+networks:
+  lan:
+    ipam:
+      config:
+        - subnet: 10.253.82.0/24

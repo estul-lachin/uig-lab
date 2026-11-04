@@ -1,0 +1,9 @@
+# Another Samba server on the plant LAN (fs-02, print-01); MIN comes from docker-compose.yml.
+FROM ubuntu:24.04
+RUN apt-get update \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends samba \
+ && rm -rf /var/lib/apt/lists/*
+COPY config/smb.conf /etc/samba/smb.conf
+COPY config/start-smb.sh /usr/local/sbin/start-smb
+RUN chmod 755 /usr/local/sbin/start-smb
+CMD ["sh", "-c", "start-smb; exec sleep infinity"]
