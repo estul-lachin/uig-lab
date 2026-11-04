@@ -1,0 +1,9 @@
+Windows Registry Editor Version 5.00
+
+; Exported from BWD-FS01 during the investigation, 2 June 2026
+[HKEY_LOCAL_MACHINE\SOFTWARE\WOW6432Node\recfg]
+"pk_key"=hex:3c,91,0e,a7,52,d4,18,6b,e0,77,c2,09,4f,ab,31,d8,66,e5,0a,93,7c,bb,24,f1,58,0d,c6,39,a2,4e,91,07
+"sk_key"=hex:a1,5f,c8,02,3e,9d,74,b6,11,e9,48,cc,07,6a,f3,92,5b,20,d7,84,e3,1c,68,af,39,f5,02,ba,7d,c4,16,e8
+"0_key"=hex:7e,04,b9,62,d1,3a,8f,c5,26,90,ed,13,4b,a8,f7,5c
+"rnd_ext"=".q7w2kx9"
+"stat"="done"
