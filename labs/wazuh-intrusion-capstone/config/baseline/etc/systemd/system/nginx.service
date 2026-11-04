@@ -1,0 +1,9 @@
+[Unit]
+Description=nginx web server
+After=network.target
+
+[Service]
+ExecStart=/usr/sbin/nginx -g "daemon off;"
+
+[Install]
+WantedBy=multi-user.target

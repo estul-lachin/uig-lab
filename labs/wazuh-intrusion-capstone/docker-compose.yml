@@ -1,0 +1,5 @@
+services:
+  # A Wazuh manager on web-server-01 itself: ./lab shell and ./lab check run here.
+  main:
+    build: .
+    hostname: web-server-01

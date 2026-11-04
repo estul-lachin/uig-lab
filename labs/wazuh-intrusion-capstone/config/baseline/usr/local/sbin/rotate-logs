@@ -1,0 +1,3 @@
+#!/bin/sh
+# Rotate the shop logs
+exec /usr/sbin/logrotate /etc/logrotate.conf

