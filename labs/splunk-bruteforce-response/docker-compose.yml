@@ -1,0 +1,27 @@
+services:
+  # The analyst's workstation: ./lab shell and ./lab check run here. It also plays the SOAR:
+  # a small webhook receiver at http://soar:8088/ that logs every POST (config/soar.py).
+  main:
+    build: .
+    hostname: analyst
+    init: true
+    depends_on:
+      - splunk
+    networks:
+      default:
+        aliases:
+          - soar
+  # Splunk with four days of bastion-01's auth log (splunk/gen_auth.py).
+  splunk:
+    build: ./splunk
+    platform: linux/amd64
+    hostname: splunk
+    environment:
+      # The owner accepted the Splunk General Terms and license for these labs.
+      SPLUNK_START_ARGS: --accept-license
+      SPLUNK_GENERAL_TERMS: --accept-sgt-current-at-splunk-com
+      # Lab-only password, documented in the README. Splunk Web listens on localhost only.
+      SPLUNK_PASSWORD: Lab-Splunk-2026
+      SPLUNK_APPS_URL: /opt/lab-app/lab_data.tgz
+    ports:
+      - "127.0.0.1:8000:8000"
