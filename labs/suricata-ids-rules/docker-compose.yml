@@ -1,0 +1,8 @@
+services:
+  main:
+    build: .
+    hostname: ids-sensor
+    init: true
+    # The box idles (sleep infinity). You write Suricata rules in /root/local.rules
+    # and run Suricata offline against the capture yourself - open a shell with
+    # `./lab shell suricata-ids-rules`.
