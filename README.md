@@ -120,6 +120,7 @@ A local dashboard (phase 3):
 
 | Lab | Category | What it practices |
 |---|---|---|
+| [ad-core-concepts](labs/ad-core-concepts/) | security | Explore a live Active Directory domain controller from its shell: map forest, domain and OUs, read the functional level and the schema version from the rootDSE, find the Global Catalog through DNS and its ports, see why a plaintext LDAP bind is refused, list the FSMO role holders, and move a computer out of the default container into an OU. |
 | [backups-rsync-cron](labs/backups-rsync-cron/) | linux | Back up an application directory with rsync, locally and over SSH to a second machine, wrap it in a script that cron runs every night, prove the backup by restoring a file with its permissions, and remove a suspicious cron job. |
 | [bash-conditionals](labs/bash-conditionals/) | linux | Write bash decisions that hold up: file tests that get symlinks right, numeric comparisons that reject bad input, a case dispatcher with proper usage errors, regex validation of IPv4 addresses, and an IP classifier built from them. |
 | [bash-functions](labs/bash-functions/) | linux | Build a small bash function library: functions that take any number of arguments, return status codes instead of exiting, keep their variables local, get sourced from another script by path, and pass exit codes on unchanged. |
