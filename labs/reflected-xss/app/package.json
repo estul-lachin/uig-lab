@@ -1,0 +1,11 @@
+{
+  "name": "postboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Deliberately vulnerable demo app for the reflected-xss lab",
+  "main": "server.js",
+  "dependencies": {
+    "express": "4.21.2",
+    "jsdom": "25.0.1"
+  }
+}

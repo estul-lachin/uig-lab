@@ -1,0 +1,8 @@
+services:
+  main:
+    build: .
+    hostname: postboard
+    init: true
+    # The vulnerable app (node server.js) is the container's main process and
+    # listens on 127.0.0.1:8080 inside the container. Drive it with curl from
+    # `./lab shell reflected-xss`; no host port is published on purpose.
