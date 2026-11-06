@@ -1,0 +1,34 @@
+services:
+  # WS01, a domain member; ./lab shell and ./lab check run here (where policy is applied).
+  main:
+    build:
+      context: .
+      dockerfile: ws/Dockerfile
+    hostname: ws01
+    domainname: ridgeline.local
+    init: true
+    dns:
+      # The DC is the domain's DNS server; the workstation must resolve it to find and join the domain.
+      - 10.203.18.10
+    networks:
+      corp:
+        ipv4_address: 10.203.18.51
+    depends_on:
+      - dc
+  # DC01, the domain controller and the GPO store.
+  dc:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    hostname: dc01
+    domainname: ridgeline.local
+    init: true
+    networks:
+      corp:
+        ipv4_address: 10.203.18.10
+
+networks:
+  corp:
+    ipam:
+      config:
+        - subnet: 10.203.18.0/24
