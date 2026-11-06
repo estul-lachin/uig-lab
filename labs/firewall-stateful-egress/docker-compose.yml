@@ -1,0 +1,8 @@
+services:
+  main:
+    build: .
+    hostname: ws-25
+    init: true
+    # Lets the lab set the host address and load nftables rules.
+    cap_add:
+      - NET_ADMIN

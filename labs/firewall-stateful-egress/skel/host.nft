@@ -1,0 +1,32 @@
+#!/usr/sbin/nft -f
+#
+# Host firewall for workstation ws-25 (10.50.10.25). Complete the rules, then apply:
+#     nft -c -f /root/host.nft   # check syntax
+#     nft -f /root/host.nft      # apply
+#
+# Right now both chains default to ACCEPT and the host is wide open. Harden it to
+# the design in the README. Remember: rules are first-match, top to bottom.
+
+flush ruleset
+
+table inet fw {
+    chain input {
+        type filter hook input priority 0; policy accept;   # TODO: default-deny (drop)
+
+        iif "lo" accept
+        ct state established,related accept
+        # TODO: drop packets with an invalid connection state
+        # TODO: allow inbound SSH (tcp/22) only from the mgmt subnet 10.50.99.0/24
+    }
+
+    chain output {
+        type filter hook output priority 0; policy accept;  # TODO: default-deny egress (drop)
+
+        oif "lo" accept
+        ct state established,related accept
+        # TODO: silently DROP all egress to the known C2 server 198.51.100.66
+        #       -- place it BEFORE the web allow so first-match catches it
+        # TODO: REJECT outbound SMB (tcp/445) so blocked apps fail fast
+        # TODO: allow outbound DNS (udp/tcp 53) and web (tcp 80, 443)
+    }
+}
