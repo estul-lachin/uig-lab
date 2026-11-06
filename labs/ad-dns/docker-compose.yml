@@ -1,0 +1,17 @@
+services:
+  # DC01, the only domain controller of ridgeline.local; ./lab shell and ./lab check run here.
+  main:
+    build: .
+    hostname: dc01
+    domainname: ridgeline.local
+    init: true
+    networks:
+      corp:
+        # The address the domain was provisioned with (dc/provision.sh); its DNS records point here.
+        ipv4_address: 10.203.17.10
+
+networks:
+  corp:
+    ipam:
+      config:
+        - subnet: 10.203.17.0/24
