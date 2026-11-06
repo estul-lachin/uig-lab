@@ -1,0 +1,8 @@
+services:
+  main:
+    build: .
+    hostname: edge-fw
+    init: true
+    # Lets the lab create the zone interfaces and load nftables rules (incl. NAT).
+    cap_add:
+      - NET_ADMIN

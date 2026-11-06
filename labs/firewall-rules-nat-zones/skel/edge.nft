@@ -1,0 +1,41 @@
+#!/usr/sbin/nft -f
+#
+# Edge firewall for site-7. Complete the rules, then apply with:
+#     nft -f /root/edge.nft
+# (Check syntax first with:  nft -c -f /root/edge.nft)
+#
+# Zones (interfaces already exist on this box):
+#   wan0  WAN / untrusted (internet)      203.0.113.10/24
+#   lan0  LAN / trusted workstations      10.50.10.0/24
+#   dmz0  DMZ / semi-trusted servers      10.50.20.0/24
+# DMZ web server: 10.50.20.10 (serves HTTPS on tcp/443)
+#
+# Right now this box forwards everything (policy accept) and does no NAT.
+# Harden it to the design described in the README.
+
+flush ruleset
+
+table inet filter {
+    chain input {
+        type filter hook input priority 0; policy accept;
+    }
+
+    chain forward {
+        type filter hook forward priority 0; policy accept;   # TODO: make this default-deny (drop)
+
+        ct state established,related accept
+
+        # TODO: allow LAN out to WAN (lan0 -> wan0) and LAN to the DMZ (lan0 -> dmz0)
+        # TODO: allow the DMZ out to WAN only (dmz0 -> wan0)
+        # TODO: allow inbound HTTPS to the DMZ web server (wan0 -> dmz0, 10.50.20.10 tcp/443)
+        # TODO: block the DMZ from reaching the LAN (dmz0 -> lan0)  -- segmentation
+    }
+
+    chain output {
+        type filter hook output priority 0; policy accept;
+    }
+}
+
+# TODO: add a NAT table with:
+#   - postrouting masquerade for traffic leaving wan0   (SNAT / PAT, many-to-one)
+#   - prerouting DNAT: inbound wan0 tcp/443 -> 10.50.20.10:443  (port-forward)
