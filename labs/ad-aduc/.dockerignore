@@ -1,0 +1,6 @@
+# Keep checks, solutions and docs out of the Docker build context,
+# so no Dockerfile can COPY them into the image by accident.
+check.sh
+solution/
+screenshots/
+README.md
