@@ -1,0 +1,24 @@
+services:
+  # The protected web application (returns 200 for any path). The WAF inspects
+  # requests before they reach it.
+  backend:
+    image: traefik/whoami:v1.10.3
+    init: true
+
+  # The WAF. Starts in DetectionOnly (inspect + log, never block) - your job is to
+  # turn enforcement on and add a custom rule. ./lab shell enters here.
+  main:
+    build: .
+    hostname: larkhill-waf
+    init: true
+    user: root
+    environment:
+      BACKEND: "http://backend:80"
+      PORT: "8080"
+      MODSEC_RULE_ENGINE: "DetectionOnly"
+      PARANOIA: "1"
+      ANOMALY_INBOUND: "5"
+      MODSEC_AUDIT_LOG: "/var/log/modsec/audit.log"
+      MODSEC_AUDIT_ENGINE: "RelevantOnly"
+    depends_on:
+      - backend
