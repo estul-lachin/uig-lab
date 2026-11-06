@@ -1,0 +1,14 @@
+services:
+  main:
+    build: .
+    hostname: rdg-fs01
+    init: true
+    networks:
+      corp:
+        ipv4_address: 10.203.14.21
+
+networks:
+  corp:
+    ipam:
+      config:
+        - subnet: 10.203.14.0/24
