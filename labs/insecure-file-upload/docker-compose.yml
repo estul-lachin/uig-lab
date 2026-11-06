@@ -1,0 +1,7 @@
+services:
+  main:
+    build: .
+    hostname: snapvault
+    init: true
+    # Apache serves the app on port 80 inside the container. Drive it with curl
+    # from `./lab shell insecure-file-upload`; no host port is published on purpose.
