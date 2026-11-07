@@ -17,4 +17,10 @@ LEVEL_3=procedure
 ACRONYM=Adversarial Tactics, Techniques, and Common Knowledge
 MAINTAINER=MITRE
 PHILOSOPHY=threat-informed defense
+PLAN=Detection Strategy
+IMPLEMENTATION=Analytic
+DET_PREFIX=DET
+AN_PREFIX=AN
+LOGSOURCE_HOME=Data Component
+WIN_SECURITY=wineventlog:security
 EOF

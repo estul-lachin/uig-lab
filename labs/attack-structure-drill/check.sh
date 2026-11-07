@@ -33,3 +33,15 @@ check "ACRONYM: Adversarial Tactics, Techniques, and Common Knowledge" \
   "Adversarial Tactics, Techniques, and Common Knowledge"
 check "MAINTAINER: MITRE" 'want MAINTAINER "mitre"' "the non-profit that curates ATT&CK"
 check "PHILOSOPHY: threat-informed defense" 'want PHILOSOPHY "threatinformed"' "prioritise defenses around real adversary behaviour"
+
+section "5. The v18 detection model"
+check "the PLAN (what behaviour to look for) is the Detection Strategy" \
+  'want PLAN "detectionstrategy"' "DET#### - the structured plan, replacing the old Detection paragraph"
+check "the IMPLEMENTATION (platform-specific logic) is the Analytic" \
+  'want IMPLEMENTATION "analytic"' "AN#### - one per platform, pointing at exact telemetry"
+check "a Detection Strategy id prefix is DET" 'want DET_PREFIX "^det$"' "DET0119"
+check "an Analytic id prefix is AN" 'want AN_PREFIX "^an$"' "AN0351"
+check "Log Sources now live inside Data Components" \
+  'want LOGSOURCE_HOME "datacomponent"' "v18 moved Log Sources inside Data Components"
+check "the Windows Security event log is named wineventlog:security" \
+  'want WIN_SECURITY "wineventlogsecurity"' "the clear source:channel naming convention"

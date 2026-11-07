@@ -41,6 +41,14 @@ checklist. (Three domains: Enterprise, Mobile, ICS.)
 - **Related models:** the **Cyber Kill Chain** (7 linear phases) and the **Diamond Model** (Adversary,
   Capability, Infrastructure, Victim). ATT&CK is more granular than the Kill Chain and complements the
   Diamond Model.
+- **The v18 detection model.** Before v18, a technique had a vague "Detection" paragraph and a list of
+  "Data Sources". v18 retired that for a modular chain —
+  **Technique → Detection Strategy → Analytic → Log Sources / Data Components**:
+  - **Detection Strategy (`DET####`)** — the **plan**: what behaviour to look for.
+  - **Analytic (`AN####`)** — the **implementation**: platform-specific detection logic (one per
+    platform) pointing at the exact telemetry.
+  - **Data Component** (e.g. Process Creation) — the specific data a system produces; in v18 **Log
+    Sources live inside Data Components**, named like `wineventlog:security` or `auditd:SYSCALL`.
 
 ## Tasks
 
@@ -53,6 +61,7 @@ Read the three reference files, then fill in **`/root/answers.txt`**:
 cat /opt/attack/ids.txt       # A. classify each ID by object type
 cat /opt/attack/pyramid.txt   # B. the top and bottom of the Pyramid of Pain
 cat /opt/attack/levels.txt    # C. tactic vs technique vs procedure
+cat /opt/attack/detection.txt # E. the v18 detection model
 ```
 
 - **A.** `ID_A`…`ID_G` — the object type of each ID (tactic, technique, sub-technique, software,
@@ -60,6 +69,8 @@ cat /opt/attack/levels.txt    # C. tactic vs technique vs procedure
 - **B.** `PAIN_MOST` / `PAIN_LEAST` — the top (most pain) and bottom (least pain) pyramid levels.
 - **C.** `LEVEL_1`…`LEVEL_3` — the object-model level of each item.
 - **D.** `ACRONYM`, `MAINTAINER`, `PHILOSOPHY` — the foundations.
+- **E.** `PLAN`, `IMPLEMENTATION`, `DET_PREFIX`, `AN_PREFIX`, `LOGSOURCE_HOME`, `WIN_SECURITY` — the
+  v18 detection model.
 
 Check your work from the host: `./lab check attack-structure-drill`.
 

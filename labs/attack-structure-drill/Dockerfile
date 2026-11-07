@@ -29,6 +29,14 @@ RUN { \
   echo 'MAINTAINER='; \
   echo '# PHILOSOPHY: the two-word idea - defend based on how real adversaries behave'; \
   echo 'PHILOSOPHY='; \
+  echo ''; \
+  echo '# E. The v18 detection model (see /opt/attack/detection.txt)'; \
+  echo 'PLAN='; \
+  echo 'IMPLEMENTATION='; \
+  echo 'DET_PREFIX='; \
+  echo 'AN_PREFIX='; \
+  echo 'LOGSOURCE_HOME='; \
+  echo 'WIN_SECURITY='; \
   } > /root/answers.txt
 
 RUN { \

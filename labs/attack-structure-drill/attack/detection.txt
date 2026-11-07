@@ -1,0 +1,24 @@
+THE v18 DETECTION MODEL
+Before v18, a technique page had a vague "Detection" paragraph and a list of
+"Data Sources" (e.g. "Process Creation") - a category of telemetry, no logic.
+v18 retired that and replaced it with a modular chain:
+
+  Technique -> Detection Strategy -> Analytic -> Log Sources / Data Components
+
+  - Detection Strategy (DET####, e.g. DET0119): the PLAN - what behaviour to
+    look for, in structured form.
+  - Analytic (AN####, e.g. AN0351): the IMPLEMENTATION - platform-specific
+    detection logic pointing at the exact telemetry. One Detection Strategy can
+    have several Analytics, one per platform (Windows, Linux, macOS...).
+  - Data Component (e.g. Process Creation): the specific data a system produces.
+    In v18, Log Sources moved to live INSIDE Data Components, named with a clear
+    convention like  wineventlog:security  (the Windows Security event log) or
+    auditd:SYSCALL  (Linux).
+
+Answer in /root/answers.txt:
+  PLAN            = the object that says WHAT behaviour to look for
+  IMPLEMENTATION  = the object that gives the platform-specific detection logic
+  DET_PREFIX      = the id prefix of a Detection Strategy
+  AN_PREFIX       = the id prefix of an Analytic
+  LOGSOURCE_HOME  = Log Sources now live inside which object?
+  WIN_SECURITY    = the v18 log-source name for the Windows Security event log
