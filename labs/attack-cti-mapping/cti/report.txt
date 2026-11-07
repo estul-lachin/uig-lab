@@ -1,0 +1,22 @@
+THREAT REPORT - "Operation Pinewood" (fictional)
+
+Map each numbered behaviour below to its MITRE ATT&CK TECHNIQUE ID
+(T#### or T####.###). Record them as MAP_1 .. MAP_10 in /root/answers.txt.
+(The parent technique id or the exact sub-technique id is accepted.)
+
+ 1. The actor sent targeted emails to finance staff, each carrying a
+    malicious Excel attachment.
+ 2. When opened, the document's macro launched an obfuscated PowerShell
+    command that downloaded the next stage.
+ 3. For persistence, the loader registered a scheduled task that runs at
+    each user logon.
+ 4. The operator dumped credentials from LSASS process memory using Mimikatz.
+ 5. They enumerated privileged accounts with:  net group "Domain Admins" /domain
+ 6. Using a stolen admin credential, they moved laterally to the file servers
+    over SMB admin shares with a PsExec-style remote service.
+ 7. The implant beaconed to its command-and-control server using HTTPS
+    (standard web protocols) to blend with normal traffic.
+ 8. Collected data was exfiltrated out over that same C2 channel.
+ 9. Before the finale they cleared the Windows Security event logs to slow
+    the responders.
+10. Finally they deployed ransomware that encrypted files across the shares.

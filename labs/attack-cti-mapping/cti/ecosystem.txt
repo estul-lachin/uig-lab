@@ -1,0 +1,13 @@
+THE ATT&CK ECOSYSTEM - name the project or term each describes. Record them
+as ATOMIC, EMULATION, DEFENSE, PURPLE, STIX in /root/answers.txt.
+
+ ATOMIC    : an open-source library of small, single-technique tests, each
+             mapped to one ATT&CK technique (by Red Canary).
+ EMULATION : MITRE's platform that chains techniques into full, automated
+             adversary-emulation operations.
+ DEFENSE   : MITRE's knowledge graph of DEFENSIVE countermeasures - the
+             counterpart to ATT&CK's offensive view.
+ PURPLE    : what it's called when red (emulation) and blue (detection) work
+             together on ATT&CK common ground.
+ STIX      : the machine-readable format ATT&CK is published in so SIEMs/TIPs
+             can ingest it (two-part name; either part is accepted).
