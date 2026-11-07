@@ -1,0 +1,4 @@
+CASE 08
+The attacker ran  Set-MpPreference -DisableRealtimeMonitoring $true  and
+stopped the EDR sensor service, so endpoint detection went blind for the
+rest of the intrusion. (v19: this breaks the tooling, it does not just hide.)

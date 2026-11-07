@@ -1,0 +1,4 @@
+CASE 11
+Using a stolen admin hash, the attacker authenticated to three other
+servers over SMB and started a service remotely with PsExec on each,
+spreading from the first host to new systems.

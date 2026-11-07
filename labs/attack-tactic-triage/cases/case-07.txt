@@ -1,0 +1,4 @@
+CASE 07
+The malware copied itself to C:\Windows\System32\svch0st.exe and set its
+file description to "Host Process for Windows Services" to blend in with
+legitimate processes. Endpoint tooling kept running normally.

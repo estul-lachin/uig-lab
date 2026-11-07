@@ -1,0 +1,4 @@
+CASE 01
+Perimeter firewall logs show a single external IP sending SYN packets to
+1,000+ different ports across your public /24 in under a minute, with no
+sessions ever completing. No prior activity from this address.

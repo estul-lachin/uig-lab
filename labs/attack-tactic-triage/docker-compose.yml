@@ -1,0 +1,17 @@
+services:
+  main:
+    build: .
+    hostname: attack-tactic-triage
+    init: true
+    # Persist data across `./lab down` / `up` (wiped by `./lab reset`):
+    # volumes:
+    #   - data:/data
+
+  # Multi-machine labs: add more services here; they share the default network.
+  # client:
+  #   image: ubuntu:24.04
+  #   init: true
+  #   command: ["sleep", "infinity"]
+
+# volumes:
+#   data:

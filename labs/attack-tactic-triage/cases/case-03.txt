@@ -1,0 +1,4 @@
+CASE 03
+An employee opened an "invoice" attachment in email. The Word document's
+macro spawned a child process. This is the earliest attacker activity seen
+on the host - the first foothold.

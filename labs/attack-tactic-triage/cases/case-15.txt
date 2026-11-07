@@ -1,0 +1,4 @@
+CASE 15
+All files on the reachable shares were encrypted and renamed with a
+.helixlock extension, and a RESTORE-FILES.txt ransom note was dropped in
+every directory. Operations halted.

@@ -1,0 +1,4 @@
+CASE 10
+Within 30 seconds the host ran:  whoami /groups ,
+net group "Domain Admins" /domain ,  nltest /dclist ,  systeminfo  -
+learning about the account, the domain and the environment.

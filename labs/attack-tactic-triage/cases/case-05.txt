@@ -1,0 +1,4 @@
+CASE 05
+A new scheduled task \Microsoft\Windows\UpdateOrchestrator\SvcHelper was
+created to launch a binary from C:\ProgramData at every user logon, so the
+implant comes back after a reboot.

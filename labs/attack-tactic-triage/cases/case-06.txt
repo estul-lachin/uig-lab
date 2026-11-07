@@ -1,0 +1,4 @@
+CASE 06
+A medium-integrity process duplicated a SYSTEM access token from lsass and
+used it to spawn a new process running as NT AUTHORITY\SYSTEM - gaining
+higher permissions than the account it started from.

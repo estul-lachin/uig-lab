@@ -1,0 +1,4 @@
+CASE 12
+Before leaving, the attacker copied documents from several file shares into
+a single password-protected archive, C:\Temp\data.rar, staging the target
+data in one place.

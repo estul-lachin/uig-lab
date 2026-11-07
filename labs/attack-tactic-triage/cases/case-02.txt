@@ -1,0 +1,4 @@
+CASE 02
+Threat intel reports that, three days before any intrusion activity, the
+group registered the look-alike domain acme-corp-support[.]example and
+stood up two rented VPS nodes to host payloads and a redirector.

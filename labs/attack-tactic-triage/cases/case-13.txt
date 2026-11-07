@@ -1,0 +1,4 @@
+CASE 13
+The implant beacons to cdn.acme-corp-support[.]example over HTTPS every ~60
+seconds with jittered timing, maintaining a channel the operator uses to
+send instructions - blending in with normal web traffic.

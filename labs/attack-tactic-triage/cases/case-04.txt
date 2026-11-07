@@ -1,0 +1,4 @@
+CASE 04
+EDR recorded winword.exe launching:
+  powershell.exe -nop -w hidden -enc SQBFAFgAIAAo...
+which decoded and ran a script in memory.
