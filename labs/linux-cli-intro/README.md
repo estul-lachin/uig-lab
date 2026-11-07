@@ -131,8 +131,8 @@ cat /var/log/auth.log | grep -i "failed"
 
 #### `echo >` & `echo >>`
 ```bash
-echo "first finding" > notes.txt
-echo "fake ps in /usr/local/bin' >> notes.txt
+echo "line one" > demo.txt
+echo "line two" >> demo.txt
 ```
 ![echo](screenshots/echo.png)
 
