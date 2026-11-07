@@ -15,6 +15,10 @@ services:
     environment:
       BACKEND: "http://backend:80"
       PORT: "8080"
+      # The -lts nginx image ships an HTTP/3 template but no default HTTP3 value;
+      # its entrypoint runs under `set -u`, so leaving HTTP3 unset aborts the
+      # substitution and nginx fails on the literal HTTP3_CONFIG directive.
+      HTTP3: "off"
       MODSEC_RULE_ENGINE: "DetectionOnly"
       PARANOIA: "1"
       ANOMALY_INBOUND: "5"

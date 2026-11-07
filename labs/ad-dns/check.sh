@@ -9,7 +9,9 @@ _kv() { sed -n "s/^$1=//p" "$A" 2>/dev/null | head -n1 | tr -d '\r' | sed 's/^[[
 _n() { printf '%s' "$1" | tr '[:upper:]' '[:lower:]' | tr -d ' _-' | sed 's/\.$//'; }
 _any() { _v=$(_kv "$1"); shift; [ -n "$_v" ] || return 1; for _e in "$@"; do [ "$(_n "$_v")" = "$(_n "$_e")" ] && return 0; done; return 1; }
 # dig prints connection errors on stdout as ";;" lines: drop them, an unreachable server answers nothing.
-_dig() { dig +short +time=3 +tries=1 @127.0.0.1 "$@" 2>/dev/null | grep -v '^;'; }
+# A single UDP query can be dropped under load (CI), so retry a few times (+tries only retries on
+# no answer, never on NXDOMAIN) - this keeps the one-shot A-record checks from flaking.
+_dig() { dig +short +time=2 +tries=3 @127.0.0.1 "$@" 2>/dev/null | grep -v '^;'; }
 _rogue() { awk -v ip=$NET.66 '$4 == "wpad.ridgeline.local" && $6 == ip' $LOG; }
 
 for _ in $(seq 1 45); do [ -e /var/lib/samba/.lab-planted ] && [ -n "$(_dig dc01.ridgeline.local)" ] && break; sleep 2; done
