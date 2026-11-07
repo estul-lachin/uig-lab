@@ -1,0 +1,13 @@
+{
+  "name": "Larkhill - current detection coverage",
+  "versions": { "attack": "17", "navigator": "5.1.0", "layer": "4.5" },
+  "domain": "enterprise-attack",
+  "description": "Techniques our current rules reliably detect (score 1 = covered).",
+  "techniques": [
+    { "techniqueID": "T1059.001", "score": 1, "color": "#33cc33", "comment": "PowerShell ScriptBlock logging + EDR" },
+    { "techniqueID": "T1003.001", "score": 1, "color": "#33cc33", "comment": "LSASS access alerting" },
+    { "techniqueID": "T1486", "score": 1, "color": "#33cc33", "comment": "mass-encryption canary + behaviour rule" },
+    { "techniqueID": "T1110", "score": 1, "color": "#33cc33", "comment": "brute-force rule" },
+    { "techniqueID": "T1053.005", "score": 1, "color": "#33cc33", "comment": "scheduled-task creation alert" }
+  ]
+}

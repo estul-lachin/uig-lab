@@ -1,0 +1,11 @@
+INCIDENT - "Operation Sandpiper" (fictional), Larkhill Freight
+
+Map each step to its ATT&CK technique id, then build a Navigator layer (see the
+README) that scores all six so they highlight.
+
+  1. An employee opened a Word attachment from a spoofed vendor email.
+  2. Opening it ran a PowerShell script.
+  3. The script downloaded an additional tool from the internet.
+  4. The attacker dumped credentials from LSASS process memory.
+  5. They moved to the finance server over RDP.
+  6. They encrypted files across the shares and dropped a ransom note.
