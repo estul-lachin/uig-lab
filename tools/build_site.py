@@ -41,7 +41,7 @@ CATEGORIES = {
     "misc": "Misc",
 }
 CONF_DEFAULTS = {
-    "TITLE": "", "SUMMARY": "", "CATEGORY": "misc", "TAGS": "", "SOURCE": "",
+    "TITLE": "", "SUMMARY": "", "CATEGORY": "misc", "TAGS": "",
     "SERVICE": "main", "CLEANUP_CMD": "", "PUBLIC": "yes", "DATE": "",
 }
 MIN_LEAK_LINE = 20  # shorter lines (fi, }, set -e ...) are too generic to compare
@@ -366,8 +366,6 @@ def build_lab(lab):
     c, passes, name = lab["conf"], lab["passes"], lab["name"]
     latest = passes[-1]
     meta = [f'<span>{e(category_name(c["CATEGORY"]))}</span>']
-    if c["SOURCE"]:
-        meta.append(f'<span>Learned from: {e(c["SOURCE"])}</span>')
     checks = "".join(f"<li>{e(str(d))}</li>" for d in latest.get("checks", []))
     body = f"""<article class="lab">
 <header class="lab-header">
@@ -400,8 +398,6 @@ def build_lab(lab):
 def build_project(p):
     c, name = p["conf"], p["name"]
     meta = [f'<span>{e(category_name(c["CATEGORY"]))}</span>']
-    if c["SOURCE"]:
-        meta.append(f'<span>Learned from: {e(c["SOURCE"])}</span>')
     body = f"""<article class="lab">
 <header class="lab-header">
   <p class="meta">{" · ".join(meta)}</p>

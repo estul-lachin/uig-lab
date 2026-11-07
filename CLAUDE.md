@@ -47,7 +47,7 @@ is exposed to the internet.
   `README.md` out of the Docker build context.
 - English everywhere (READMEs, comments, CLI output, website).
 - Pinned image tags, never `latest`; prefer images with arm64 builds (CI runs on amd64, so both matter).
-- Course material from paid courses is never copied: rewrite in the owner's own words with their own scenarios.
+- Write original scenarios and data; never copy text or questions from source material.
 - Never commit or push without being asked.
 
 ## Lessons learned

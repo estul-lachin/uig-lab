@@ -20,7 +20,7 @@ section "0. The DNS server"
 check "DC01 answers DNS queries for ridgeline.local" '[ "$(_dig dc01.ridgeline.local)" = $NET.10 ]' \
   "Samba needs a few seconds after ./lab up; run the check again"
 
-section "1. AD-integrated DNS (the course questions)"
+section "1. AD-integrated DNS (the core questions)"
 check "DNS_CONSOLE: the .msc that opens DNS Manager" '_any DNS_CONSOLE dnsmgmt.msc' "dns + mgmt"
 check "ZONE_STORAGE: how the zone is stored so it replicates with the directory" '_any ZONE_STORAGE "Active Directory-integrated" "AD-integrated" "Active Directory integrated" "AD integrated" "ADintegrated"' \
   "Not a zone file: the records are directory objects"

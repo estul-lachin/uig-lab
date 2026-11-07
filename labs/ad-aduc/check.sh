@@ -11,7 +11,7 @@ _dadmins() { samba-tool group listmembers "Domain Admins" 2>/dev/null; }
 
 for _ in $(seq 1 30); do samba-tool user show alice >/dev/null 2>&1 && break; sleep 2; done
 
-section "1. The console and a user (the course questions)"
+section "1. The console and a user (the core questions)"
 check "ADUC_CONSOLE: the .msc that opens Active Directory Users and Computers" '_any ADUC_CONSOLE dsa.msc' "dsa"
 check "ALICE_UPN: alice's User Principal Name" '_any ALICE_UPN "$(_attr alice userPrincipalName)"' "user@domain; samba-tool user show alice"
 check "ALICE_SID: her SID (differs on every build - read it from this box)" '_any ALICE_SID "$(_attr alice objectSid)"' \

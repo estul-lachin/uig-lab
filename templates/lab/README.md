@@ -2,7 +2,7 @@
 
 ## Concepts
 
-<!-- The ideas behind this lab, in my own words. -->
+<!-- The ideas behind this lab. -->
 
 ## Tasks
 

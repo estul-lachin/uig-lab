@@ -47,7 +47,7 @@ Start the lab with `./lab up wazuh-rootcheck-trojans`, then open a shell with `.
 after start-up it receives the latest rootcheck results of seven fleet hosts (`/var/lib/lab-feed-done`
 appears when that is done). Write `KEY=value` answers to `/root/answers.txt`.
 
-1. **The course questions.**
+1. **The core questions.**
 
    ```
    RC_TOTAL=<rootcheck detections, rule 510, all hosts>

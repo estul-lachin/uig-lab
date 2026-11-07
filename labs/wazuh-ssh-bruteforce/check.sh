@@ -20,7 +20,7 @@ section "0. Wazuh is ready"
 check "The manager is up and bastion-01's morning has been analysed" '[ -f /var/lib/lab-feed-done ] && [ "$(_n "true")" -gt 100 ]' \
   "The manager needs a minute or two after ./lab up; run the check again"
 
-section "1. The course questions"
+section "1. The core questions"
 check "FAILED_5710: rule-5710 alerts" '[ "$(_kv $A FAILED_5710)" = "$(_n ".rule.id == \"5710\"")" ]' "jq select on .rule.id, then count lines"
 check "TOP_SRC: the source IP with the most of them" '[ "$(_kv $A TOP_SRC)" = "$(_top)" ]' ".data.srcip | sort | uniq -c | sort -rn"
 check "TOP_SRC_5710: how many of them are that address" '[ "$(_kv $A TOP_SRC_5710)" = "$(_n ".rule.id == \"5710\" and .data.srcip == \"$(_top)\"")" ]' "Both conditions in one select"
@@ -28,7 +28,7 @@ check "COMPROMISED: the account that address logged in as" '[ "$(_kv $A COMPROMI
   "Look for authentication_success in rule.groups, or for Accepted in full_log, from that address"
 check "SUCCESS_5715: rule-5715 alerts in total" '[ "$(_kv $A SUCCESS_5715)" = "$(_n ".rule.id == \"5715\"")" ]' "rule.id 5715 only"
 
-section "2. What the course questions miss"
+section "2. Going further"
 check "BREACH_RULE: the rule the attacker's login got instead of 5715" '_b=$(_sel ".data.srcip == \"$(_top)\" and (.full_log | test(\"Accepted \"))" | jq -r .rule.id | head -n1); [ "$(_kv $A BREACH_RULE)" = "$_b" ]' \
   "List every rule.id for that address, not only 5710 and 5715"
 check "DISTINCT_USERS: different non-existent usernames the attacker tried" '[ "$(_kv $A DISTINCT_USERS)" = "$(_sel ".rule.id == \"5710\" and .data.srcip == \"$(_top)\"" | jq -r .data.srcuser | sort -u | wc -l | tr -d " ")" ]' \

@@ -51,7 +51,7 @@ its sshd and a Wazuh manager that reads both logs (`/var/log/lab/`) and watches
 plays out; `/var/lib/lab-feed-done` appears when it is over. Write `KEY=value` answers to
 `/root/answers.txt`.
 
-1. **The course questions.**
+1. **The core questions.**
 
    ```
    ATTACKER_IP=<the one data.srcip found in 31103, 5710 and 5715 alike>

@@ -25,7 +25,7 @@ section "0. Splunk is ready"
 check "Splunk answers and has indexed all $TOTAL events" '[ "$(_spl "| tstats count where index=main")" = $TOTAL ]' \
   "Splunk needs a few minutes after ./lab up (longer the first time, under emulation); run the check again"
 
-section "1. The course questions"
+section "1. The core questions"
 check "ATTACKER: the source with more than 50 failed passwords" '[ -n "$(_loud)" ] && [ "$(_kv $A ATTACKER)" = "$(_loud)" ]' "rex the address, stats count by src, where count>50"
 check "BURST: its failed passwords" '[ "$(_kv $A BURST)" = "$(_spl "search $SEC \"Failed password\" \"from $(_loud) \" | stats count")" ]' "The count on that row"
 check "COMPROMISED: the account it then logged in as" '[ "$(_kv $A COMPROMISED)" = "$(_spl "search $SEC \"Accepted password\" \"from $(_loud) \" | rex \"for (?<u>\S+) from\" | stats count by u | fields u")" ]' \

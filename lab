@@ -15,7 +15,7 @@ RECORD=1
 
 CATEGORIES=(linux network security web db cloud misc)
 NAME_RE='^[a-z0-9][a-z0-9-]*$'
-CONF_KEYS=(TITLE SUMMARY CATEGORY TAGS SOURCE SERVICE CLEANUP_CMD PUBLIC)
+CONF_KEYS=(TITLE SUMMARY CATEGORY TAGS SERVICE CLEANUP_CMD PUBLIC)
 declare -A CONF=()
 
 # Resolve the repo root (follows symlinks without GNU readlink -f) and work from there.
@@ -104,11 +104,11 @@ load_conf() {
   local n=$1 v i
   local -a vals=()
   while IFS= read -r -d '' v; do vals+=("$v"); done < <(
-    TITLE="" SUMMARY="" CATEGORY=misc TAGS="" SOURCE="" SERVICE=main CLEANUP_CMD="" PUBLIC=yes
+    TITLE="" SUMMARY="" CATEGORY=misc TAGS="" SERVICE=main CLEANUP_CMD="" PUBLIC=yes
     set +u
     # shellcheck disable=SC1090
     source "labs/$n/lab.conf" >/dev/null 2>&1 || exit 1
-    printf '%s\0' "$TITLE" "$SUMMARY" "$CATEGORY" "$TAGS" "$SOURCE" \
+    printf '%s\0' "$TITLE" "$SUMMARY" "$CATEGORY" "$TAGS" \
       "${SERVICE:-main}" "$CLEANUP_CMD" "${PUBLIC:-yes}"
   )
   [ ${#vals[@]} -eq ${#CONF_KEYS[@]} ] || die "could not read labs/$n/lab.conf"

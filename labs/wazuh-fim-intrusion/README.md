@@ -55,7 +55,7 @@ real time. A minute or two after start-up an intruder goes to work on it; when t
 `/var/lib/lab-intrusion-done` appears. Answer about the intruder's changes (anything you change
 yourself afterwards doesn't count). Write `KEY=value` answers to `/root/answers.txt`.
 
-1. **The course questions.**
+1. **The core questions.**
 
    ```
    MODIFIED_550=<files modified, rule 550>

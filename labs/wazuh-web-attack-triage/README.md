@@ -50,7 +50,7 @@ after start-up it reads one morning of web-server-01's nginx access log
 (`/var/log/lab/web-server-01-access.log`; `/var/lib/lab-feed-done` appears when that is done).
 Write `KEY=value` answers to `/root/answers.txt`.
 
-1. **The course questions.**
+1. **The core questions.**
 
    ```
    SQLI_31103=<SQL injection alerts, rule 31103>

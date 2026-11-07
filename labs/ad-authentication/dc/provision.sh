@@ -17,7 +17,7 @@ samba-tool domain provision --realm=RIDGELINE.LOCAL --domain=RIDGELINE --server-
   --option="xattr_tdb:file=/var/lib/samba/xattr.tdb" \
   --option="dns forwarder = 127.0.0.11" >/dev/null
 
-# The lockout policy from the course: 5 bad passwords, 30-minute window and duration.
+# The lockout policy for this lab: 5 bad passwords, 30-minute window and duration.
 samba-tool domain passwordsettings set --account-lockout-threshold=5 \
   --account-lockout-duration=30 --reset-account-lockout-after=30 >/dev/null
 

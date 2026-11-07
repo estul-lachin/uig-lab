@@ -70,7 +70,6 @@ uig-lab/
   - `SUMMARY`: one or two sentences on the skill this lab practices (shown on the showcase)
   - `CATEGORY`: linux / network / security / web / db / cloud / misc
   - `TAGS`: space-separated keywords
-  - `SOURCE`: where I learned it (course, book, article)
   - `SERVICE`: compose service that `./lab shell` enters; default `main`
   - `CLEANUP_CMD`: command run inside the container before volumes are deleted; usually empty
     (e.g. a lab with `chattr +i` files must run `chattr -R -i` first, or the volume can't be removed)
@@ -79,7 +78,7 @@ uig-lab/
   needs, `CMD ["sleep","infinity"]`; append an `echo` to `/root/.bashrc` pointing to the task description and
   the check command
 - `docker-compose.yml`: at least one service, `init: true`; add services for multi-machine labs (same network)
-- `README.md`: Concepts (in my own words) / Tasks (what to achieve, not how) /
+- `README.md`: Concepts / Tasks (what to achieve, not how) /
   Hints in a collapsible `<details>` / My notes / Related
 - `check.sh`: no shebang; `./lab check` concatenates it with the lib and runs it inside the container
 - `solution/solve.sh`: entry point of the reference solution; may call other scripts in the same folder
@@ -189,7 +188,6 @@ Short rules for future AI sessions (Claude Code reads it automatically). Include
 - Never commit pass records created by an AI session or by verification — `progress.jsonl` only holds the
   owner's own passes
 - English everywhere; pinned image tags; prefer images with arm64 builds
-- Course material from paid courses is never copied — rewrite in my own words with my own scenarios
 - A "Lessons learned" section at the end, empty for now, where I add a rule each time the AI makes a mistake
 
 ### .claude/commands/new-lab.md
@@ -253,7 +251,7 @@ architecture will show up here.
 Work that can't be a Docker lab with automated checks (VMs, Windows, Active Directory, Wazuh agents, GUI
 tools), such as my VM home lab, which my résumé links to. Kept clearly apart from labs so "passed" keeps its
 meaning:
-- `projects/<name>/project.conf`: `TITLE`, `SUMMARY`, `CATEGORY`, `TAGS`, `SOURCE`, `DATE`, `PUBLIC`.
+- `projects/<name>/project.conf`: `TITLE`, `SUMMARY`, `CATEGORY`, `TAGS`, `DATE`, `PUBLIC`.
   A project is published only when `PUBLIC=yes` **and** `DATE` is set (e.g. `2026-11`): an unfinished write-up
   stays hidden, the way an unpassed lab does
 - `README.md` (Overview / What I built / What I did / What I learned / My notes / Related) and optional
@@ -319,8 +317,7 @@ Record these principles in the README under "Roadmap":
   services, log analysis) and what doesn't (pure concepts → notes; Windows / Active Directory / Sysmon / GUI
   → my VM home lab)
 - Conventions: lowercase-hyphenated names; categories as above; pinned image tags, preferably with **arm64**
-  builds; every lab must pass `./lab test` before commit; content from paid courses is rewritten in my own words
-  with my own scenarios, never copied; set `PUBLIC=no` for labs I don't want shown (note: the repo itself is
+  builds; every lab must pass `./lab test` before commit; set `PUBLIC=no` for labs I don't want shown (note: the repo itself is
   public, so `PUBLIC=no` hides a lab from the site, not from GitHub)
 - Showcase deployment steps (phase 2)
 - Roadmap (phase 3)

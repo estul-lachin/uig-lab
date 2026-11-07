@@ -82,8 +82,8 @@ splunk-search-basics`) to `/root/answers.txt` as `KEY=value` lines.
    Then save a search of the failed SSH passwords counted per source address, largest first, over All
    time, as a **report** named `ssh-failures-by-src`. Its first row must be the brute-force source.
 
-8. **Optional: your own course data.** If you have exported data you may use but not share (for example
-   from a course's lab), put it in [`private-data/`](private-data/README.md). It stays on your machine,
+8. **Optional: your own private data.** If you have exported data you may use but not share (for example
+   from another lab environment you have access to), put it in [`private-data/`](private-data/README.md). It stays on your machine,
    is indexed into a separate index `private`, and adds answers `PRIVATE_COUNT_ACCESS`, `PRIVATE_SOURCETYPES`,
    `PRIVATE_STATUS_VALUES` and `PRIVATE_COUNT_SECURE` (the same questions as 1, 2, 3 and 5, with
    `index=private`). Without it, this step is skipped.

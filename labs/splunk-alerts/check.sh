@@ -26,7 +26,7 @@ section "0. Splunk is ready"
 check "Splunk answers and has indexed all $TOTAL events" '[ "$(_spl "| tstats count where index=main")" = $TOTAL ]' \
   "Splunk needs a few minutes after ./lab up (longer the first time, under emulation); run the check again"
 
-section "1. The course questions"
+section "1. The core questions"
 check "CRON_2MIN: the cron expression for every 2 minutes" '[ "$(_kvs CRON_2MIN)" = "*/2 * * * *" ]' "Five fields: minute hour day month weekday"
 check "ALERT_TYPE: the alert type that runs on a fixed interval" '[ "$(_lc ALERT_TYPE)" = scheduled ]' "One word"
 check "TRIGGER: one action for every matching event" '[ "$(_lc TRIGGER)" = per-result ]' "Number of Results or Per-Result"

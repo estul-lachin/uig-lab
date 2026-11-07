@@ -18,7 +18,7 @@ section "0. The file server"
 check "DC01 serves the Labs share" 'timeout 20 smbclient -L //dc01 -U "Administrator%$P" 2>/dev/null | grep -q Labs' \
   "Samba needs a few seconds after ./lab up; run the check again"
 
-section "1. Reading permissions (the course questions)"
+section "1. Reading permissions (the core questions)"
 check "HR_PERMISSION: what HR-Staff has on HR-Files" '_any HR_PERMISSION Modify M' "smbcacls shows it as letters; which Windows level is read, write, execute and delete?"
 check "ADMIN_PERMISSION: what Domain Admins has on HR-Files" '_any ADMIN_PERMISSION "Full Control" Full F' "FULL"
 check "INHERITANCE: enabled or disabled on HR-Files" '_any INHERITANCE disabled off' "The CONTROL line"

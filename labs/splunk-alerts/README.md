@@ -58,7 +58,7 @@ The workstation (`./lab shell splunk-alerts`) also plays the shop's **WAF**: it 
 `http://waf:8088/ban` and logs every request it gets to `/var/log/waf/requests.jsonl`. Write the
 answers there, to `/root/answers.txt`.
 
-1. **The course questions.**
+1. **The core questions.**
 
    ```
    CRON_2MIN=<the cron expression for every 2 minutes>

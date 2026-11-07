@@ -71,7 +71,6 @@ both folders.
 - Categories: `linux`, `network`, `security`, `web`, `db`, `cloud`, `misc`
 - Pinned image tags (never `latest`), preferably images with **arm64** builds
 - Every lab must pass `./lab test <name>` before it is committed
-- Content from paid courses is rewritten in my own words with my own scenarios, never copied
 - Screenshots: `./lab shot <lab> ~/Screenshots/<file>.png <name>` copies one into `labs/<lab>/screenshots/`,
   shrinks it to 1600px on the longest side if it is bigger (never enlarges), compresses PNGs when `pngquant`
   is installed (`brew install pngquant`), and prints the Markdown line to paste into the README:

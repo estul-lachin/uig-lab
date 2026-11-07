@@ -19,12 +19,12 @@ section "0. Wazuh is ready"
 check "The manager is up and web-server-01's afternoon has been analysed" '[ -f /var/lib/lab-feed-done ] && [ "$(_n "true")" -gt 80 ]' \
   "The manager needs a minute or two after ./lab up; run the check again"
 
-section "1. The course questions"
+section "1. The core questions"
 check "FAILED_5401: failed sudo attempts (rule 5401)" '[ "$(_kv $A FAILED_5401)" = "$(_n ".rule.id == \"5401\"")" ]' "jq select(.rule.id == \"5401\"), then count"
 check "TOP_FAILER: the user with the most of them" '[ "$(_kv $A TOP_FAILER)" = "$(_top_failer)" ]' ".data.srcuser | sort | uniq -c"
 check "FAILER_5401: how many of them that user had" '[ "$(_kv $A FAILER_5401)" = "$(_n ".rule.id == \"5401\" and .data.srcuser == \"$(_top_failer)\"")" ]' "Both conditions in one select"
 check "SUCCESS_5402: successful sudo to root (rule 5402)" '[ "$(_kv $A SUCCESS_5402)" = "$(_n ".rule.id == \"5402\"")" ]' "rule.id 5402"
-check "FAILER_5402: rule-5402 alerts for that user" '[ "$(_kv $A FAILER_5402)" = "$(_n ".rule.id == \"5402\" and .data.srcuser == \"$(_top_failer)\"")" ]' "The course stops here"
+check "FAILER_5402: rule-5402 alerts for that user" '[ "$(_kv $A FAILER_5402)" = "$(_n ".rule.id == \"5402\" and .data.srcuser == \"$(_top_failer)\"")" ]' "The baseline stops here"
 
 section "2. What rule 5402 does not show"
 check "FIRST_TIME_RULE: the rule a first successful sudo gets instead of 5402" '[ "$(_kv $A FIRST_TIME_RULE)" = 5403 ]' \

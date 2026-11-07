@@ -26,7 +26,7 @@ section "0. Wazuh is ready"
 check "The manager is up and web-server-01's morning has been analysed" '[ -f /var/lib/lab-feed-done ] && [ "$(_n "true")" -gt 100 ] && [ -n "$(_attacker)" ]' \
   "The manager needs a minute or two after ./lab up; run the check again"
 
-section "1. The course questions"
+section "1. The core questions"
 check "ATTACKER_IP: the address in 31103, 5710 and 5715 alike" '[ "$(_kv $A ATTACKER_IP)" = "$(_attacker)" ]' "One sorted list of data.srcip per rule, then the common line"
 check "RECON_31103: its SQL injection alerts" '[ "$(_kv $A RECON_31103)" = "$(_n ".rule.id == \"31103\" and .data.srcip == \"$(_attacker)\"")" ]' "Both conditions in one select"
 check "BRUTE_5710: its rule-5710 alerts" '[ "$(_kv $A BRUTE_5710)" = "$(_n ".rule.id == \"5710\" and .data.srcip == \"$(_attacker)\"")" ]' "The same, for 5710"

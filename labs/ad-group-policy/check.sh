@@ -19,7 +19,7 @@ section "0. The domain member"
 check "WS01 has joined ridgeline.local and can read the GPOs" 'samba-tool gpo listall $H 2>/dev/null | grep -qi "Default Domain Policy"' \
   "The workstation joins on first start; give it a few seconds after ./lab up and run the check again"
 
-section "1. Reading Group Policy (the course questions)"
+section "1. Reading Group Policy (the core questions)"
 check "GPO_CONSOLE: the .msc that opens the Group Policy Management Console" '_any GPO_CONSOLE gpmc.msc' "gpmc"
 check "BANNER_GPO: the domain-root GPO that sets the pre-logon legal notice" '_any BANNER_GPO "RDG - Logon Banner" "RDG-Logon Banner" "Logon Banner"' "Its name ends in Logon Banner"
 check "OU_GPO: the GPO linked to OU=Workstations" '_any OU_GPO "RDG - Workstation Lockdown" "Workstation Lockdown"' "The scope demo"

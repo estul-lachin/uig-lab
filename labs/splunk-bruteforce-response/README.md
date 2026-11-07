@@ -52,7 +52,7 @@ The workstation (`./lab shell splunk-bruteforce-response`) also plays the **SOAR
 webhooks at `http://soar:8088/ban` and logs every request to `/var/log/soar/requests.jsonl`. Write
 the answers there, to `/root/answers.txt`.
 
-1. **The course questions.**
+1. **The core questions.**
 
    ```
    ATTACKER=<the source with more than 50 failed passwords>

@@ -33,7 +33,7 @@ section "0. Wazuh is ready"
 check "The manager is up and the fleet's rootcheck results have been analysed" '[ -f $MARK ] && [ "$(_n "true")" -ge 25 ]' \
   "The manager needs a minute or two after ./lab up; run the check again"
 
-section "1. The course questions"
+section "1. The core questions"
 check "RC_TOTAL: rootcheck detections (rule 510), all hosts" '[ "$(_kv $A RC_TOTAL)" = "$(_n ".rule.id == \"510\"")" ]' "jq select on .rule.id, then count lines"
 check "WORST_HOST: the host with the most of them" '[ "$(_kv $A WORST_HOST)" = "$(_rank 1)" ]' ".agent.name | sort | uniq -c | sort -rn"
 check "WORST_COUNT: rule-510 detections on that host" '[ "$(_kv $A WORST_COUNT)" = "$(_n ".rule.id == \"510\" and .agent.name == \"$(_rank 1)\"")" ]' "Both conditions in one select"

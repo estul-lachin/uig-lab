@@ -47,7 +47,7 @@ after start-up it reads one morning of bastion-01's sshd log (`/var/lib/lab-feed
 that is done). Staff reach bastion-01 from the internal network `10.0.0.0/8`. Write `KEY=value`
 answers to `/root/answers.txt`.
 
-1. **The course questions.**
+1. **The core questions.**
 
    ```
    FAILED_5710=<rule-5710 alerts>
@@ -57,7 +57,7 @@ answers to `/root/answers.txt`.
    SUCCESS_5715=<rule-5715 alerts in total>
    ```
 
-2. **What the course questions miss.**
+2. **Going further.**
 
    ```
    BREACH_RULE=<the rule id the attacker's login got instead of 5715>

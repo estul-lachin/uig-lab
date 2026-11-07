@@ -31,7 +31,7 @@ section "0. Wazuh is ready"
 check "The manager is up and the intrusion has been recorded by FIM" '[ -f $MARK ] && [ "$(_n "true")" -ge 10 ]' \
   "The manager needs a minute or two after ./lab up; run the check again"
 
-section "1. The course questions"
+section "1. The core questions"
 check "MODIFIED_550: files modified (rule 550)" '[ "$(_kv $A MODIFIED_550)" = "$(_n ".rule.id == \"550\"")" ]' "jq select on .rule.id, then count lines"
 check "ADDED_554: files added (rule 554)" '[ "$(_kv $A ADDED_554)" = "$(_n ".rule.id == \"554\"")" ]' "The same, another rule id"
 check "DELETED_553: files deleted (rule 553)" '[ "$(_kv $A DELETED_553)" = "$(_n ".rule.id == \"553\"")" ]' "Which directory were they in?"

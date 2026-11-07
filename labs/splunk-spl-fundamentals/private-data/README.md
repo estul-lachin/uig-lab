@@ -2,7 +2,7 @@
 
 Files you put here are **never committed** (see the repo's `.gitignore`), never built into an image
 and never published on the site. Use it for data you're allowed to use yourself but not to share, such
-as the events from a course's lab environment.
+as the events from another lab environment you have access to.
 
 When `./lab up` starts this lab's Splunk, it indexes these files, if present, into a
 separate index named **`private`**, next to the lab's own data in `main`. Expected names, one per

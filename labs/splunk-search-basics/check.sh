@@ -18,7 +18,7 @@ section "0. Splunk is ready"
 check "Splunk answers and has indexed all $TOTAL events" '[ "$(_spl "| tstats count where index=main")" = $TOTAL ]' \
   "Splunk needs a few minutes after ./lab up (longer the first time, under emulation); run the check again"
 
-section "1-5. The course questions"
+section "1-5. The core questions"
 check "COUNT_ACCESS: events in access_combined" '[ "$(_kv $A COUNT_ACCESS)" = "$(_spl "| tstats count where index=main sourcetype=access_combined")" ]' \
   "index=main sourcetype=access_combined, time picker on All time"
 check "SOURCETYPES: how many sourcetypes feed main" '[ "$(_kv $A SOURCETYPES)" = "$(_spl "| metadata type=sourcetypes index=main | stats count")" ]' "| metadata type=sourcetypes index=main"

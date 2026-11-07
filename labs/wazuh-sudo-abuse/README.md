@@ -44,7 +44,7 @@ Start the lab with `./lab up wazuh-sudo-abuse`, then open a shell with `./lab sh
 reads one afternoon of web-server-01's auth log (`/var/lib/lab-feed-done` appears when that is done).
 Write `KEY=value` answers to `/root/answers.txt`.
 
-1. **The course questions.**
+1. **The core questions.**
 
    ```
    FAILED_5401=<failed sudo attempts, rule 5401>

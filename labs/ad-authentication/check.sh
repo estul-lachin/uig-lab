@@ -10,7 +10,7 @@ _any() { _v=$(_kv "$1"); shift; [ -n "$_v" ] || return 1; for _e in "$@"; do [ "
 # field VALUE from a set of log lines on stdin: _field EventID=4740 TargetUser
 _ev() { grep "EventID=$1" "$LOG"; }
 
-section "1. The two protocols (the course questions)"
+section "1. The two protocols (the core questions)"
 check "AUTH_DEFAULT: the default authentication protocol in AD" '_any AUTH_DEFAULT Kerberos' "Ticket-based; the KDC runs on the DC"
 check "LEGACY_PROTOCOL: the older challenge-response protocol behind Pass-the-Hash" '_any LEGACY_PROTOCOL NTLM' "Four letters"
 check "TICKET_CMD: the command that lists your cached Kerberos tickets" '_any TICKET_CMD klist' "Try it after kinit"

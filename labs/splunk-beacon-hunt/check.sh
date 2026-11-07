@@ -20,7 +20,7 @@ section "0. Splunk is ready"
 check "Splunk answers and has indexed all $TOTAL events" '[ "$(_spl "| tstats count where index=main")" = $TOTAL ]' \
   "Splunk needs a few minutes after ./lab up (longer the first time, under emulation); run the check again"
 
-section "1. Profile and periodicity (the course questions)"
+section "1. Profile and periodicity (the core questions)"
 check "BEACON_SRC: the internal host of the 60-second beacon" '[ "$(_kv $A BEACON_SRC)" = 10.60.2.22 ]' "stats count dc(dest_port) by src_ip dest_ip dest_port; a pair with hundreds of connections"
 check "BEACON_DST: where it calls" '[ "$(_kv $A BEACON_DST)" = 198.51.100.66 ]' "Only one internal host talks to it"
 check "BEACON_PORT: on which port" '[ "$(_kv $A BEACON_PORT)" = 8443 ]' "dest_port"

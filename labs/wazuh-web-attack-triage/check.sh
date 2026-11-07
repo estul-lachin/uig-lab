@@ -22,7 +22,7 @@ section "0. Wazuh is ready"
 check "The manager is up and web-server-01's morning has been analysed" '[ -f /var/lib/lab-feed-done ] && [ "$(_n "true")" -gt 50 ]' \
   "The manager needs a minute or two after ./lab up; run the check again"
 
-section "1. The course questions"
+section "1. The core questions"
 check "SQLI_31103: SQL injection alerts (rule 31103)" '[ "$(_kv $A SQLI_31103)" = "$(_n ".rule.id == \"31103\"")" ]' "jq select on .rule.id, then count lines"
 check "XSS_31105: cross-site scripting alerts (rule 31105)" '[ "$(_kv $A XSS_31105)" = "$(_n ".rule.id == \"31105\"")" ]' "The same, another rule id"
 check "TRAVERSAL_31104: directory traversal alerts (rule 31104)" '[ "$(_kv $A TRAVERSAL_31104)" = "$(_n ".rule.id == \"31104\"")" ]' "The stock rule calls it Common web attack"
