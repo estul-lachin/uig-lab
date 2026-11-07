@@ -1,0 +1,10 @@
+OBJECT-MODEL LEVELS - for each item, name its level:
+  tactic (the goal / the "why", a matrix column)
+  technique (the "how", a matrix cell)
+  sub-technique (a more specific variant)
+  procedure (a real actor's/tool's implementation - a "Procedure Example")
+
+  ITEM_1: "Persistence" - listed as a column of the matrix
+  ITEM_2: "Command and Scripting Interpreter" (T1059) - a cell under Execution
+  ITEM_3: a Procedure Examples entry: "G0016 (APT29) used an encoded
+          PowerShell one-liner to stage a loader on the host"

@@ -1,0 +1,11 @@
+ATT&CK ID SCHEME - classify the OBJECT TYPE of each ID.
+One of: tactic | technique | sub-technique | software | group | campaign | mitigation
+(The prefix tells you: TA / T / T....nnn / S / G / C / M.)
+
+  A: TA0002
+  B: T1059
+  C: T1059.001
+  D: S0154
+  E: G0016
+  F: C0001
+  G: M1049

@@ -1,0 +1,6 @@
+THE PYRAMID OF PAIN - indicators ranked by how much pain it causes the
+adversary to change them when you detect on them. The levels, unordered:
+  Hash Values, IP Addresses, Domain Names, Network/Host Artifacts, Tools, TTPs
+
+Name the level at the TOP of the pyramid (hardest to change = MOST pain) and
+the one at the BOTTOM (trivial to change = LEAST pain). ATT&CK lives at the top.
