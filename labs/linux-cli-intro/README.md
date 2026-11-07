@@ -94,6 +94,64 @@ Check your work from the host: `./lab check linux-cli-intro`
 <!-- Screenshots: ./lab shot linux-cli-intro ~/Screenshots/<file>.png <name>, then link it as
      ![what it shows](screenshots/<name>.png). Prefer code blocks for terminal output. -->
 
+install nano
+```bash
+apt update && apt install nano
+```
+#### `head`
+```bash
+head -n 1 /var/log/web/access.log
+```
+![head](screenshots/head.png)
+
+#### `tail`
+```bash
+tail -n 1 /var/log/web/access.log
+```
+![tail](screenshots/tail.png)
+
+#### `wc -l` how much line 
+```bash
+cat /var/log/web/access.log | wc -l
+```
+![wc -l](screenshots/wc-l.png)
+
+#### `grep` 
+```bash
+cat /var/log/auth.log | grep "Failed password"
+```
+![grep](screenshots/grep.png)
+
+#### `grep -i` ignore case sencetive 
+```bash
+cat /var/log/auth.log | grep -i "failed"
+```
+![grep -i](screenshots/grep-i.png)
+
+
+#### `echo >` & `echo >>`
+```bash
+echo "first finding" > notes.txt
+echo "fake ps in /usr/local/bin' >> notes.txt
+```
+![echo](screenshots/echo.png)
+
+
+#### `>`
+```bash
+ls /nope 2> err.txt
+```
+![cmm err](screenshots/echo-err.png)
+
+#### `which ps`
+![which ps](screenshots/which-ps.png)
+
+#### `.bash_history`
+```bash
+cat .bash_history
+```
+![bash history](screenshots/bash-history.png)
+
 ## Related
 
 - [linux-file-management](../linux-file-management/): copying, moving, finding and grepping files
