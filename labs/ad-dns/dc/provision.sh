@@ -9,13 +9,16 @@ NET=10.203.17
 
 rm -f /etc/samba/smb.conf
 # Containers can't write security.* extended attributes, so file ACLs go to a tdb file (xattr_tdb).
+# No self-registration (samba_dnsupdate): it would add the container's current IP (the build
+# container's, or any other) as a second A record for dc01. All records here are added explicitly.
 samba-tool domain provision --realm=RIDGELINE.LOCAL --domain=RIDGELINE --server-role=dc \
   --dns-backend=SAMBA_INTERNAL --host-name=dc01 --host-ip=$NET.10 --adminpass="$PASS" \
   --use-rfc2307 --function-level=2016 \
   --option="ad dc functional level = 2016" \
   --option="vfs objects = dfs_samba4 acl_xattr xattr_tdb" \
   --option="xattr_tdb:file=/var/lib/samba/xattr.tdb" \
-  --option="dns forwarder = 127.0.0.11" >/dev/null
+  --option="dns forwarder = 127.0.0.11" \
+  --option="dns update command = /bin/true" >/dev/null
 
 # Kerberos straight to the local KDC (Docker's DNS doesn't know the domain's SRV records).
 cat > /etc/krb5.conf <<'KRB'

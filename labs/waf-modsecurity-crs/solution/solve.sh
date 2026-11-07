@@ -7,6 +7,10 @@ set -euo pipefail
 
 OVERRIDE=/etc/modsecurity.d/modsecurity-override.conf
 
+# The image's entrypoint templates the nginx config in several steps before nginx
+# starts; reloading mid-way fails on a half-rendered config. Wait until the WAF answers.
+for _ in $(seq 1 60); do curl -s -o /dev/null http://localhost:8080/ && break; sleep 1; done
+
 # 1 + 3: enable the engine and add a custom deny rule. The override file is loaded
 # after the CRS, so SecRuleEngine On here wins over the DetectionOnly default.
 cat >> "$OVERRIDE" <<'CONF'

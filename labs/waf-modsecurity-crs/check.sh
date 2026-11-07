@@ -7,6 +7,10 @@ WAF="http://localhost:8080"
 ANS=/root/answers.txt
 AUDIT=/var/log/modsec/audit.log
 
+# The image's entrypoint templates the nginx config in several steps before nginx
+# starts; probing too early gets no answer. Wait until the WAF answers.
+for _ in $(seq 1 60); do curl -s -o /dev/null http://localhost:8080/ && break; sleep 1; done
+
 # Drive the WAF once up front: a SQL-injection probe and a request carrying the
 # custom-rule marker. Capture the status codes for the checks below.
 SQLI_CODE="$(curl -s -o /dev/null -w '%{http_code}' -G "$WAF/search" --data-urlencode "id=1' OR '1'='1" 2>/dev/null)"
