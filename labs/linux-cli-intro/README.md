@@ -94,10 +94,6 @@ Check your work from the host: `./lab check linux-cli-intro`
 <!-- Screenshots: ./lab shot linux-cli-intro ~/Screenshots/<file>.png <name>, then link it as
      ![what it shows](screenshots/<name>.png). Prefer code blocks for terminal output. -->
 
-install nano
-```bash
-apt update && apt install nano
-```
 #### `head`
 ```bash
 head -n 1 /var/log/web/access.log
