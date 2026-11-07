@@ -1,0 +1,8 @@
+services:
+  main:
+    build: .
+    hostname: quillpad
+    init: true
+    # The Flask API is the container's main process and listens on 127.0.0.1:8080.
+    # Drive it with curl from `./lab shell jwt-auth-bypass`; no host port is
+    # published on purpose.
