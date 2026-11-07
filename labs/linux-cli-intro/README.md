@@ -110,21 +110,21 @@ tail -n 1 /var/log/web/access.log
 ```
 ![tail](screenshots/tail.png)
 
-#### `wc -l` how much line 
+#### `wc -l` how many lines
 ```bash
-cat /var/log/web/access.log | wc -l
+wc -l < /var/log/web/access.log
 ```
 ![wc -l](screenshots/wc-l.png)
 
 #### `grep` 
 ```bash
-cat /var/log/auth.log | grep "Failed password"
+grep "Failed password" /var/log/auth.log
 ```
 ![grep](screenshots/grep.png)
 
-#### `grep -i` ignore case sencetive 
+#### `grep -i` ignore case
 ```bash
-cat /var/log/auth.log | grep -i "failed"
+grep -i "failed" /var/log/auth.log
 ```
 ![grep -i](screenshots/grep-i.png)
 
@@ -137,11 +137,11 @@ echo "line two" >> demo.txt
 ![echo](screenshots/echo.png)
 
 
-#### `>`
+#### `2>`
 ```bash
 ls /nope 2> err.txt
 ```
-![cmm err](screenshots/echo-err.png)
+![cmd error](screenshots/echo-err.png)
 
 #### `which ps`
 ![which ps](screenshots/which-ps.png)
