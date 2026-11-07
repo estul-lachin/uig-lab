@@ -1,0 +1,11 @@
+services:
+  main:
+    build: .
+    hostname: linkpeek
+    init: true
+    # NET_ADMIN lets the container add the link-local 169.254.169.254 address that
+    # the mock metadata service listens on.
+    cap_add:
+      - NET_ADMIN
+    # The Flask app listens on 127.0.0.1:8080 inside the container; drive it with
+    # curl from `./lab shell ssrf-cloud-metadata`. No host port is published.
