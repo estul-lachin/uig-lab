@@ -451,6 +451,25 @@ def build_timeline(labs):
     return page("Timeline", body, 1, "timeline", path="timeline/")
 
 
+def build_summary(labs, projects):
+    """Counts for other sites (uig.me reads it; Pages allows cross-origin reads).
+
+    Same rule as the pages: only passed labs are counted, projects are never passes.
+    """
+    passed = [l for l in labs.values() if l["passes"]]
+    latest = max((p["_time"] for l in passed for p in l["passes"]), default=None)
+    cats = {}
+    for l in passed:
+        name = category_name(l["conf"]["CATEGORY"])
+        cats[name] = cats.get(name, 0) + 1
+    return json.dumps({
+        "labs_passed": len(passed),
+        "latest_pass": fmt_date(latest) if latest else None,
+        "categories": cats,
+        "projects": len(projects),
+    }, indent=1) + "\n"
+
+
 def build_404():
     body = '<h1>Not found</h1><p>That page does not exist. <a href="/">Back to the labs</a>.</p>'
     return page("Not found", body, None)
@@ -521,6 +540,7 @@ def main():
         write(out / "projects" / p["name"] / "index.html", build_project(p))
         copy_screenshots(f"projects/{p['name']}", out)
 
+    write(out / "summary.json", build_summary(labs, projects))
     leak_check(out)
     print(f"Built {out}: {len(passed)} of {len(labs)} public labs passed, "
           f"{sum(len(l['passes']) for l in labs.values())} passes, {len(projects)} documented projects.")
