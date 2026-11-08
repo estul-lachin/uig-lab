@@ -146,6 +146,8 @@ h3 { font-size: 1.05rem; margin: 0 0 6px; }
 .timeline .count { color: var(--muted); font-size: 14px; }
 
 @media (max-width: 520px) {
+  .site-header .wrap { flex-wrap: wrap; height: auto; padding-top: 10px; padding-bottom: 10px; row-gap: 2px; }
+  .site-header nav { gap: 16px; }
   h1 { font-size: 1.55rem; }
   .stat { flex: 1 1 140px; min-width: 0; padding: 12px 14px; }
   .stat .num { font-size: 1.25rem; }
