@@ -231,7 +231,8 @@ def page(title, body, depth, current="", path="", description=SITE_DESCRIPTION):
     nav = [("Labs", rel or "./", "home"),
            ("Projects", f"{rel}projects/", "projects"),
            ("Timeline", f"{rel}timeline/", "timeline"),
-           ("Honeypot", "https://honeypot.uig.me/", "honeypot")]
+           ("Honeypot", "https://honeypot.uig.me/", "honeypot"),
+           ("Detections", "https://detections.uig.me/", "detections")]
     links = "".join(
         f'<a href="{href}"{" aria-current=\"page\"" if key == current else ""}>{label}</a>'
         for label, href, key in nav
