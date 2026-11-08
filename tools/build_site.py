@@ -264,7 +264,7 @@ def page(title, body, depth, current="", path="", description=SITE_DESCRIPTION):
 <body>
 <header class="site-header">
   <div class="wrap">
-    <a class="brand" href="{rel or './'}">{OWNER}</a>
+    <a class="brand" href="https://uig.me/">{OWNER}</a>
     <nav>{links}</nav>
   </div>
 </header>
