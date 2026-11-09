@@ -25,7 +25,7 @@ RAW_URL = "https://raw.githubusercontent.com/estul-lachin/uig-lab/main"
 PROFILE_URL = "https://github.com/estul-lachin"
 LINKEDIN_URL = "https://www.linkedin.com/in/estul-lachin"
 OWNER = "Estul Lachin"
-BYLINE = "IT support technician moving into SOC · Edmonton, AB"
+BYLINE = "IT support & security operations · Edmonton, AB"
 SITE_URL = "https://lab.uig.me"
 SITE_DESCRIPTION = ("Hands-on IT labs I have built and passed, each a resettable Docker environment "
                     "with automated checks.")
