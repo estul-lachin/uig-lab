@@ -245,7 +245,8 @@ architecture will show up here.
    - Pass record: first pass, latest pass, number of passes
    - Link to the lab's folder: `REPO_URL/tree/main/labs/<name>`
 3. **Timeline** `/timeline/`: every pass, newest first (lab passes only, never projects)
-4. **Projects** `/projects/` and `/projects/<name>/`: documented projects (see below)
+4. **Projects** `/projects/` and `/projects/<name>/`: documented projects (see below); the nav links to it only once
+   there is at least one
 
 ### Documented projects
 Work that can't be a Docker lab with automated checks (VMs, Windows, Active Directory, Wazuh agents, GUI

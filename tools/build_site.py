@@ -49,6 +49,7 @@ SCREENSHOTS = "screenshots"  # per-lab folder, copied to the site as is
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".gif", ".webp"}
 MAX_IMAGE_BYTES = 1024 * 1024  # larger screenshots get a warning: resize them first
 ASSETS = ROOT / "tools" / "assets"  # favicons and the link-preview image, copied to the site root
+HAS_PROJECTS = False  # set in main(); the Projects nav link only shows once there is one
 OG_IMAGE = "og-image.png"  # 1200x630, rendered from tools/assets/og-image.html
 
 e = html.escape
@@ -228,9 +229,10 @@ def page(title, body, depth, current="", path="", description=SITE_DESCRIPTION):
     # depth = how deep the page sits below the site root; None = absolute links (404 page,
     # which GitHub Pages serves at any missing URL). path = the page's URL path, for link previews.
     rel = "/" if depth is None else "../" * depth
-    nav = [("Labs", rel or "./", "home"),
-           ("Projects", f"{rel}projects/", "projects"),
-           ("Timeline", f"{rel}timeline/", "timeline"),
+    nav = [("Labs", rel or "./", "home")]
+    if HAS_PROJECTS or current == "projects":  # no nav link to an empty projects page
+        nav.append(("Projects", f"{rel}projects/", "projects"))
+    nav += [("Timeline", f"{rel}timeline/", "timeline"),
            ("Honeypot", "https://honeypot.uig.me/", "honeypot"),
            ("Detections", "https://detections.uig.me/", "detections")]
     links = "".join(
@@ -518,6 +520,8 @@ def main():
 
     labs = load_labs(load_progress(args.progress))
     projects = load_projects()
+    global HAS_PROJECTS
+    HAS_PROJECTS = bool(projects)
     out = args.out.resolve()
     if out == ROOT or ROOT.is_relative_to(out):
         fail(f"refusing to write into {out}")
