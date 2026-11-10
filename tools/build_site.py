@@ -22,6 +22,14 @@ import markdown
 
 REPO_URL = "https://github.com/estul-lachin/uig-lab"
 RAW_URL = "https://raw.githubusercontent.com/estul-lachin/uig-lab/main"
+# The visit counter is a pinned version with a Subresource Integrity hash; to update it, change both
+# (openssl dgst -sha384 -binary count.vN.js | base64).
+COUNTER_JS = "https://gc.zgo.at/count.v5.js"
+COUNTER_SRI = "sha384-atnOLvQb9t+jTSipvd75X2yginT4PjVbqDdlJAmxMm+wYElFmeR6EmLP5bYeoRVQ"
+# No inline scripts or styles anywhere. README images outside screenshots/ load from RAW_URL.
+CSP = ("default-src 'none'; script-src https://gc.zgo.at; style-src 'self'; "
+       "img-src 'self' https://raw.githubusercontent.com https://uig.goatcounter.com; "
+       "connect-src https://uig.goatcounter.com; base-uri 'none'; form-action 'none'")
 PROFILE_URL = "https://github.com/estul-lachin"
 LINKEDIN_URL = "https://www.linkedin.com/in/estul-lachin"
 OWNER = "Estul Lachin"
@@ -214,9 +222,50 @@ def copy_screenshots(base, out):
         shutil.copyfile(f, dest)
 
 
+LIST_ITEM = re.compile(r"^( *)([-*+]|\d+[.)])( +)(?=\S)")
+
+
+def normalize_lists(text):
+    """Re-indent nested lists to the 4 spaces per level that Python-Markdown needs.
+
+    The READMEs indent a nested list under its parent's text, as GitHub (CommonMark) expects: 3 spaces
+    under "1. ", 2 under "- ". Python-Markdown would fold those items into the parent's paragraph.
+    """
+    out, stack, fence, blank = [], [], None, False  # stack: content column of each open list item
+    for line in text.splitlines():
+        body = line.lstrip(" ")
+        indent = len(line) - len(body)
+        if fence:  # inside a code block: move it with its list item, change nothing else
+            out.append(" " * max(indent + fence[1], 0) + body)
+            if body.startswith(fence[0]) and not body.strip(fence[0][0]).strip():
+                fence = None
+            continue
+        if not body:
+            out.append("")
+            blank = True
+            continue
+        item = LIST_ITEM.match(line)
+        # A line belongs to the innermost item whose text column it reaches. One that does not reach it
+        # only stays inside (a lazy continuation) when it directly follows text and is not an item itself.
+        depth = sum(1 for col in stack if indent >= col)
+        if depth < len(stack) and (blank or item or indent == 0):
+            del stack[depth:]
+        depth = min(depth, len(stack))
+        base = stack[depth - 1] if depth else 0
+        shift = 4 * depth - base
+        out.append(" " * max(indent + shift, 0) + body)
+        if item:
+            stack.append(indent + len(item.group(2)) + len(item.group(3)))
+        m = re.match(r"(`{3,}|~{3,})", body)
+        if m:
+            fence = (m.group(1), shift)
+        blank = False
+    return "\n".join(out)
+
+
 def render_readme(text, base):
     md = markdown.Markdown(extensions=["extra", "sane_lists"], output_format="html")
-    return rewrite_links(md.convert(clean_readme(text)), base)
+    return rewrite_links(md.convert(normalize_lists(clean_readme(text))), base)
 
 
 # ---------------------------------------------------------------- pages
@@ -245,6 +294,8 @@ def page(title, body, depth, current="", path="", description=SITE_DESCRIPTION):
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="{CSP}">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <title>{e(full_title)}</title>
 <meta name="description" content="{e(description)}">
 <meta property="og:type" content="website">
@@ -262,7 +313,8 @@ def page(title, body, depth, current="", path="", description=SITE_DESCRIPTION):
 <link rel="apple-touch-icon" href="{rel}apple-touch-icon.png">
 <link rel="stylesheet" href="{rel}style.css">
 <!-- Privacy-friendly visit counter (no cookies): https://uig.goatcounter.com -->
-<script data-goatcounter="https://uig.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://uig.goatcounter.com/count" async src="{COUNTER_JS}"
+  integrity="{COUNTER_SRI}" crossorigin="anonymous"></script>
 </head>
 <body>
 <header class="site-header">
