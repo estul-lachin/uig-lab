@@ -11,6 +11,7 @@ import ipaddress
 import json
 import os
 import re
+import shutil
 import sys
 from datetime import datetime, timezone
 
@@ -215,6 +216,14 @@ def table(rows, columns):
     """columns: list of (HEADER, function(obj) -> str)"""
     cells = [[h for h, _ in columns]] + [[f(r) for _, f in columns] for r in rows]
     widths = [max(len(c[i]) for c in cells) for i in range(len(columns))]
+    # Like gcloud: a table wider than the terminal is printed one "KEY: value" block per row.
+    if sys.stdout.isatty() and sum(widths) + 2 * (len(widths) - 1) > shutil.get_terminal_size().columns:
+        for i, c in enumerate(cells[1:]):
+            if i:
+                print()
+            for h, v in zip(cells[0], c):
+                print(f"{h}: {v}")
+        return
     for c in cells:
         line = "  ".join(v.ljust(widths[i]) for i, v in enumerate(c)).rstrip()
         print(line)
@@ -293,6 +302,7 @@ NET_COLUMNS = [
     ("BGP_ROUTING_MODE", lambda n: n["x_gcloud_bgp_routing_mode"]),
     ("IPV4_RANGE", lambda n: ""),
     ("GATEWAY_IPV4", lambda n: ""),
+    ("INTERNAL_IPV6_RANGE", lambda n: ""),
 ]
 SUB_COLUMNS = [
     ("NAME", lambda s: s["name"]),
@@ -304,6 +314,7 @@ SUB_COLUMNS = [
     ("INTERNAL_IPV6_PREFIX", lambda s: ""),
     ("EXTERNAL_IPV6_PREFIX", lambda s: ""),
 ]
+SUB_LIST_COLUMNS = SUB_COLUMNS + [("UTILIZATION_DETAILS", lambda s: "")]
 
 
 # ---------------------------------------------------------------- argument parsing
@@ -541,7 +552,7 @@ def subnets_list(state, args, g):
         subs = [s for s in subs if basename(s["region"]) in want]
     subs = apply_filter(subs, g["filter"])
     subs.sort(key=lambda s: (s["name"], basename(s["region"])))
-    emit(subs, g["format"], SUB_COLUMNS)
+    emit(subs, g["format"], SUB_LIST_COLUMNS)
 
 
 def find_subnet(state, opts, name):
