@@ -33,7 +33,7 @@ CSP = ("default-src 'none'; script-src https://gc.zgo.at; style-src 'self'; "
 PROFILE_URL = "https://github.com/estul-lachin"
 LINKEDIN_URL = "https://www.linkedin.com/in/estul-lachin"
 OWNER = "Estul Lachin"
-BYLINE = "IT support & security operations · Edmonton, AB"
+BYLINE = "Security operations & IT support · Edmonton, AB"
 SITE_URL = "https://lab.uig.me"
 SITE_DESCRIPTION = ("Hands-on IT labs I have built and passed, each a resettable Docker environment "
                     "with automated checks.")
