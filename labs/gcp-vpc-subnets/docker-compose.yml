@@ -1,5 +1,0 @@
-services:
-  main:
-    build: .
-    hostname: cloudshell
-    init: true
