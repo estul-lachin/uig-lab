@@ -86,6 +86,69 @@ Check your work from the host: `./lab check linux-file-editing`
 <!-- Screenshots: ./lab shot linux-file-editing ~/Screenshots/<file>.png <name>, then link it as
      ![what it shows](screenshots/<name>.png). Prefer code blocks for terminal output. -->
 
+#### nano `⌃ + \` = Search and Replace
+
+#### `vim` 
+```bash
+# Enter Insert mode
+i
+# Return to Normal mode
+Esc
+# Save
+:w
+# Quit
+:q
+# Save and quit
+:wq
+# Quit without saving
+:q!
+# Delete current line
+dd
+# Undo
+u
+# Replace all occurrences in the file
+:%s/old/new/g
+```
+
+#### `cat`
+```bash
+# Display file contents
+cat file.txt
+# Create/overwrite a file
+cat > file.txt
+# Append to a file
+cat >> file.txt
+# Display with line numbers
+cat -n file.txt
+# Combine files into a new file
+cat file1 file2 > file3
+# Finish cat input
+Ctrl + D
+```
+#### `echo` `printf`
+```bash
+# Write/overwrite
+echo "Hello, World!" > a.txt
+
+# Append
+echo "Another line." >> a.txt
+
+# Write two lines with TAB separation
+printf "aaaaaaa\taaaaaaa\naaaaaaa\taaaaaaa\n" > a.tsv
+
+# Write to file and display on screen
+echo "aaaaaaa" | tee a.txt
+
+# Append to file and display on screen
+echo "bbbbbb" | tee -a seen.txt
+
+# Write current date/time (overwrite)
+date > a.txt
+
+# Append another timestamp
+date >> a.txt
+```
+
 ## Related
 
 - [linux-file-management](../linux-file-management/): creating, copying and searching files
