@@ -283,7 +283,8 @@ def page(title, body, depth, current="", path="", description=SITE_DESCRIPTION):
         nav.append(("Projects", f"{rel}projects/", "projects"))
     nav += [("Timeline", f"{rel}timeline/", "timeline"),
            ("Honeypot", "https://honeypot.uig.me/", "honeypot"),
-           ("Detections", "https://detections.uig.me/", "detections")]
+           ("Detections", "https://detections.uig.me/", "detections"),
+           ("Guide", "https://guide.uig.me/", "guide")]
     links = "".join(
         f'<a href="{href}"{" aria-current=\"page\"" if key == current else ""}>{label}</a>'
         for label, href, key in nav
