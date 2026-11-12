@@ -64,6 +64,23 @@ Check your work from the host: `./lab check linux-file-management`
 <!-- Screenshots: ./lab shot linux-file-management ~/Screenshots/<file>.png <name>, then link it as
      ![what it shows](screenshots/<name>.png). Prefer code blocks for terminal output. -->
 
+#### `cp` copy a folder to another folder
+```bash
+cp -r /path/to/source_folder /path/to/destination_folder/
+```
+
+#### `mv` move and rename a folder
+```bash
+mv /source/path/old_folder /destination/path/new_folder
+```
+
+#### `find` find the directory by name
+```bash
+find foldername -type d -name "directory-name"
+```
+
+#### `grep -r sth <dir>` vs `grep -rl sth <dir>`
+
 ## Related
 
 - [linux-file-permissions](../linux-file-permissions/): `find -perm` and permission audits
