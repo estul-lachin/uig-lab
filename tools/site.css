@@ -21,6 +21,8 @@
   --radius: 2px;
   --font: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
   --mono: var(--font);
+  /* long-form prose (articles, READMEs) reads faster in a proportional face */
+  --prose: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color-scheme: dark;
 }
 
@@ -184,6 +186,9 @@ h2.small-heading::before { content: "// "; content: "// " / ""; }
 .checks li { padding: 4px 0 4px 36px; position: relative; }
 .checks li::before { content: "[+]"; content: "[+]" / ""; position: absolute; left: 0; color: var(--ok); font-weight: 700; text-shadow: var(--glow); }
 .checks .note { color: var(--muted); font-size: 13px; margin-top: -4px; }
+
+/* long-form prose in a proportional face; headings, data and code stay mono */
+.readme p, .readme li, .readme blockquote { font-family: var(--prose); font-size: 16px; line-height: 1.7; }
 
 /* rendered README */
 .readme { overflow-wrap: break-word; }
