@@ -25,7 +25,7 @@ shot og-image.html 1200 630 og-image.png
 # Chrome won't make a window narrower than about 500px, so render the icon in the middle of the page
 # and crop it (sips crops around the center). The SVG is inlined: an <img> may not have loaded yet.
 {
-  printf '<html><body style="margin:0;height:600px;background:#0a0f0b;display:flex;align-items:center;justify-content:center">'
+  printf '<html><body style="margin:0;height:600px;background:#0b100d;display:flex;align-items:center;justify-content:center">'
   printf '<div style="width:180px;height:180px">'
   sed 's/<svg /<svg width="180" height="180" /' favicon.svg
   printf '</div></body></html>'

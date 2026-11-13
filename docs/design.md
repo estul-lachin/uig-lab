@@ -263,7 +263,7 @@ meaning:
 - `./lab shot` works for projects too
 
 ### Design
-- One CSS file, no JS framework; works at phone width; a dark terminal theme (mono font, green accent, CSS-only scanlines and cursor; animations off under `prefers-reduced-motion`) shared with the other uig.me sites
+- One CSS file, no JS framework; works at phone width; a dark terminal theme (mono font for headings, data and code, sans for prose; soft green accent, no glow or scanlines; a CSS-only cursor that blinks a few times then stays solid, off under `prefers-reduced-motion`) shared with the other uig.me sites
 - Clean, like technical docs / a portfolio — nothing flashy
 - No personal contact details (phone, email); only links to LinkedIn
   (https://www.linkedin.com/in/estul-lachin) and https://github.com/estul-lachin, in the footer
