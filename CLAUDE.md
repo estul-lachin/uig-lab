@@ -50,6 +50,13 @@ is exposed to the internet.
 - Write original scenarios and data; never copy text or questions from source material.
 - Never commit or push without being asked.
 
+## Exceptions the owner granted
+
+- `projects/sentinel-incident-triage` (2026-11-13): at the owner's request, an AI session wrote the README,
+  set DATE, and added the screenshots (cropped and redacted from the owner's own portal screenshots). The
+  triage itself, every investigation and every incident close, was done by the owner. This applies to this
+  project only; the projects rule above still holds everywhere else.
+
 ## Lessons learned
 
 <!-- One rule per AI mistake, added by the owner. -->
